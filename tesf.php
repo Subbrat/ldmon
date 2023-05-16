@@ -8,7 +8,6 @@
 <body>
     <?php
     require_once('./class/conn.php');
-
     // Fetch all tables in the database
     $tablesQuery = "SHOW TABLES";
     $tablesResult = mysqli_query($connection, $tablesQuery);
@@ -17,7 +16,7 @@
         echo "<ul>";
         while ($tableRow = mysqli_fetch_row($tablesResult)) {
             $tableName = $tableRow[0];
-            echo "<li>$tableName</li>";
+            echo "<a href='tabdetails.php?table=$tableName'><li>$tableName</li></a>";
         }
         echo "</ul>";
         mysqli_free_result($tablesResult);
