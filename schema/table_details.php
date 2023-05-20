@@ -1,5 +1,5 @@
 <?php
-require_once('./class/conn.php');
+require_once('./../class/conn.php');
 // Check if the table name is provided in the URL
 if (isset($_GET['table'])) {
     $tableName = $_GET['table'];
@@ -19,7 +19,7 @@ if (isset($_GET['table'])) {
         echo "Failed to fetch columns for table: $tableName";
     }
 } else {
-    echo "Table name not provided in the URL";
+    header("Location: ./all_table.php");
 }
 // Close the database connection
 mysqli_close($connection);

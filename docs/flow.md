@@ -28,7 +28,7 @@
 
 
 # Faculty / Lab side system
-## 1.  Data Importlogin & <br>
+## 1.  Data Import-login & <br>
   - data import of [primary table](https://github.com/Subbrat/ldmon/blob/main/docs/table.md#primary_fields)
   - reset password and hash from user side
   - login to dashboard

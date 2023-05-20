@@ -7,16 +7,16 @@
 
 <body>
     <?php
-    require_once('./class/conn.php');
+    require_once('./../class/conn.php');
     // Fetch all tables in the database
     $tablesQuery = "SHOW TABLES";
     $tablesResult = mysqli_query($connection, $tablesQuery);
     if ($tablesResult) {
-        echo "<h2>Tables in the Database</h2>";
+        echo "<h1>All tables in the Database</h1>";
         echo "<ul>";
         while ($tableRow = mysqli_fetch_row($tablesResult)) {
             $tableName = $tableRow[0];
-            echo "<a href='tabdetails.php?table=$tableName'><li>$tableName</li></a>";
+            echo "<a href='table_details.php?table=$tableName'><li>$tableName</li></a>";
         }
         echo "</ul>";
         mysqli_free_result($tablesResult);
