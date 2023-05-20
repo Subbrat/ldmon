@@ -69,7 +69,8 @@
 
 | database | tables | fields | data type | description | access |
 | :-- | :--: |:--: |:--: |:--: | --: |
-| | | batch availability | | | |
+| | | batch | | | |
+| | | availability | | | |
 | | | category | | | |
 | | | name | | | |
 | | | company | | | |
@@ -107,3 +108,125 @@
 | | | any specific foundation or base system req | | | |
 | | | water and drainage required | | | |
 | | | furniture or closet | | | |
+
+
+### rough
+___
+| field | description |
+| :-- | :--: |
+| department |P C M B E|
+| batch |dismissed|
+| category |`TBD by faculty`|
+| name |instrument group name|
+| company |instrument group company name|
+| slno |`?`instrument group SL name|
+| floor |common one|
+| room |to dept && UID|
+| table |to UID|
+| description |to group of instrument|
+| total nos |to group of instrument|
+| head of dept |to dept|
+| instructor |to group of instrument|
+| week availability |maybe 7/5 or less|
+| cycle time |in minutes for group of inst|
+| gap betn cycle |in minutes for group of inst|
+| cycles per day |in minutes for group of inst|
+
+### specification
+
+| field | description |
+| :-- | :--: |
+| things used as input |gas metal soild paper etc etc|
+| unit in one maintainance |the refuel|
+| unit used per cycle |in format of the the unit of material|
+| cycle in one maintainance period |for group = unit in in one maintainance/ used in one cycle|
+| working days it can run |(cycles one maintainance/ cycle per day) |
+| last maintainance date |date for UID|
+### dynamic variables
+| field | description |
+| :-- | :--: |
+| already used |cycles used per UID|
+| remaining cycles |maintainance cycles used cycles : UID |
+| working days it can run now |cycles one maintainance/ cycle per day) / week day number|
+| next maintainance date | today + remaining days : UID |
+| warning date |next maintainance date - 5 or 10 days whichever is precise|
+| uID |auto generated assigned number :: group ** numbers of instruments [UID](#db_uid)|
+| out of service |true or false for UID |
+| size |for group of instrument|
+| weight |for group|
+| power requirement |group|
+| socket requirement |group|
+| UPS requirement |group|
+| HVAC & AC requirement |group|
+| Gas requirement |group|
+| any specific foundation or base system req |group|
+| water and drainage required |group|
+| furniture or closet |group|
+| user log|log|
+|image | of the iabnstrument|
+|link to manual | hyper link to user manual|
+|transfer history | if room | room; table | table|
+|warrenty date | date of expiration of warrenty|
+|warrenty status | if is in or not in|
+|template for the certification | file and link for code |
+|related risk warning | any risk of concern|
+|past reports of malfunction | any :: user log to review|
+|Standard Operating Procedures (SOPs) for Equipment | any specific proced|
+|Equipment Troubleshooting Guides | troubleshooting guide group|
+|any other emergebcy guide | any any any for group|
+
+
+<br><br>
+
+1. department  - P C M B E<br>
+1. batch  - dismissed<br>
+1. category  - `TBD by faculty`<br>
+1. name  - instrument group name<br>
+1. company  - instrument group company name<br>
+1. slno  - `?`instrument group SL name<br>
+1. floor  - common one<br>
+1. room  - to dept && UID<br>
+1. table  - to UID<br>
+1. description  - to group of instrument<br>
+1. total nos  - to group of instrument<br>
+1. head of dept  - to dept<br>
+1. instructor  - to group of instrument<br>
+1. week availability  - maybe 7/5 or less<br>
+1. cycle time  - in minutes for group of inst<br>
+1. gap betn cycle  - in minutes for group of inst<br>
+1. cycles per day  - in minutes for group of inst<br>
+1. things used as input  - gas metal soild paper etc etc<br>
+1. unit in one maintainance  - the refuel<br>
+1. unit used per cycle  - in format of the the unit of material<br>
+cycle in one maintainance period  - for group = unit in in one maintainance/ used 1. <br>in one cycle
+1. working days it can run  - (cycles one maintainance/ cycle per day)<br>
+1. last maintainance date  - date for UID<br>
+1. already used  - cycles used per UID<br>
+1. remaining cycles  - maintainance cycles used cycles : UID<br>
+working days it can run now  - cycles one maintainance/ cycle per day) / week day 1. <br>number
+1. next maintainance date today + remaining days : UID<br>
+1. warning date  - next maintainance date 5 or 10 days whichever is precise<br>
+1. uID  - auto generated assigned number :: group ** numbers of instruments [UID]<br>(#db_uid)
+1. out of service  - true or false for UID<br>
+1. size  - for group of instrument<br>
+1. weight  - for group<br>
+1. power requirement  - group<br>
+1. socket requirement  - group<br>
+1. UPS requirement  - group<br>
+1. HVAC & AC requirement  - group<br>
+1. Gas requirement  - group<br>
+1. any specific foundation or base system req  - group<br>
+1. water and drainage required  - group<br>
+1. furniture or closet  - group<br>
+1. user log - UID users for the inst:: also for the group :: dept :: all<br>
+1. image - of the iabnstrument<br>
+1. link to manual - hyper link to user manual<br>
+1. transfer history - if room - room; table - table<br>
+1. warrenty date - date of expiration of warrenty<br>
+1. warrenty status - if is in or not in<br>
+1. template for the certification - file and link for code -<br>
+1. related risk warning - any risk of concern<br>
+1. past reports of malfunction - any :: user log to review<br>
+1. Standard Operating Procedures (SOPs) for Equipment - any specific proced<br>
+1. Equipment Troubleshooting Guides - troubleshooting guide group<br>
+1. any other emergebcy guide - any any any for group<br>
