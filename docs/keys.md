@@ -1,1 +1,0 @@
-> secured logs with blockchain algorithm
