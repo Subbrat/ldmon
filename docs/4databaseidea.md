@@ -2,6 +2,7 @@
 1. [INSTRUMENT](#instrument)<br>
 2. [MAINTAINANCE](#maintainance)<br>
 3. [LOG](#log)
+4. [DATABASES](#databases)
 
 
 # INSTRUMENT
@@ -60,3 +61,49 @@
 
 
 `PRETTY MUCH EVERYTHING WILL BE LOGGED `
+
+
+# DATABASES
+## database : INSTRUMENTS
+`all the databases concerning instruments`<br>
+
+| database | tables | fields | data type | description | access |
+| :-- | :--: |:--: |:--: |:--: | --: |
+| | | batch availability | | | |
+| | | category | | | |
+| | | name | | | |
+| | | company | | | |
+| | | slno | | | |
+| | | room | | | |
+| | | table | | | |
+| | | description | | | |
+| | | total nos | | | |
+| | | instructor | | | |
+| | | week availability | | | |
+| | | cycle time | | | |
+| | | gap betn cycle | | | |
+| | | cycles per day | | | |
+| | | specification | | | |
+| | | unit in one maintainance | | | |
+| | | unit used per cycle | | | |
+| | | cycle in one maintainance period | | | |
+| | | working days it can run | | | |
+| | | last maintainance date | | | |
+| | | dynamic variables | | | |
+| | | already used | | | |
+| | | remaining cycles | | | |
+| | | working days it can run now | | | |
+| | | next maintainance date | | | |
+| | | warning date | | | |
+| | | sID | | | |
+| | | out of service | | | |
+| | | size | | | |
+| | | weight | | | |
+| | | power requirement | | | |
+| | | socket requirement | | | |
+| | | UPS requirement | | | |
+| | | HVAC & AC requirement | | | |
+| | | Gas requirement | | | |
+| | | any specific foundation or base system req | | | |
+| | | water and drainage required | | | |
+| | | furniture or closet | | | |

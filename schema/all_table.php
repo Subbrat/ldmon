@@ -16,7 +16,7 @@
         echo "<ul>";
         while ($tableRow = mysqli_fetch_row($tablesResult)) {
             $tableName = $tableRow[0];
-            echo "<a href='table_details.php?table=$tableName'><li>$tableName</li></a>";
+            echo "<a href='0table_details.php?table=$tableName'><li>$tableName</li></a>";
         }
         echo "</ul>";
         mysqli_free_result($tablesResult);
