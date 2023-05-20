@@ -5,7 +5,7 @@
 `[ experimental - every algorithm in just in experiment phase ]`
 
 ## User
-signup . reset password . edit profile . provide funding certification . funding certification verifies and user set with type [(user types)](https://google.com)
+signup . reset password . edit profile . provide funding certification . funding certification verifies and user set with type [(user types)](https://github.com/Subbrat/ldmon/blob/main/docs/shortnotes.md#user-types)
 
 login
     pay the pre charge price to finance handler > finance send data to admin admin credit pseudo amount to their account
