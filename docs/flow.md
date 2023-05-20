@@ -7,7 +7,7 @@
 # User
 
 ## 1.  User login <br>
-signup > set password > provide funding certification > funding certification verifies and user set with type [user types](https://github>com/Subbrat/ldmon/blob/main/docs/shortnotes>md#user-types) > edit profile
+signup > set password > provide funding certification > funding certification verifies and user set with type [user types](https://github.com/Subbrat/ldmon/blob/main/docs/shortnotes.md#user-types) > edit profile
 
 ## 2.  Finance <br>
     pay the pre charge price to finance handler > finance send data to admin admin credit pseudo amount to their account
