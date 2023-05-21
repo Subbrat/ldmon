@@ -231,14 +231,14 @@ working days it can run now  - cycles one maintainance/ cycle per day) / week da
 1. Equipment Troubleshooting Guides - troubleshooting guide group<br>
 1. any other emergebcy guide - any any any for group<br>
 
-## department
-```sh
-room numbers
-head of dept: to dept
-```
+# classification
+1. one time for a group
+2. one time for individual instrument
+3. changing variables for Individual instrument
 
-# One time for group:
-## others
+## one time for group:
+---
+### basic
 department: P C M B E
 batch: dismissed
 category: TBD by faculty
@@ -251,9 +251,9 @@ instructor: to group of instrument
 image: of the instrument
 week availability: maybe 7/5 or less
 
-## specification data
+### specification data
 
-## guide/ manuals
+### guide/ manuals
 link to manual: hyperlink to user manual
 template for certification: file and link for code
 related risk warning: any risk of concern
@@ -261,9 +261,9 @@ Standard Operating Procedures (SOPs) for Equipment: any specific procedure
 Equipment Troubleshooting Guides: troubleshooting guide group
 
 
-## vicinity requirements
+### vicinity requirements
 
-### One time for individual instrument:
+## One time for individual instrument:
 floor: common one
 room: to dept && UID
 warranty date: date of expiration of warranty
@@ -272,7 +272,7 @@ past reports of malfunction: any:: user log to review
 any other emergency guide: any any any for specific instrument
 
 
-### Dynamic to instrument group:
+## Dynamic to instrument group:
 cycle time: in minutes for group of inst
 gap between cycle: in minutes for group of inst
 cycles per day: in minutes for group of inst
@@ -289,7 +289,7 @@ any specific foundation or base system req: group
 water and drainage required: group
 furniture or closet: group
 
-### Dynamic to one individual instrument:
+## Dynamic to one individual instrument:
 unit used per cycle: in format of the unit of material
 cycle in one maintenance period: for group = unit in in one maintenance/ used in one cycle
 last maintenance date: date for UID
@@ -299,4 +299,10 @@ working days it can run now: (cycles one maintenance/ cycle per day) / week day 
 next maintenance date: today + remaining days: UID
 out of service: true or false for UID
 user log: UID users for the inst:: also for the group:: dept:: all
+
+
+
+## raw department
+room numbers
+head of dept: to dept
 transfer history: if room - room; table - table
