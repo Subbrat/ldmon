@@ -306,8 +306,6 @@ next maintenance date: today + remaining days: UID
 out of service: true or false for UID
 user log: UID users for the inst:: also for the group:: dept:: all
 
-
-
 ## raw department
 room numbers
 head of dept: to dept
