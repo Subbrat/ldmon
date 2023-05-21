@@ -181,7 +181,7 @@ ___
 1. department  - P C M B E<br>
 1. batch  - dismissed<br>
 1. category  - `TBD by faculty`<br>
-1. name  - instrument group name<br>
+1. name  - instrument group name or Instrument name<br>
 1. company  - instrument group company name<br>
 1. slno  - `?`instrument group SL name<br>
 1. floor  - common one<br>
@@ -229,4 +229,4 @@ working days it can run now  - cycles one maintainance/ cycle per day) / week da
 1. past reports of malfunction - any :: user log to review<br>
 1. Standard Operating Procedures (SOPs) for Equipment - any specific proced<br>
 1. Equipment Troubleshooting Guides - troubleshooting guide group<br>
-1. any other emergebcy guide - any any any for group<br>
+1. any other emergency guide - any any any for group<br>
