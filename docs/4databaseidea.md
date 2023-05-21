@@ -236,9 +236,8 @@ working days it can run now  - cycles one maintainance/ cycle per day) / week da
 room numbers
 head of dept: to dept
 ```
-1. dept name - dept name
-### One time for group:
-```sh
+
+# One time for group:
 ## others
 department: P C M B E
 batch: dismissed
@@ -251,32 +250,27 @@ total nos: to group of instrument
 instructor: to group of instrument
 image: of the instrument
 week availability: maybe 7/5 or less
-```
 
 ## specification data
 
 ## guide/ manuals
-```sh
 link to manual: hyperlink to user manual
 template for certification: file and link for code
 related risk warning: any risk of concern
 Standard Operating Procedures (SOPs) for Equipment: any specific procedure
 Equipment Troubleshooting Guides: troubleshooting guide group
-```
+
 
 ## vicinity requirements
-```sh
-```
 
 ### One time for individual instrument:
-```sh
 floor: common one
 room: to dept && UID
 warranty date: date of expiration of warranty
 warranty status: if it is in or not in
 past reports of malfunction: any:: user log to review
 any other emergency guide: any any any for specific instrument
-```
+
 
 ### Dynamic to instrument group:
 cycle time: in minutes for group of inst
@@ -295,7 +289,7 @@ any specific foundation or base system req: group
 water and drainage required: group
 furniture or closet: group
 
-###Dynamic to one individual instrument:
+### Dynamic to one individual instrument:
 unit used per cycle: in format of the unit of material
 cycle in one maintenance period: for group = unit in in one maintenance/ used in one cycle
 last maintenance date: date for UID
