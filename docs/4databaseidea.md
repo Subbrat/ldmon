@@ -181,7 +181,7 @@ ___
 1. department  - P C M B E<br>
 1. batch  - dismissed<br>
 1. category  - `TBD by faculty`<br>
-1. name  - instrument group name or Instrument name<br>
+1. name  - instrument group name<br>
 1. company  - instrument group company name<br>
 1. slno  - `?`instrument group SL name<br>
 1. floor  - common one<br>
@@ -230,3 +230,73 @@ working days it can run now  - cycles one maintainance/ cycle per day) / week da
 1. Standard Operating Procedures (SOPs) for Equipment - any specific proced<br>
 1. Equipment Troubleshooting Guides - troubleshooting guide group<br>
 1. any other emergebcy guide - any any any for group<br>
+
+department
+room numbers
+head of dept: to dept
+
+### One time for group:
+```sh
+## others
+department: P C M B E
+batch: dismissed
+category: TBD by faculty
+name: instrument group name or Instrument name
+company: instrument group company name
+slno: ? instrument group SL name
+description: to group of instrument
+total nos: to group of instrument
+instructor: to group of instrument
+image: of the instrument
+week availability: maybe 7/5 or less
+
+## specification data
+
+## guide/ manuals
+link to manual: hyperlink to user manual
+template for certification: file and link for code
+related risk warning: any risk of concern
+Standard Operating Procedures (SOPs) for Equipment: any specific procedure
+Equipment Troubleshooting Guides: troubleshooting guide group
+
+## vicinity requirements
+```
+
+### One time for individual instrument:
+```sh
+floor: common one
+room: to dept && UID
+warranty date: date of expiration of warranty
+warranty status: if it is in or not in
+past reports of malfunction: any:: user log to review
+any other emergency guide: any any any for specific instrument
+```
+
+### Dynamic to instrument group:
+cycle time: in minutes for group of inst
+gap between cycle: in minutes for group of inst
+cycles per day: in minutes for group of inst
+things used as input: gas metal solid paper etc etc
+unit in one maintenance: the refuel
+size: for group of instrument
+weight: for group
+power requirement: group
+socket requirement: group
+UPS requirement: group
+HVAC & AC requirement: group
+Gas requirement: group
+any specific foundation or base system req: group
+water and drainage required: group
+furniture or closet: group
+
+###Dynamic to one individual instrument:
+unit used per cycle: in format of the unit of material
+cycle in one maintenance period: for group = unit in in one maintenance/ used in one cycle
+last maintenance date: date for UID
+already used: cycles used per UID
+remaining cycles: maintenance cycles used cycles: UID
+working days it can run now: (cycles one maintenance/ cycle per day) / week day number
+next maintenance date: today + remaining days: UID
+out of service: true or false for UID
+user log: UID users for the inst:: also for the group:: dept:: all
+transfer history: if room - room; table - table
