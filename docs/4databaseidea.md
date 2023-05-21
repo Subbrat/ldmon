@@ -233,8 +233,14 @@ working days it can run now  - cycles one maintainance/ cycle per day) / week da
 
 # classification
 1. one time for a group
+   - basic data
+   - specifications
+   - additional data
 2. one time for individual instrument
+   - non changing
 3. changing variables for Individual instrument
+   - vicinity related
+   - expeiment related
 
 ## one time for group:
 ---
