@@ -231,10 +231,12 @@ working days it can run now  - cycles one maintainance/ cycle per day) / week da
 1. Equipment Troubleshooting Guides - troubleshooting guide group<br>
 1. any other emergebcy guide - any any any for group<br>
 
-department
+## department
+```sh
 room numbers
 head of dept: to dept
-
+```
+1. dept name - dept name
 ### One time for group:
 ```sh
 ## others
@@ -249,17 +251,21 @@ total nos: to group of instrument
 instructor: to group of instrument
 image: of the instrument
 week availability: maybe 7/5 or less
+```
 
 ## specification data
 
 ## guide/ manuals
+```sh
 link to manual: hyperlink to user manual
 template for certification: file and link for code
 related risk warning: any risk of concern
 Standard Operating Procedures (SOPs) for Equipment: any specific procedure
 Equipment Troubleshooting Guides: troubleshooting guide group
+```
 
 ## vicinity requirements
+```sh
 ```
 
 ### One time for individual instrument:
