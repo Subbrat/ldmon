@@ -314,7 +314,3 @@ user log: UID users for the inst:: also for the group:: dept:: all
 
 
 
-## raw department
-room numbers
-head of dept: to dept
-transfer history: if room - room; table - table
