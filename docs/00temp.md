@@ -12,7 +12,7 @@
 | slno| ? instrument group SL name |
 | description | to group of instrument |
 | total nos | to group of instrument |
-| instructor| to group of instrument |
+| instructor| to group of instrument - current faculty incharge |
 | image | of the instrument |
 
 
@@ -75,8 +75,8 @@
 # Logs
 | | |
 |--|--|
-| usage log|  |
-| maintenance log | |
-| service log | |
-| room change log | |
-| faculty change log| |
+| usage log| user logs pk- UID & user ID  |
+| maintenance log | maintainance record pk - UID  |
+| service log | if instrument went offline for some days pk- UID|
+| room change log | instrument room change |
+| faculty change log| faculty in charge log |
