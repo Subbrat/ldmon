@@ -81,31 +81,3 @@
 | | | total nos | | | |
 | | | instructor | | | |
 | | | week availability | | | |
-| | | cycle time | | | |
-| | | gap betn cycle | | | |
-| | | cycles per day | | | |
-| | | specification | | | |
-| | | unit in one maintainance | | | |
-| | | unit used per cycle | | | |
-| | | cycle in one maintainance period | | | |
-| | | working days it can run | | | |
-| | | last maintainance date | | | |
-| | | dynamic variables | | | |
-| | | already used | | | |
-| | | remaining cycles | | | |
-| | | working days it can run now | | | |
-| | | next maintainance date | | | |
-| | | warning date | | | |
-| | | sID | | | |
-| | | out of service | | | |
-| | | size | | | |
-| | | weight | | | |
-| | | power requirement | | | |
-| | | socket requirement | | | |
-| | | UPS requirement | | | |
-| | | HVAC & AC requirement | | | |
-| | | Gas requirement | | | |
-| | | any specific foundation or base system req | | | |
-| | | water and drainage required | | | |
-| | | furniture or closet | | | |
-
