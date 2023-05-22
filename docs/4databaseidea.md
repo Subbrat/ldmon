@@ -67,17 +67,3 @@
 ## database : INSTRUMENTS
 `all the databases concerning instruments`<br>
 
-| database | tables | fields | data type | description | access |
-| :-- | :--: |:--: |:--: |:--: | --: |
-| | | batch | | | |
-| | | availability | | | |
-| | | category | | | |
-| | | name | | | |
-| | | company | | | |
-| | | slno | | | |
-| | | room | | | |
-| | | table | | | |
-| | | description | | | |
-| | | total nos | | | |
-| | | instructor | | | |
-| | | week availability | | | |
