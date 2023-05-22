@@ -142,38 +142,3 @@ ___
 | cycle in one maintainance period |for group = unit in in one maintainance/ used in one cycle|
 | working days it can run |(cycles one maintainance/ cycle per day) |
 | last maintainance date |date for UID|
-### dynamic variables
-| field | description |
-| :-- | :--: |
-| already used |cycles used per UID|
-| remaining cycles |maintainance cycles used cycles : UID |
-| working days it can run now |cycles one maintainance/ cycle per day) / week day number|
-| next maintainance date | today + remaining days : UID |
-| warning date |next maintainance date - 5 or 10 days whichever is precise|
-| uID |auto generated assigned number :: group ** numbers of instruments [UID](#db_uid)|
-| out of service |true or false for UID |
-| size |for group of instrument|
-| weight |for group|
-| power requirement |group|
-| socket requirement |group|
-| UPS requirement |group|
-| HVAC & AC requirement |group|
-| Gas requirement |group|
-| any specific foundation or base system req |group|
-| water and drainage required |group|
-| furniture or closet |group|
-| user log|log|
-|image | of the iabnstrument|
-|link to manual | hyper link to user manual|
-|transfer history | if room | room; table | table|
-|warrenty date | date of expiration of warrenty|
-|warrenty status | if is in or not in|
-|template for the certification | file and link for code |
-|related risk warning | any risk of concern|
-|past reports of malfunction | any :: user log to review|
-|Standard Operating Procedures (SOPs) for Equipment | any specific proced|
-|Equipment Troubleshooting Guides | troubleshooting guide group|
-|any other emergebcy guide | any any any for group|
-
-
-<br><br>
