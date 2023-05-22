@@ -287,30 +287,3 @@ related risk warning: any risk of concern
 Standard Operating Procedures (SOPs) for Equipment: any specific procedure
 Equipment Troubleshooting Guides: troubleshooting guide group
 ```
-
-## One time for individual instrument:
-```
-floor :
-room: to dept && UID
-warranty date: date of expiration of warranty
-warranty status: if it is in or not in
-past reports of malfunction: any:: user log to review
-any other emergency guide: any any any for specific instrument
-```
-## Dynamic to one individual instrument:
-```
-unit used per cycle: in format of the unit of material
-cycle in one maintenance period: for group = unit in in one maintenance/ used in one cycle
-last maintenance date: date for UID
-already used: cycles used per UID
-remaining cycles: maintenance cycles used cycles: UID
-working days it can run now: (cycles one maintenance/ cycle per day) / week day number
-next maintenance date: today + remaining days: UID
-out of service: true or false for UID
-user log: UID users for the inst:: also for the group:: dept:: all
-```
-
-
-
-
-
