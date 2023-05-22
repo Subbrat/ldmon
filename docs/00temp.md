@@ -17,8 +17,7 @@
 | gap between cycle | in minutes for group of inst |
 | cycles per day | in minutes for group of inst |
 | things used as input/refuel | gas metal solid paper etc. |
-| unit refuel one maintenance | the refuel amount [the variables will be as per the numbers of things used] |
-| unit used per cycle | in format of the unit of material |
+3| unit used per cycle | in format of the unit of material |
 | cycle in one maintenance period | for group = unit in one maintenance/used in one cycle |
 | **vicinity requirements** | |
 | size | for group of instrument |
