@@ -266,24 +266,3 @@ cycles per day: in minutes for group of inst
 things used as input: gas metal solid paper etc etc
 unit in one maintenance: the refuel
 ```
-### vicinity requirements
-```
-size: for group of instrument
-weight: for group
-power requirement: group
-socket requirement: group
-UPS requirement: group
-HVAC & AC requirement: group
-Gas requirement: group
-any specific foundation or base system req: group
-water and drainage required: group
-furniture or closet: group
-```
-### guide/ manuals
-```
-link to manual: hyperlink to user manual
-template for certification: file and link for code
-related risk warning: any risk of concern
-Standard Operating Procedures (SOPs) for Equipment: any specific procedure
-Equipment Troubleshooting Guides: troubleshooting guide group
-```
