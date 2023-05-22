@@ -67,4 +67,4 @@
 # DATABASES
 ## database : INSTRUMENTS
 `all the databases concerning instruments`<br>
-[ excel sheet showing table ideas ](https://docs.google.com/spreadsheets/d/1yCb8Dq7xhyu4_BMWtvEv7f6shmBArr2z/edit#gid=437566818)
+[ excel sheet showing table ideas - have restricted access ](https://docs.google.com/spreadsheets/d/1yCb8Dq7xhyu4_BMWtvEv7f6shmBArr2z/edit#gid=437566818)
