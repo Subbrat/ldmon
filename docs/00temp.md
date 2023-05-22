@@ -1,6 +1,9 @@
-| one time for group: |        |
-|---------------------|--------|
-| **basic**           |        |
+# one time for group:
+
+## basic
+
+| | |
+|--|--|
 | department          | P C M B E |
 | batch               | dismissed |
 | category            | TBD by faculty |
@@ -11,7 +14,11 @@
 | total nos           | to group of instrument |
 | instructor          | to group of instrument |
 | image               | of the instrument |
-| **specification data** |      |
+
+
+## specification data
+| | |
+|--|--|
 | week availability   | maybe 7/5 or less |
 | cycle time          | in minutes for group of inst |
 | gap between cycle   | in minutes for group of inst |
@@ -20,7 +27,10 @@
 | unit refuel one maintenance | the refuel amount [the variables will be as per the numbers of things used] |
 | unit used per cycle | in format of the unit of material |
 | cycle in one maintenance period | for group = unit in one maintenance/used in one cycle |
-| **vicinity requirements** |       |
+
+## vicinity requirements
+| | |
+|--|--|
 | size                | for group of instrument |
 | weight              | for group |
 | power requirement   | group |
@@ -31,7 +41,8 @@
 | any specific foundation or base system req | group |
 | water and drainage required | group |
 | furniture or closet | group |
-| **guide/manuals**   |        |
+
+## guide/manuals
 | link to manual      | hyperlink to user manual |
 | template for certification | file and link for code |
 | related risk warning | any risk of concern |
