@@ -230,17 +230,3 @@ working days it can run now  - cycles one maintainance/ cycle per day) / week da
 1. Standard Operating Procedures (SOPs) for Equipment - any specific proced<br>
 1. Equipment Troubleshooting Guides - troubleshooting guide group<br>
 1. any other emergebcy guide - any any any for group<br>
-
-# classification
-1. one time for a group
-   - basic data
-   - specifications
-   - additional data
-2. one time for individual instrument
-   - non changing
-3. changing variables for Individual instrument
-   - vicinity related
-   - expeiment related
-
-## one time for group:
-
