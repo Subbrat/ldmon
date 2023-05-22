@@ -1,7 +1,6 @@
 # one time for group:
 
 ## basic
-
 | | |
 |--|--|
 | department| P C M B E |
