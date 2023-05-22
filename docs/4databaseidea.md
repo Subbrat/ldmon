@@ -109,26 +109,3 @@
 | | | water and drainage required | | | |
 | | | furniture or closet | | | |
 
-
-### rough
-___
-| field | description |
-| :-- | :--: |
-| department |P C M B E|
-| batch |dismissed|
-| category |`TBD by faculty`|
-| name |instrument group name|
-| company |instrument group company name|
-| slno |`?`instrument group SL name|
-| floor |common one|
-| room |to dept && UID|
-| table |to UID|
-| description |to group of instrument|
-| total nos |to group of instrument|
-| head of dept |to dept|
-| instructor |to group of instrument|
-| week availability |maybe 7/5 or less|
-| cycle time |in minutes for group of inst|
-| gap betn cycle |in minutes for group of inst|
-| cycles per day |in minutes for group of inst|
-
