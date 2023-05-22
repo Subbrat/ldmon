@@ -75,7 +75,7 @@
 # **Logs**
 | | |
 |--|--|
-| usage log| user logs pk- UID & user ID  |
+| usage log | user logs pk- UID & user ID  |
 | maintenance log | maintainance record pk - UID  |
 | service log | if instrument went offline for some days pk- UID|
 | room change log | instrument room change |
