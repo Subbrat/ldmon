@@ -58,8 +58,8 @@
 
 | Logs | description |
 |---------------------------|---------|
-| **user log** | logging usage of the individual instrument |
-| **maintenance log** | logging the maintainance |
-| **service log** | loggin if the service when was active or offline |
-| **room change log** | change of room from place to place |
-| **faculty change log** | change of faculty |
+|  user log  | logging usage of the individual instrument |
+|  maintenance log  | logging the maintainance |
+|  service log  | loggin if the service when was active or offline |
+|  room change log  | change of room from place to place |
+|  faculty change log  | change of faculty |
