@@ -132,13 +132,3 @@ ___
 | gap betn cycle |in minutes for group of inst|
 | cycles per day |in minutes for group of inst|
 
-### specification
-
-| field | description |
-| :-- | :--: |
-| things used as input |gas metal soild paper etc etc|
-| unit in one maintainance |the refuel|
-| unit used per cycle |in format of the the unit of material|
-| cycle in one maintainance period |for group = unit in in one maintainance/ used in one cycle|
-| working days it can run |(cycles one maintainance/ cycle per day) |
-| last maintainance date |date for UID|
