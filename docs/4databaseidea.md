@@ -244,25 +244,3 @@ working days it can run now  - cycles one maintainance/ cycle per day) / week da
 
 ## one time for group:
 
-### basic
-```
-department: P C M B E
-batch: dismissed
-category: TBD by faculty
-name: instrument group name or Instrument name
-company: instrument group company name
-slno: ? instrument group SL name
-description: to group of instrument
-total nos: to group of instrument
-instructor: to group of instrument
-image: of the instrument
-```
-### specification data
-```
-week availability: maybe 7/5 or less
-cycle time: in minutes for group of inst
-gap between cycle: in minutes for group of inst
-cycles per day: in minutes for group of inst
-things used as input: gas metal solid paper etc etc
-unit in one maintenance: the refuel
-```
