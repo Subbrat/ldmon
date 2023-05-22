@@ -1,4 +1,4 @@
-# one time for group:
+# **one time for group**
 
 ## basic
 | | |
@@ -13,7 +13,6 @@
 | total nos | to group of instrument |
 | instructor| to group of instrument - current faculty incharge |
 | image | of the instrument |
-
 
 ## specification data
 | | |
@@ -50,7 +49,7 @@
 | Standard Operating Procedures (SOPs) for Equipment | any specific procedure |
 | Equipment Troubleshooting Guides | troubleshooting guide group |
 
-# One time for individual instrument:
+# **One time for individual instrument**
 | | |
 |--|--|
 | floor||
@@ -60,7 +59,8 @@
 | past reports of malfunction| any:: user log to review |
 | any other emergency guide| any any any for specific instrument |
 
-# Dynamic to one individual instrument:
+
+# **Dynamic to one individual instrument**
 
 | | |
 |--|--|
@@ -71,7 +71,8 @@
 | next maintenance date | today + remaining days: UID |
 | out of service| true or false for UID |
 
-# Logs
+
+# **Logs**
 | | |
 |--|--|
 | usage log| user logs pk- UID & user ID  |
