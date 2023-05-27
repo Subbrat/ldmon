@@ -52,7 +52,7 @@
 | type        | is that credit or debit |          |             |
 | amount      | amount of transaction |          |             |
 
-## reservation
+## reservation (3 tables - approved, cancelled, pending)
 | column name | description | datatype | data length |
 |-------------|-------------|----------|-------------|
 | id          |             |          |             |
