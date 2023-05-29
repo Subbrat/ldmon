@@ -1,107 +1,104 @@
-# other Tables
-
 ## user
 | column name | description | datatype | data length |
 |-------------|-------------|----------|-------------|
-| id          | unique id/ primary key |          |             |
-| name        | name of user |          |             |
-| dept        | foreign key from db: department |          |             |
-| email       | email |          |             |
+| id          | unique id/ primary key | INT |             |
+| name        | name of user | VARCHAR |             |
+| dept        | foreign key from db: department | INT |             |
+| email       | email | VARCHAR |             |
 
 ## category
 | column name | description | datatype | data length |
 |-------------|-------------|----------|-------------|
-| id          | unique id/ primary key |          |             |
-| name        | name |          |             |
-| dept        | dept |          |             |
+| id          | unique id/ primary key | INT |             |
+| name        | name | VARCHAR |             |
+| dept        | dept | INT |             |
 
 ## department
 | column name | description | datatype | data length |
 |-------------|-------------|----------|-------------|
-| id          | unique id/ primary key |          |             |
-| name        | name |          |             |
-| hod         | name of hod |          |             |
+| id          | unique id/ primary key | INT |             |
+| name        | name | VARCHAR |             |
+| hod         | name of hod | VARCHAR |             |
 
 ## rooms
 | column name | description | datatype | data length |
 |-------------|-------------|----------|-------------|
-| id          | unique id/ primary key |          |             |
-| room        | room_name or number |          |             |
-| floor       | floor number |          |             |
-| dept        | assigned dept |          |             |
+| id          | unique id/ primary key | INT |             |
+| room        | room_name or number | VARCHAR |             |
+| floor       | floor number | INT |             |
+| dept        | assigned dept | INT |             |
 
 ## floor
 | column name | description | datatype | data length |
 |-------------|-------------|----------|-------------|
-| id          | unique id/ primary key |          |             |
-| floor       | floor name/ number |          |             |
+| id          | unique id/ primary key | INT |             |
+| floor       | floor name/ number | VARCHAR |             |
 
 ## faculty
 | column name | description | datatype | data length |
 |-------------|-------------|----------|-------------|
-| id          | unique id/ primary key |          |             |
-| name        | name |          |             |
-| dept        | foreign key from db: department |          |             |
-| email       | email |          |             |
+| id          | unique id/ primary key | INT |             |
+| name        | name | VARCHAR |             |
+| dept        | foreign key from db: department | INT |             |
+| email       | email | VARCHAR |             |
 
 ## finance
 | column name | description | datatype | data length |
 |-------------|-------------|----------|-------------|
-| id          | unique id/ primary key |          |             |
-| account     | foreign key from user |          |             |
-| type        | is that credit or debit |          |             |
-| amount      | amount of transaction |          |             |
+| id          | unique id/ primary key | INT |             |
+| account     | foreign key from user | INT |             |
+| type        | is that credit or debit | VARCHAR |             |
+| amount      | amount of transaction | DECIMAL |             |
 
 ## reservation (3 tables - approved, cancelled, pending)
 | column name | description | datatype | data length |
 |-------------|-------------|----------|-------------|
-| id          |             |          |             |
-| user        | foreign key from db: user |          |             |
-| for         | foreign key from db: instruments |          |             |
-| dept        | foreign key from db: department |          |             |
-| faculty     | foreign key from db: faculty |          |             |
-| comment     | any comment for the same |          |             |
+| id          | unique id / primary key| INT |             |
+| user        | foreign key from db: user | INT |             |
+| for         | foreign key from db: instruments | INT |             |
+| dept        | foreign key from db: department | INT |             |
+| faculty     | foreign key from db: faculty | INT |             |
+| comment     | any comment for the same | TEXT |             |
 
 ## pricing
 | column name | description | datatype | data length |
 |-------------|-------------|----------|-------------|
-| id          |             |          |             |
-| instid      | foreign key from db: instrumentsIID |          |             |
-| price       | pricing for the instrument |          |             |
+| id          | unique id / primary key| INT |             |
+| instid      | foreign key from db: instrumentsIID | INT |             |
+| price       | pricing for the instrument | DECIMAL |             |
 
 ## refuels
 | column name | description | datatype | data length |
 |-------------|-------------|----------|-------------|
-| id          |             |          |             |
-| name        | name of the fuel |          |             |
-| incharge    | name of incharge if any |          |             |
+| id          | unique id / primary key| INT |             |
+| name        | name of the fuel | VARCHAR |             |
+| incharge    | name of incharge if any | VARCHAR |             |
 
 ## maintenance
 | column name | description | datatype | data length |
 |-------------|-------------|----------|-------------|
-| id          |             |          |             |
-| uinstid     | instrument unique id, foreign key from db: UID |          |             |
-| date        | date of task |          |             |
-| status      | if done/failed/ upcoming |          |             |
+| id          | unique id / primary key| INT |             |
+| uinstid     | instrument unique id, foreign key from db: UID | INT |             |
+| date        | date of task | DATE |             |
+| status      | if done/failed/ upcoming | VARCHAR |             |
 
 ## user_verification (3 tables - approved, cancelled, pending)
 | column name | description | datatype | data length |
 |-------------|-------------|----------|-------------|
-| id          |             |          |             |
-| name        |             |          |             |
-| email       |             |          |             |
-| institute   |             |          |             |
-| instituteid |             |          |             |
-| date        | when they applied for verification, date time |          |             |
+| id          | unique id / primary key| INT |             |
+| name        |             | VARCHAR |             |
+| email       |             | VARCHAR |             |
+| institute   | institute name - fkey from db:inst | VARCHAR |             |
+| instituteid | foreing key from db:inst | VARCHAR |             |
+| date        | when they applied for verification, date time | DATETIME |             |
 
 ## institutions
 | column name | description | datatype | data length |
 |-------------|-------------|----------|-------------|
-| id          |             |          |             |
-| name        |             |          |             |
-| representative |          |          |             |
+| id          | unique id / primary key| INT |             |
+| name        |             | VARCHAR |             |
+| representative |          | VARCHAR |             |
 
----
 
 # LOG Tables
 ## Usage Log
