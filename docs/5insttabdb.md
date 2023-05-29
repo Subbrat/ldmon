@@ -3,8 +3,7 @@
 ## basic
 | | |
 |--|--|
-| department| P C M B E |
-| batch | dismissed |
+| department| either P C M B E |
 | category| TBD by faculty |
 | name| instrument group name or Instrument name |
 | company | instrument group company name |
