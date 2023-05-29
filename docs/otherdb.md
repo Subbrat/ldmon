@@ -67,6 +67,14 @@
 | instid      | foreign key from db: instrumentsIID | INT |             |
 | price       | pricing for the instrument | DECIMAL |             |
 
+## Peripherals
+| Column       | Description                        | Data Type | Key                     | Data Length |
+|--------------|------------------------------------|-----------|-------------------------|-------------|
+| id           | Unique ID / Primary Key             | INT       | Primary Key             |             |
+| name         | Peripheral Name                    | VARCHAR   |                         |             |
+| description  | Description                        | TEXT      |                         |             |
+| quantity     | Quantity                           | INT       |                         |             |
+
 ## refuels
 | column name | description | datatype | data length |
 |-------------|-------------|----------|-------------|
