@@ -69,13 +69,3 @@
 | working days it can run now | (cycles one maintenance/cycle per day) / week day number |
 | next maintenance date | today + remaining days: UID |
 | out of service| true or false for UID |
-
-
-# **Log databases**
-|table name |description | |
-|--|--|--|
-| usage log |user logs pk- UID & user ID|
-| maintenance log |maintainance record pk - UID|
-| service log |if instrument went offline for some days pk- UID|
-| room change log |instrument room change |
-| faculty change log|faculty in charge log
