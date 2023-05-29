@@ -1,77 +1,73 @@
-# **one time for group**
+## Basic
+| Column    | Description                        | Data Type | Key                                  | Data Length |
+|-----------|------------------------------------|-----------|--------------------------------------|-------------|
+| id        | Unique ID / Primary Key             | INT       | Primary Key                          |             |
+| department| Department                         | VARCHAR   | Foreign Key from department table    |             |
+| category  | Category                           | VARCHAR   | Foreign Key from category table      |             |
+| name      | Instrument Group Name or Instrument Name | VARCHAR |                                      |             |
+| company   | Instrument Group Company Name      | VARCHAR   |                                      |             |
+| slno      | Instrument Group SL Name           | VARCHAR   |                                      |             |
+| description| Description                       | TEXT      |                                      |             |
+| total nos | Total Number of Instruments        | INT       |                                      |             |
+| instructor| Current Faculty Incharge           | VARCHAR   |                                      |             |
+| image     | Image                              | VARCHAR   |                                      |             |
 
-## basic
-| | |
-|--|--|
-| id | unique id / primary key |
-| department| either P C M B E |
-| category| TBD by faculty |
-| name| instrument group name or Instrument name |
-| company | instrument group company name |
-| slno| ? instrument group SL name |
-| description | to group of instrument |
-| total nos | to group of instrument |
-| instructor| to group of instrument - current faculty incharge |
-| image | of the instrument |
+## Specification Data
+| Column              | Description                          | Data Type | Key                                  | Data Length |
+|---------------------|--------------------------------------|-----------|--------------------------------------|-------------|
+| id                  | Unique ID / Primary Key               | INT       | Primary Key                          |             |
+| week availability   | Week Availability                     | INT       |                                      |             |
+| cycle time          | Cycle Time (Minutes)                  | INT       |                                      |             |
+| gap between cycle   | Gap Between Cycles (Minutes)          | INT       |                                      |             |
+| cycles per day      | Cycles Per Day                        | INT       |                                      |             |
+| things used as input/refuel | Things Used as Input/Refuel     | VARCHAR   |                                      |             |
+| unit refuel one maintenance | Unit Refuel Amount per Maintenance | DECIMAL   |                                      |             |
+| unit used per cycle | Unit Used per Cycle                   | VARCHAR   |                                      |             |
+| cycle in one maintenance period | Cycles in One Maintenance Period | DECIMAL   |                                      |             |
 
-## specification data
-| | |
-|--|--|
-| id | unique id / primary key |
-| week availability | maybe 7/5 or less |
-| cycle time| in minutes for group of inst |
-| gap between cycle | in minutes for group of inst |
-| cycles per day| in minutes for group of inst |
-| things used as input/refuel | gas metal solid paper etc. |
-| unit refuel one maintenance | the refuel amount [the variables will be as per the numbers of things used] |
-| unit used per cycle | in format of the unit of material |
-| cycle in one maintenance period | for group = unit in one maintenance/used in one cycle |
+## Vicinity Requirements
+| Column                 | Description                          | Data Type | Key                                  | Data Length |
+|------------------------|--------------------------------------|-----------|--------------------------------------|-------------|
+| id                     | Unique ID / Primary Key               | INT       | Primary Key                          |             |
+| size                   | Size                                 | VARCHAR   |                                      |             |
+| weight                 | Weight                               | VARCHAR   |                                      |             |
+| power requirement      | Power Requirement                    | VARCHAR   |                                      |             |
+| socket requirement     | Socket Requirement                   | VARCHAR   |                                      |             |
+| UPS requirement        | UPS Requirement                      | VARCHAR   |                                      |             |
+| HVAC & AC requirement  | HVAC & AC Requirement                | VARCHAR   |                                      |             |
+| Gas requirement        | Gas Requirement                      | VARCHAR   |                                      |             |
+| any specific foundation or base system req | Specific Foundation or Base System Requirement | VARCHAR |             |             |
+| water and drainage required | Water and Drainage Required        | VARCHAR   |                                      |             |
+| furniture or closet    | Furniture or Closet                   | VARCHAR   |                                      |             |
 
-## vicinity requirements
-| | |
-|--|--|
-| id | unique id / primary key |
-| size| for group of instrument |
-| weight| for group |
-| power requirement | group |
-| socket requirement| group |
-| UPS requirement | group |
-| HVAC & AC requirement | group |
-| Gas requirement | group |
-| any specific foundation or base system req | group |
-| water and drainage required | group |
-| furniture or closet | group |
+## Guide/Manuals
+| Column                 | Description                          | Data Type | Key                                  | Data Length |
+|------------------------|--------------------------------------|-----------|--------------------------------------|-------------|
+| id                     | Unique ID / Primary Key               | INT       | Primary Key                          |             |
+| link to manual         | Hyperlink to User Manual              | VARCHAR   |                                      |             |
+| template for certification | File and Link for Code             | VARCHAR   |                                      |             |
+| related risk warning   | Related Risk Warning                  | VARCHAR   |                                      |             |
+| Standard Operating Procedures (SOPs) for Equipment | SOPs for Equipment  | VARCHAR |                              |             |
+| Equipment Troubleshooting Guides | Troubleshooting Guide               | VARCHAR   |                                      |             |
 
-## guide/manuals
-| | |
-|--|--|
-| id | unique id / primary key |
-| link to manual| hyperlink to user manual |
-| template for certification | file and link for code |
-| related risk warning | any risk of concern |
-| Standard Operating Procedures (SOPs) for Equipment | any specific procedure |
-| Equipment Troubleshooting Guides | troubleshooting guide group |
+## One Time for Individual Instrument
+| Column                 | Description                          | Data Type | Key                                  | Data Length |
+|------------------------|--------------------------------------|-----------|--------------------------------------|-------------|
+| id                     | Unique ID / Primary Key               | INT       | Primary Key                          |             |
+| floor                  | Floor Number                         | INT       |                                      |             |
+| room                   | Room                                 | VARCHAR   | Foreign Key from room table          |             |
+| warranty date          | Warranty Expiration Date              | DATE      |                                      |             |
+| warranty status        | Warranty Status                       | VARCHAR   |                                      |             |
+| past reports of malfunction | Past Reports of Malfunction         | VARCHAR   |                                      |             |
+| any other emergency guide | Other Emergency Guide                | VARCHAR   |                                      |             |
 
-# **One time for individual instrument**
-| | |
-|--|--|
-| id | unique id / primary key |
-| floor|floor number|
-| room | to dept && UID |
-| warranty date| date of expiration of warranty |
-| warranty status| if it is in or not in |
-| past reports of malfunction| any:: user log to review |
-| any other emergency guide| any any any for specific instrument |
-
-
-# **Dynamic to one individual instrument**
-
-| | |
-|--|--|
-| id | unique id / primary key |
-| last maintenance date | date for UID |
-| already used| cycles used per UID |
-| remaining cycles| maintenance cycles used cycles: UID |
-| working days it can run now | (cycles one maintenance/cycle per day) / week day number |
-| next maintenance date | today + remaining days: UID |
-| out of service| true or false for UID |
+## Dynamic to One Individual Instrument
+| Column                 | Description                          | Data Type | Key                                  | Data Length |
+|------------------------|--------------------------------------|-----------|--------------------------------------|-------------|
+| id                     | Unique ID / Primary Key               | INT       | Primary Key                          |             |
+| last maintenance date  | Last Maintenance Date                 | DATE      |                                      |             |
+| already used           | Cycles Used                           | INT       |                                      |             |
+| remaining cycles       | Remaining Cycles                      | INT       |                                      |             |
+| working days it can run now | Working Days                        | INT       |                                      |             |
+| next maintenance date  | Next Maintenance Date                 | DATE      |                                      |             |
+| out of service         | Out of Service                        | BOOLEAN   |                                      |             |
