@@ -74,6 +74,8 @@
 | name         | Peripheral Name                    | VARCHAR   |                         |             |
 | description  | Description                        | TEXT      |                         |             |
 | quantity     | Quantity                           | INT       |                         |             |
+| use     | how many in use                         | INT       |                         |             |
+| type     | type                           | VARCHAR       |                         |             |
 
 ## refuels
 | column name | description | datatype | data length |
