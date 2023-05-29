@@ -25,16 +25,14 @@
 | unit used per cycle | Unit Used per Cycle                   | VARCHAR   |                                      |             |
 | cycle in one maintenance period | Cycles in One Maintenance Period | DECIMAL   |                                      |             |
 
-## Vicinity Requirements
+## Vicinity Requirements [2NF format]
 | Column                 | Description                          | Data Type | Key                                  | Data Length |
 |------------------------|--------------------------------------|-----------|--------------------------------------|-------------|
 | id                     | Unique ID / Primary Key               | INT       | Primary Key                          |             |
 | size                   | Size                                 | VARCHAR   |                                      |             |
 | weight                 | Weight                               | VARCHAR   |                                      |             |
 | power requirement      | Power Requirement                    | VARCHAR   |                                      |             |
-| socket requirement     | Socket Requirement                   | VARCHAR   |                                      |             |
-| UPS requirement        | UPS Requirement                      | VARCHAR   |                                      |             |
-| HVAC & AC requirement  | HVAC & AC Requirement                | VARCHAR   |                                      |             |
+| peripheral requirement      | peripheral Requirement           | INT   |        foreign key from db: peripheral  |             |
 | Gas requirement        | Gas Requirement                      | VARCHAR   |                                      |             |
 | any specific foundation or base system req | Specific Foundation or Base System Requirement | VARCHAR |             |             |
 | water and drainage required | Water and Drainage Required        | VARCHAR   |                                      |             |
