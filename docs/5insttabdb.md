@@ -56,7 +56,7 @@
 | | |
 |--|--|
 | id | unique id / primary key |
-| floor||
+| floor|floor number|
 | room | to dept && UID |
 | warranty date| date of expiration of warranty |
 | warranty status| if it is in or not in |
