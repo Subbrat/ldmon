@@ -3,6 +3,7 @@
 ## basic
 | | |
 |--|--|
+| id | unique id / primary key |
 | department| either P C M B E |
 | category| TBD by faculty |
 | name| instrument group name or Instrument name |
@@ -16,6 +17,7 @@
 ## specification data
 | | |
 |--|--|
+| id | unique id / primary key |
 | week availability | maybe 7/5 or less |
 | cycle time| in minutes for group of inst |
 | gap between cycle | in minutes for group of inst |
@@ -28,6 +30,7 @@
 ## vicinity requirements
 | | |
 |--|--|
+| id | unique id / primary key |
 | size| for group of instrument |
 | weight| for group |
 | power requirement | group |
@@ -42,6 +45,7 @@
 ## guide/manuals
 | | |
 |--|--|
+| id | unique id / primary key |
 | link to manual| hyperlink to user manual |
 | template for certification | file and link for code |
 | related risk warning | any risk of concern |
@@ -51,6 +55,7 @@
 # **One time for individual instrument**
 | | |
 |--|--|
+| id | unique id / primary key |
 | floor||
 | room | to dept && UID |
 | warranty date| date of expiration of warranty |
@@ -63,6 +68,7 @@
 
 | | |
 |--|--|
+| id | unique id / primary key |
 | last maintenance date | date for UID |
 | already used| cycles used per UID |
 | remaining cycles| maintenance cycles used cycles: UID |
