@@ -12,25 +12,32 @@
    + [| static](#static)<br>
    + [| dynamic](#dynamic) <br>
 ---
-   2. [refuels](#refuels)
+   1. [refuels](#refuels)
 ---
-   3. [logs](#logs)
+   1. [logs](#logs)
 ---
-## tables
-4. [instrument](#instrument)
-4. [users](#users)
-4. [category](#category)
-4. [department](#department)
-4. [rooms](#rooms)
-4. [floor](#floor)
-4. [faculty](#faculty)*5
-4. [finance](#finance)
-4. [reservations](#reservations)*3
-4. [pricing](#1pricing)
-4. [maintainance](#maintainance)
-4. [user verification](#userverification)*3
-4. [institutions](#institutions)
----
-
-# SQL codes
+## Tables
+1. [instrument](#instrument)
+1. [users](#users)
+1. [category](#category)
+1. [department](#department)
+1. [rooms](#rooms)
+1. [floor](#floor)
+1. [faculty](#faculty)
+1. [finance](#finance)
+1. [reservations](#reservations)
+1. [pricing](#pricing)
+1. [maintainance](#maintainance)
+1. [user verification](#userverification)
+1. [institutions](#institutions)
+1. [Usage Log](#usage-log)
+1. [Maintenance Log](#maintenance-log)
+1. [Service Log](#service-log)
+1. [Room Change Log](#room-change-log)
+1. [Faculty Change Log for department](#faculty-change-log-for-department)
+1. [Faculty Change Log for IID](#faculty-change-log-for-iid)
+1. [Price Change Log](#price-change-log)
+1. [Refuel Log (For Fuel)](#refuel-log-for-fuel)
+1. [Refuel Log (For UIDS)](#refuel-log-for-uids)
+1. [Refuel Log (For IIDS)](#refuel-log-for-iids)
 
