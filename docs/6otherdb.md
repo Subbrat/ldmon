@@ -200,7 +200,7 @@
 | amount | Amount of fuel refueled | DECIMAL |
 | remark | Additional remarks or comments | TEXT |
 
-## Refuel Log (For IIDS)
+### Refuel Log (For IIDS)
 | column name | description | data type |
 |-------------|-------------|-----------|
 | id | ID of the refuel log | INT |
