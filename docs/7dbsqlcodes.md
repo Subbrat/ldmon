@@ -3,29 +3,29 @@
 ---
 1. [instrument](#instrument)<br>
    a. category - [groups/ IID](#instrument_IID) <br>
-   + [| basics](#basics)<br>
-   + [| specification](#general_specifications) <br>
-   + [| vicinity](#vicinity) <br>
-   + [| manual](#manual)<br>
+      + [| basics](#basics)<br>
+      + [| specification](#general_specifications) <br>
+      + [| vicinity](#vicinity) <br>
+      + [| manual](#manual)<br>
 
    b. category - [individuals/ UID](#instrument_UID) <br>
-   + [| static](#static)<br>
-   + [| dynamic](#dynamic) <br>
+      + [| static](#static)<br>
+      + [| dynamic](#dynamic) <br>
 ---
-   2. [refuels](#refuels)
-   a. [Refuel Log (For UIDS)](#refuel-log-for-uids)<br>
-   a. [Refuel Log (For Fuel)](#refuel-log-for-fuel)<br>
-   a. [Refuel Log (For IIDS)](#refuel-log-for-iids)<br>
+   1. [refuels](#refuels)
+      a. [Refuel Log (For UIDS)](#refuel-log-for-uids)<br>
+      a. [Refuel Log (For Fuel)](#refuel-log-for-fuel)<br>
+      a. [Refuel Log (For IIDS)](#refuel-log-for-iids)<br>
 
 ---
    1. [logs](#logs)<br>
-   a. [Usage Log](#usage-log)<br>
-   a. [Maintenance Log](#maintenance-log)<br>
-   a. [Service Log](#service-log)<br>
-   a. [Room Change Log](#room-change-log)<br>
-   a. [Faculty Change Log for department](#faculty-change-log-for-department)<br>
-   a. [Faculty Change Log for IID](#faculty-change-log-for-iid)<br>
-   a. [Price Change Log](#price-change-log)<br>
+      a. [Usage Log](#usage-log)<br>
+      a. [Maintenance Log](#maintenance-log)<br>
+      a. [Service Log](#service-log)<br>
+      a. [Room Change Log](#room-change-log)<br>
+      a. [Faculty Change Log for department](#faculty-change-log-for-department)<br>
+      a. [Faculty Change Log for IID](#faculty-change-log-for-iid)<br>
+      a. [Price Change Log](#price-change-log)<br>
 ---
 ## Tables
 1. [instrument](#instrument)
