@@ -1,6 +1,6 @@
 ## Basic
 | Column| Description| Data Type | Key| Data Length |
-|-----------|------------------------------------|-----------|--------------------------------------|-------------|
+|--|-----|--|-----|--|
 | id| Unique ID / Primary Key | INT | Primary Key| |
 | department| Department | VARCHAR | Foreign Key from department table| |
 | category| Category | VARCHAR | Foreign Key from category table| |
@@ -14,7 +14,7 @@
 
 ## Specification Data
 | Column| Description| Data Type | Key| Data Length |
-|---------------------|--------------------------------------|-----------|--------------------------------------|-------------|
+|---|-----|--|-----|--|
 | id| Unique ID / Primary Key | INT | Primary Key| |
 | week availability | Week Availability | INT || |
 | cycle time| Cycle Time (Minutes)| INT || |
@@ -27,7 +27,7 @@
 
 ## Vicinity Requirements [2NF format]
 | Column | Description| Data Type | Key| Data Length |
-|------------------------|--------------------------------------|-----------|--------------------------------------|-------------|
+|---|-----|--|-----|--|
 | id | Unique ID / Primary Key | INT | Primary Key| |
 | size | Size | VARCHAR || |
 | weight | Weight | VARCHAR || |
@@ -40,7 +40,7 @@
 
 ## Guide/Manuals
 | Column | Description| Data Type | Key| Data Length |
-|------------------------|--------------------------------------|-----------|--------------------------------------|-------------|
+|---|-----|--|-----|--|
 | id | Unique ID / Primary Key | INT | Primary Key| |
 | link to manual | Hyperlink to User Manual| VARCHAR || |
 | template for certification | File and Link for Code | VARCHAR || |
@@ -50,7 +50,7 @@
 
 ## One Time for Individual Instrument
 | Column | Description| Data Type | Key| Data Length |
-|------------------------|--------------------------------------|-----------|--------------------------------------|-------------|
+|---|-----|--|-----|--|
 | id | Unique ID / Primary Key | INT | Primary Key| |
 | floor| Floor Number | INT || |
 | room | Room | VARCHAR | Foreign Key from room table| |
@@ -61,7 +61,7 @@
 
 ## Dynamic to One Individual Instrument
 | Column | Description| Data Type | Key| Data Length |
-|------------------------|--------------------------------------|-----------|--------------------------------------|-------------|
+|---|-----|--|-----|--|
 | id | Unique ID / Primary Key | INT | Primary Key| |
 | last maintenance date| Last Maintenance Date | DATE|| |
 | already used | Cycles Used | INT || |
