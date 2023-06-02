@@ -42,7 +42,6 @@
 | dept | foreign key from table : department | INT |
 | email | email | VARCHAR |
 
----
 ## funds
 | column name | description | datatype |
 |--|--|--|
@@ -50,40 +49,38 @@
 |account | foreign key from table : user | INT |
 |balance|present amount balanace|decimal|
 
-## transaction
-| column name | description | datatype |
-|-------------|-------------|----------|
-| id | unique id/ primary key | INT |
-| account | foreign key from user | INT |
-| type | is that credit or debit | VARCHAR |
-| amount | amount of transaction | DECIMAL |
----
-## reservation (3 tables - approved, cancelled, pending)
+## reservation
 | column name | description | datatype |
 |-------------|-------------|----------|
 | id | unique id / primary key | INT |
-| user | foreign key from db: user | INT |
-| for | foreign key from db: instruments | INT |
-| dept | foreign key from db: department | INT |
-| faculty | foreign key from db: faculty | INT |
-| comment | any comment for the same | TEXT |
+| user | foreign key from table: user | INT |
+| for | foreign key from table: instruments | INT |
+| status | approved/ cancelled/ pending | INT |
+| dept | foreign key from table: department | INT |
+| faculty | foreign key from table: faculty | INT |
+| comment | any comment for the same | varchar |
+| related | any link for the same | varchar |
 
 ## pricing
 | column name | description | datatype |
 |-------------|-------------|----------|
 | id | unique id / primary key | INT |
-| instid | foreign key from db: instrumentsIID | INT |
-| price | pricing for the instrument | DECIMAL |
+| iid | foreign key from table: iid_basic | INT |
+| price | pricing for the instrument | INT |
 
 ## Peripherals
 | Column | Description | Data Type |
 |--------|-------------|-----------|
 | id | Unique ID / Primary Key | INT |
 | name | Peripheral Name | VARCHAR |
-| description | Description | TEXT |
+| description | Description | varchar |
 | quantity | Quantity | INT |
 | use | how many in use | INT |
 | type | type | VARCHAR |
+
+## add_types
+| id | Unique ID / Primary Key | INT |
+| type | Peripheral type | VARCHAR |
 
 ## refuels
 | column name | description | datatype |
@@ -91,12 +88,13 @@
 | id | unique id / primary key | INT |
 | name | name of the fuel | VARCHAR |
 | incharge | name of incharge if any | VARCHAR |
+| type | type of fuel | VARCHAR |
 
 ## maintenance
 | column name | description | datatype |
 |-------------|-------------|----------|
 | id | unique id / primary key | INT |
-| uinstid | instrument unique id, foreign key from db: UID | INT |
+| uinstid | instrument unique id, foreign key from table: UID | INT |
 | date | date of task | DATE |
 | status | if done/failed/ upcoming | VARCHAR |
 
@@ -106,8 +104,8 @@
 | id | unique id / primary key | INT |
 | name | | VARCHAR |
 | email | | VARCHAR |
-| institute | institute name - fkey from db:inst | VARCHAR |
-| instituteid | foreign key from db:inst | VARCHAR |
+| institute | institute name - fkey from table:inst | VARCHAR |
+| instituteid | foreign key from table:inst | VARCHAR |
 | date | when they applied for verification, date time | DATETIME |
 
 ## institutions
@@ -188,6 +186,13 @@
 | from | Previous price | DECIMAL |
 | remark | Additional remarks or comments | TEXT |
 
+## transaction
+| column name | description | datatype |
+|-------------|-------------|----------|
+| id | unique id/ primary key | INT |
+| account | foreign key from user | INT |
+| type | is that credit or debit | VARCHAR |
+| amount | amount of transaction | DECIMAL |
 
 ### Refuel Log (For Fuel)
 | column name | description | data type |
