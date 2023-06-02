@@ -7,7 +7,7 @@
 | name | Instrument Group Name or Instrument Name | VARCHAR |
 | company | Instrument Group Company Name | VARCHAR |
 | slno | Instrument Group SL Name | VARCHAR |
-| description | Description | TEXT |
+| description | Description | varchar |
 | total nos | Total Number of Instruments | INT |
 | instructor | Current Faculty Incharge | VARCHAR |
 | image | Image | VARCHAR |

@@ -3,7 +3,7 @@
 |-------------|-------------|----------|
 | id | unique id/ primary key | INT |
 | name | name of user | VARCHAR |
-| dept | foreign key from db: department | INT |
+| dept | foreign key from table : department | INT |
 | email | email | VARCHAR |
 
 ## category
@@ -11,22 +11,22 @@
 |-------------|-------------|----------|
 | id | unique id/ primary key | INT |
 | name | name | VARCHAR |
-| dept | dept | INT |
+| dept | dept : foreign key from table : department | INT |
 
 ## department
 | column name | description | datatype |
 |-------------|-------------|----------|
 | id | unique id/ primary key | INT |
 | name | name | VARCHAR |
-| hod | name of hod | VARCHAR |
+| hod | name of hod : foreign key from table : faculty | INT |
 
 ## rooms
 | column name | description | datatype |
 |-------------|-------------|----------|
 | id | unique id/ primary key | INT |
 | room | room_name or number | VARCHAR |
-| floor | floor number | INT |
-| dept | assigned dept | INT |
+| floor | floor number : foreign key from table : floor | INT |
+| dept | assigned dept : foreign key from table : department | INT |
 
 ## floor
 | column name | description | datatype |
@@ -39,17 +39,25 @@
 |-------------|-------------|----------|
 | id | unique id/ primary key | INT |
 | name | name | VARCHAR |
-| dept | foreign key from db: department | INT |
+| dept | foreign key from table : department | INT |
 | email | email | VARCHAR |
 
-## finance
+---
+## funds
+| column name | description | datatype |
+|--|--|--|
+| id | id / primary key | INT |
+|account | foreign key from table : user | INT |
+|balance|present amount balanace|decimal|
+
+## transaction
 | column name | description | datatype |
 |-------------|-------------|----------|
 | id | unique id/ primary key | INT |
 | account | foreign key from user | INT |
 | type | is that credit or debit | VARCHAR |
 | amount | amount of transaction | DECIMAL |
-
+---
 ## reservation (3 tables - approved, cancelled, pending)
 | column name | description | datatype |
 |-------------|-------------|----------|
