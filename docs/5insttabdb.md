@@ -1,7 +1,8 @@
-## Basic
+## iid_basic
 | Column | Description | Data Type |
 |--------|-------------|-----------|
 | id | Unique ID / Primary Key | INT |
+| iid | instrumentID | Varchar |
 | department_id | Foreign Key from department table | INT |
 | category_id | Foreign Key from category table | INT |
 | name | Instrument Group Name or Instrument Name | VARCHAR |
