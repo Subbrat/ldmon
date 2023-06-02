@@ -2,8 +2,8 @@
 | Column | Description | Data Type |
 |--------|-------------|-----------|
 | id | Unique ID / Primary Key | INT |
-| department | Department | VARCHAR | Foreign Key from department table |
-| category | Category | VARCHAR | Foreign Key from category table |
+| department_id | Foreign Key from department table | INT |
+| category_id | Foreign Key from category table | INT |
 | name | Instrument Group Name or Instrument Name | VARCHAR |
 | company | Instrument Group Company Name | VARCHAR |
 | slno | Instrument Group SL Name | VARCHAR |
@@ -53,7 +53,7 @@
 |--------|-------------|-----------|
 | id | Unique ID / Primary Key | INT |
 | floor | Floor Number | INT |
-| room | Room | VARCHAR | Foreign Key from room table |
+| room | Room | VARCHAR
 | warranty date | Warranty Expiration Date | DATE |
 | warranty status | Warranty Status | VARCHAR |
 | past reports of malfunction | Past Reports of Malfunction | VARCHAR |
