@@ -41,7 +41,7 @@
 13. [institutions](#institutions)
 
 
-CREATE TABLE user (
+CREATE TABLE members (
   id INT AUTO_INCREMENT PRIMARY KEY,
   name VARCHAR(255),
   dept INT,
@@ -194,11 +194,11 @@ CREATE TABLE log_room_cng (
   id INT AUTO_INCREMENT PRIMARY KEY,
   instrument INT,
   vfrom INT,
-  to INT,
+  vto INT,
   remark TEXT,
   FOREIGN KEY (instrument) REFERENCES instruments(id),
   FOREIGN KEY (vfrom) REFERENCES rooms(id),
-  FOREIGN KEY (to) REFERENCES rooms(id)
+  FOREIGN KEY (vto) REFERENCES rooms(id)
 );
 
 CREATE TABLE log_fac_cng_dept (
@@ -206,11 +206,11 @@ CREATE TABLE log_fac_cng_dept (
   depid INT,
   dt DATETIME,
   vfrom INT,
-  to INT,
+  vto INT,
   remark TEXT,
   FOREIGN KEY (depid) REFERENCES department(id),
   FOREIGN KEY (vfrom) REFERENCES faculty(id),
-  FOREIGN KEY (to) REFERENCES faculty(id)
+  FOREIGN KEY (vto) REFERENCES faculty(id)
 );
 
 CREATE TABLE log_fac_cng_iid (
@@ -218,7 +218,7 @@ CREATE TABLE log_fac_cng_iid (
   iid INT,
   dt DATETIME,
   vfrom VARCHAR(255),
-  to VARCHAR(255),
+  vto VARCHAR(255),
   remark TEXT,
   FOREIGN KEY (iid) REFERENCES instruments(id)
 );
@@ -239,7 +239,7 @@ CREATE TABLE log_transaction (
   account INT,
   t_type INT,
   amount DECIMAL(10, 2),
-  FOREIGN KEY (account) REFERENCES user(id)
+  FOREIGN KEY (account) REFERENCES members(id)
 );
 
 CREATE TABLE log_refuel_fuel (
