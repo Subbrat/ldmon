@@ -1,95 +1,95 @@
-## IID_BASIC
-| COLUMN | DESCRIPTION | DATA TYPE |
+## iid_basic
+| column | description | data type |
 |--------|-------------|-----------|
-| ID | UNIQUE ID / PRIMARY KEY | INT |
-| IID | INSTRUMENT ID | VARCHAR |
-| DEPARTMENT_ID | FOREIGN KEY FROM DEPARTMENT TABLE (REFERENCE: ID) | INT |
-| CATEGORY_ID | FOREIGN KEY FROM CATEGORY TABLE (REFERENCE: ID) | INT |
-| NAME | INSTRUMENT GROUP NAME OR INSTRUMENT NAME | VARCHAR |
-| COMPANY | INSTRUMENT GROUP COMPANY NAME, FOREIGN KEY TABLE- COMPANY REF- ID | INT |
-| SLNO | INSTRUMENT GROUP SERIAL NUMBER | VARCHAR |
-| DESCRIPTION | DESCRIPTION | VARCHAR |
-| TOTAL_NOS | TOTAL NUMBER OF INSTRUMENTS | INT |
-| INSTRUCTOR | FOREIGN KEY TABLE- FACULTY, REFERENCE - ID | INT |
-| IMAGE | IMAGE | VARCHAR |
+| id | unique id / primary key | int |
+| iid | instrument id | varchar |
+| department_id | foreign key from department table (reference: id) | int |
+| category_id | foreign key from category table (reference: id) | int |
+| name | instrument group name or instrument name | varchar |
+| company | instrument group company name, foreign key table- company ref- id | int |
+| slno | instrument group serial number | varchar |
+| description | description | varchar |
+| total_nos | total number of instruments | int |
+| instructor | foreign key table- faculty, reference - id | int |
+| image | image | varchar |
 
-## IID_PRICING
-| COLUMN | DESCRIPTION | DATA TYPE |
+## iid_pricing
+| column | description | data type |
 |--|--|--|
-| ID | UNIQUE ID / PRIMARY KEY | INT |
-| INSTRUMENT | FOREIGN KEY TABLE- IID_BASIC, REFERENCE - ID | INT |
-| PRICE_U1 | PRICE FOR UNIT 1 | DECIMAL |
-| PRICE_U2 | PRICE FOR UNIT 2 | DECIMAL |
-| PRICE_U3 | PRICE FOR UNIT 3 | DECIMAL |
-| PRICE_U4 | PRICE FOR UNIT 4 | DECIMAL |
-| PRICE_U5 | PRICE FOR UNIT 5 | DECIMAL |
+| id | unique id / primary key | int |
+| instrument | foreign key table- iid_basic, reference - id | int |
+| price_u1 | price for unit 1 | decimal |
+| price_u2 | price for unit 2 | decimal |
+| price_u3 | price for unit 3 | decimal |
+| price_u4 | price for unit 4 | decimal |
+| price_u5 | price for unit 5 | decimal |
 
-## IID_SPEC
-| COLUMN | DESCRIPTION | DATA TYPE |
+## iid_spec
+| column | description | data type |
 |--------|-------------|-----------|
-| ID | UNIQUE ID / PRIMARY KEY | INT |
-| INSTRUMENT | FOREIGN KEY TABLE- IID_BASIC, REFERENCE - ID | INT |
-| WEEK_AVAILABILITY | WEEK AVAILABILITY | INT |
-| CYCLE_TIME | CYCLE TIME (MINUTES) | INT |
-| GAP_BETWEEN_CYCLE | GAP BETWEEN CYCLES (MINUTES) | INT |
-| CYCLES_PER_DAY | CYCLES PER DAY | INT |
-| THINGS_USED_AS_INPUT_REFUEL | THINGS USED AS INPUT/REFUEL | VARCHAR |
-| UNIT_REFUEL_ONE_MAINTENANCE | UNIT REFUEL AMOUNT PER MAINTENANCE | DECIMAL |
-| UNIT_USED_PER_CYCLE | UNIT USED PER CYCLE | VARCHAR |
-| CYCLES_IN_ONE_MAINTENANCE_PERIOD | CYCLES IN ONE MAINTENANCE PERIOD | DECIMAL |
+| id | unique id / primary key | int |
+| instrument | foreign key table- iid_basic, reference - id | int |
+| week_availability | week availability | int |
+| cycle_time | cycle time (minutes) | int |
+| gap_between_cycle | gap between cycles (minutes) | int |
+| cycles_per_day | cycles per day | int |
+| things_used_as_input_refuel | things used as input/refuel | varchar |
+| unit_refuel_one_maintenance | unit refuel amount per maintenance | decimal |
+| unit_used_per_cycle | unit used per cycle | varchar |
+| cycles_in_one_maintenance_period | cycles in one maintenance period | decimal |
 
-## IID_VIC
-| COLUMN | DESCRIPTION | DATA TYPE |
+## iid_vic
+| column | description | data type |
 |--------|-------------|-----------|
-| ID | UNIQUE ID / PRIMARY KEY | INT |
-| INSTRUMENT | FOREIGN KEY TABLE- IID_BASIC, REFERENCE - ID | INT |
-| SIZE | SIZE | VARCHAR |
-| WEIGHT | WEIGHT | VARCHAR |
-| POWER_REQUIREMENT | POWER REQUIREMENT | VARCHAR |
-| PERIPHERAL_REQUIREMENT | PERIPHERAL REQUIREMENT (FOREIGN KEY FROM PERIPHERALS TABLE - REFERENCE: PERIPHERALS.ID) | INT |
-| GAS_REQUIREMENT | GAS REQUIREMENT | VARCHAR |
-| ANY_BASE_REQ | SPECIFIC FOUNDATION OR BASE SYSTEM REQUIREMENT | VARCHAR |
-| WATER_AND_DRAINAGE_REQUIRED | WATER AND DRAINAGE REQUIRED | VARCHAR |
-| FURNITURE_OR_CLOSET | FURNITURE OR CLOSET | VARCHAR |
+| id | unique id / primary key | int |
+| instrument | foreign key table- iid_basic, reference - id | int |
+| size | size | varchar |
+| weight | weight | varchar |
+| power_requirement | power requirement | varchar |
+| peripheral_requirement | peripheral requirement (foreign key from peripherals table - reference: peripherals.id) | int |
+| gas_requirement | gas requirement | varchar |
+| any_base_req | specific foundation or base system requirement | varchar |
+| water_and_drainage_required | water and drainage required | varchar |
+| furniture_or_closet | furniture or closet | varchar |
 
-## IID_MANUAL
-| COLUMN | DESCRIPTION | DATA TYPE |
+## iid_manual
+| column | description | data type |
 |--------|-------------|-----------|
-| ID | UNIQUE ID / PRIMARY KEY | INT |
-| INSTRUMENT | FOREIGN KEY TABLE- IID_BASIC, REFERENCE - ID | INT |
-| LINK_TO_MANUAL | HYPERLINK TO USER MANUAL | VARCHAR |
-| TEMPLATE_FOR_CERTIFICATION | FILE AND LINK FOR CODE | VARCHAR |
-| RELATED_RISK_WARNING | RELATED RISK WARNING | VARCHAR |
-| SOPS_FOR_EQUIPMENT | STANDARD OPERATING PROCEDURES (SOPS) FOR EQUIPMENT | VARCHAR |
-| EQUIPMENT_TROUBLESHOOTING_GUIDES | TROUBLESHOOTING GUIDE FOR EQUIPMENT | VARCHAR |
+| id | unique id / primary key | int |
+| instrument | foreign key table- iid_basic, reference - id | int |
+| link_to_manual | hyperlink to user manual | varchar |
+| template_for_certification | file and link for code | varchar |
+| related_risk_warning | related risk warning | varchar |
+| sops_for_equipment | standard operating procedures (sops) for equipment | varchar |
+| equipment_troubleshooting_guides | troubleshooting guide for equipment | varchar |
 
-## UID
-| COLUMN | DESCRIPTION | DATA TYPE |
+## uid
+| column | description | data type |
 |--------|-------------|-----------|
-| ID | UNIQUE ID / FOREIGN KEY | INT |
-| INSTRUMENT | FOREIGN KEY TABLE- IID_BASIC, REFERENCE - ID | INT |
-| UNIQUE_IDENTIFIER | UNIQUE IDENTIFIER | VARCHAR |
+| id | unique id / foreign key | int |
+| instrument | foreign key table- iid_basic, reference - id | int |
+| unique_identifier | unique identifier | varchar |
 
-## UID_OT
-| COLUMN | DESCRIPTION | DATA TYPE |
+## uid_ot
+| column | description | data type |
 |--------|-------------|-----------|
-| ID | UNIQUE ID / PRIMARY KEY | INT |
-| INSTRUMENT_U | FOREIGN KEY TABLE- UID, REFERENCE - ID | INT |
-| FLOOR | FLOOR NUMBER | INT |
-| ROOM | ROOM | VARCHAR |
-| WARRANTY_DATE | WARRANTY EXPIRATION DATE | DATE |
-| WARRANTY_STATUS | WARRANTY STATUS | VARCHAR |
-| PAST_REPORTS_OF_MALFUNCTION | PAST REPORTS OF MALFUNCTION | VARCHAR |
-| ANY_OTHER_EMERGENCY_GUIDE | OTHER EMERGENCY GUIDE | VARCHAR |
+| id | unique id / primary key | int |
+| instrument_u | foreign key table- uid, reference - id | int |
+| floor | floor number | int |
+| room | room | varchar |
+| warranty_date | warranty expiration date | date |
+| warranty_status | warranty status | varchar |
+| past_reports_of_malfunction | past reports of malfunction | varchar |
+| any_other_emergency_guide | other emergency guide | varchar |
 
-## UID_DYNA
-| COLUMN | DESCRIPTION | DATA TYPE |
+## uid_dyna
+| column | description | data type |
 |--------|-------------|-----------|
-| ID | UNIQUE ID / PRIMARY KEY | INT |
-| INSTRUMENT_U | FOREIGN KEY TABLE- UID, REFERENCE - ID | INT |
-| LAST_MAINTENANCE_DATE | LAST MAINTENANCE DATE | DATE |
-| ALREADY_USED_CYCLES | CYCLES USED | INT |
-| REMAINING_CYCLES | REMAINING CYCLES | INT |
-| WORKING_DAYS_NOW | WORKING DAYS IT CAN RUN NOW | INT |
-| NEXT_MAINTENANCE_DATE | NEXT MAINTENANCE DATE | DATE |
-| OUT_OF_SERVICE | OUT OF SERVICE | BOOLEAN |
+| id | unique id / primary key | int |
+| instrument_u | foreign key table- uid, reference - id | int |
+| last_maintenance_date | last maintenance date | date |
+| already_used_cycles | cycles used | int |
+| remaining_cycles | remaining cycles | int |
+| working_days_now | working days it can run now | int |
+| next_maintenance_date | next maintenance date | date |
+| out_of_service | out of service | boolean |
