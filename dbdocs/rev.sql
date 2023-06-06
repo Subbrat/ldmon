@@ -1,4 +1,4 @@
-DROP DATABASE ldmon;
+DROP DATABASE IF EXISTS ldmon;
 CREATE DATABASE ldmon;
 USE ldmon;
 
@@ -187,8 +187,9 @@ CREATE TABLE log_fac_cng_iid (
 
 CREATE TABLE iid_pricing (
   id INT AUTO_INCREMENT PRIMARY KEY,
-  iid VARCHAR(255),
-  price DECIMAL(10, 2)
+  iid INT,
+  price DECIMAL(10, 2),
+  FOREIGN KEY (iid) REFERENCES instruments(id)
 );
 
 CREATE TABLE log_prc_cng (
