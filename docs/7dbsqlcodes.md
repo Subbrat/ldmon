@@ -293,27 +293,27 @@ CREATE TABLE log_us_ver (
 
 
 ---
+DROP DATABASE IF EXISTS ldmon;
+CREATE DATABASE ldmon;
+USE ldmon;
 
 CREATE TABLE members (
   id INT AUTO_INCREMENT PRIMARY KEY,
   name VARCHAR(255),
   dept INT,
-  email VARCHAR(255),
-  FOREIGN KEY (dept) REFERENCES department(id)
+  email VARCHAR(255)
 );
 
 CREATE TABLE category (
   id INT AUTO_INCREMENT PRIMARY KEY,
   name VARCHAR(255),
-  dept INT,
-  FOREIGN KEY (dept) REFERENCES department(id)
+  dept INT
 );
 
 CREATE TABLE department (
   id INT AUTO_INCREMENT PRIMARY KEY,
   name VARCHAR(255),
-  hod INT,
-  FOREIGN KEY (hod) REFERENCES faculty(id)
+  hod INT
 );
 
 CREATE TABLE instruments (
@@ -326,9 +326,7 @@ CREATE TABLE rooms (
   id INT AUTO_INCREMENT PRIMARY KEY,
   room VARCHAR(255),
   floor INT,
-  dept INT,
-  FOREIGN KEY (floor) REFERENCES floor(id),
-  FOREIGN KEY (dept) REFERENCES department(id)
+  dept INT
 );
 
 CREATE TABLE floor (
@@ -484,7 +482,9 @@ CREATE TABLE log_fac_cng_iid (
 
 CREATE TABLE iid_pricing (
   id INT AUTO_INCREMENT PRIMARY KEY,
-  price DECIMAL(10, 2)
+  iid INT,
+  price DECIMAL(10, 2),
+  FOREIGN KEY (iid) REFERENCES instruments(id)
 );
 
 CREATE TABLE log_prc_cng (
@@ -613,4 +613,3 @@ ADD FOREIGN KEY (fid) REFERENCES refuels(id);
 ALTER TABLE log_refuel_iid
 ADD FOREIGN KEY (iid) REFERENCES instruments(id),
 ADD FOREIGN KEY (fid) REFERENCES refuels(id);
-
