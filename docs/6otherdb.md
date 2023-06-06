@@ -77,6 +77,10 @@
 | id | unique id / primary key | int |
 | type | peripheral type | varchar |
 
+## company
+| id | unique id / primary key | int |
+| name | company name | varchar |
+
 ## refuels
 | column name | description | datatype |
 |-------------|-------------|----------|
