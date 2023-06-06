@@ -153,9 +153,6 @@ CREATE TABLE uid_dyna (
   FOREIGN KEY (instrument_u) REFERENCES uid(id)
 );
 
-
-
-# other
 CREATE TABLE user (
   id INT PRIMARY KEY,
   name VARCHAR(255),
