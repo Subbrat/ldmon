@@ -43,115 +43,6 @@
 13. [institutions](#institutions)
 
 
-# instrument
-
--- Table: iid_basic
-CREATE TABLE iid_basic (
-  id INT PRIMARY KEY,
-  iid VARCHAR(255),
-  department_id INT,
-  category_id INT,
-  name VARCHAR(255),
-  company_id INT,
-  slno VARCHAR(255),
-  description VARCHAR(255),
-  total_nos INT,
-  instructor_id INT,
-  image VARCHAR(255),
-  FOREIGN KEY (department_id) REFERENCES department(id),
-  FOREIGN KEY (category_id) REFERENCES category(id),
-  FOREIGN KEY (company_id) REFERENCES company(id),
-  FOREIGN KEY (instructor_id) REFERENCES faculty(id)
-);
-
--- Table: iid_pricing
-CREATE TABLE iid_pricing (
-  id INT PRIMARY KEY,
-  instrument_id INT,
-  price_u1 DECIMAL(10, 2),
-  price_u2 DECIMAL(10, 2),
-  price_u3 DECIMAL(10, 2),
-  price_u4 DECIMAL(10, 2),
-  price_u5 DECIMAL(10, 2),
-  FOREIGN KEY (instrument_id) REFERENCES iid_basic(id)
-);
-
--- Table: iid_spec
-CREATE TABLE iid_spec (
-  id INT PRIMARY KEY,
-  instrument_id INT,
-  week_availability INT,
-  cycle_time INT,
-  gap_between_cycle INT,
-  cycles_per_day INT,
-  things_used_as_input_refuel VARCHAR(255),
-  unit_refuel_one_maintenance DECIMAL(10, 2),
-  unit_used_per_cycle VARCHAR(255),
-  cycles_in_one_maintenance_period DECIMAL(10, 2),
-  FOREIGN KEY (instrument_id) REFERENCES iid_basic(id)
-);
-
--- Table: iid_vic
-CREATE TABLE iid_vic (
-  id INT PRIMARY KEY,
-  instrument_id INT,
-  size VARCHAR(255),
-  weight VARCHAR(255),
-  power_requirement VARCHAR(255),
-  peripheral_requirement INT,
-  gas_requirement VARCHAR(255),
-  any_base_req VARCHAR(255),
-  water_and_drainage_required VARCHAR(255),
-  furniture_or_closet VARCHAR(255),
-  FOREIGN KEY (instrument_id) REFERENCES iid_basic(id),
-  FOREIGN KEY (peripheral_requirement) REFERENCES peripherals(id)
-);
-
--- Table: iid_manual
-CREATE TABLE iid_manual (
-  id INT PRIMARY KEY,
-  instrument_id INT,
-  link_to_manual VARCHAR(255),
-  template_for_certification VARCHAR(255),
-  related_risk_warning VARCHAR(255),
-  sops_for_equipment VARCHAR(255),
-  equipment_troubleshooting_guides VARCHAR(255),
-  FOREIGN KEY (instrument_id) REFERENCES iid_basic(id)
-);
-
--- Table: uid
-CREATE TABLE uid (
-  id INT PRIMARY KEY,
-  instrument_id INT,
-  unique_identifier VARCHAR(255),
-  FOREIGN KEY (instrument_id) REFERENCES iid_basic(id)
-);
-
--- Table: uid_ot
-CREATE TABLE uid_ot (
-  id INT PRIMARY KEY,
-  instrument_u INT,
-  floor INT,
-  room VARCHAR(255),
-  warranty_date DATE,
-  warranty_status VARCHAR(255),
-  past_reports_of_malfunction VARCHAR(255),
-  any_other_emergency_guide VARCHAR(255),
-  FOREIGN KEY (instrument_u) REFERENCES uid(id)
-);
-
--- Table: uid_dyna
-CREATE TABLE uid_dyna (
-  id INT PRIMARY KEY,
-  instrument_u INT,
-  last_maintenance_date DATE,
-  already_used_cycles INT,
-  remaining_cycles INT,
-  working_days_now INT,
-  next_maintenance_date DATE,
-  out_of_service BOOLEAN,
-  FOREIGN KEY (instrument_u) REFERENCES uid(id)
-);
 
 CREATE TABLE user (
   id INT PRIMARY KEY,
@@ -358,4 +249,113 @@ CREATE TABLE log_us_ver (
   uname TEXT,
   utype TEXT,
   `status` INT
+);
+
+
+-- Table: iid_basic
+CREATE TABLE iid_basic (
+  id INT PRIMARY KEY,
+  iid VARCHAR(255),
+  department INT,
+  category INT,
+  name VARCHAR(255),
+  company INT,
+  slno VARCHAR(255),
+  description VARCHAR(255),
+  total_nos INT,
+  instructor INT,
+  image VARCHAR(255),
+  FOREIGN KEY (department) REFERENCES department(id),
+  FOREIGN KEY (category) REFERENCES category(id),
+  FOREIGN KEY (company) REFERENCES company(id),
+  FOREIGN KEY (instructor) REFERENCES faculty(id)
+);
+
+-- Table: iid_pricing
+CREATE TABLE iid_pricing (
+  id INT PRIMARY KEY,
+  instrument_id INT,
+  price_u1 DECIMAL(10, 2),
+  price_u2 DECIMAL(10, 2),
+  price_u3 DECIMAL(10, 2),
+  price_u4 DECIMAL(10, 2),
+  price_u5 DECIMAL(10, 2),
+  FOREIGN KEY (instrument_id) REFERENCES iid_basic(id)
+);
+
+-- Table: iid_spec
+CREATE TABLE iid_spec (
+  id INT PRIMARY KEY,
+  instrument_id INT,
+  week_availability INT,
+  cycle_time INT,
+  gap_between_cycle INT,
+  cycles_per_day INT,
+  things_used_as_input_refuel VARCHAR(255),
+  unit_refuel_one_maintenance DECIMAL(10, 2),
+  unit_used_per_cycle VARCHAR(255),
+  cycles_in_one_maintenance_period DECIMAL(10, 2),
+  FOREIGN KEY (instrument_id) REFERENCES iid_basic(id)
+);
+
+-- Table: iid_vic
+CREATE TABLE iid_vic (
+  id INT PRIMARY KEY,
+  instrument_id INT,
+  size VARCHAR(255),
+  weight VARCHAR(255),
+  power_requirement VARCHAR(255),
+  peripheral_requirement INT,
+  gas_requirement VARCHAR(255),
+  any_base_req VARCHAR(255),
+  water_and_drainage_required VARCHAR(255),
+  furniture_or_closet VARCHAR(255),
+  FOREIGN KEY (instrument_id) REFERENCES iid_basic(id),
+  FOREIGN KEY (peripheral_requirement) REFERENCES peripherals(id)
+);
+
+-- Table: iid_manual
+CREATE TABLE iid_manual (
+  id INT PRIMARY KEY,
+  instrument_id INT,
+  link_to_manual VARCHAR(255),
+  template_for_certification VARCHAR(255),
+  related_risk_warning VARCHAR(255),
+  sops_for_equipment VARCHAR(255),
+  equipment_troubleshooting_guides VARCHAR(255),
+  FOREIGN KEY (instrument_id) REFERENCES iid_basic(id)
+);
+
+-- Table: uid
+CREATE TABLE uid (
+  id INT PRIMARY KEY,
+  instrument_id INT,
+  unique_identifier VARCHAR(255),
+  FOREIGN KEY (instrument_id) REFERENCES iid_basic(id)
+);
+
+-- Table: uid_ot
+CREATE TABLE uid_ot (
+  id INT PRIMARY KEY,
+  instrument_u INT,
+  floor INT,
+  room VARCHAR(255),
+  warranty_date DATE,
+  warranty_status VARCHAR(255),
+  past_reports_of_malfunction VARCHAR(255),
+  any_other_emergency_guide VARCHAR(255),
+  FOREIGN KEY (instrument_u) REFERENCES uid(id)
+);
+
+-- Table: uid_dyna
+CREATE TABLE uid_dyna (
+  id INT PRIMARY KEY,
+  instrument_u INT,
+  last_maintenance_date DATE,
+  already_used_cycles INT,
+  remaining_cycles INT,
+  working_days_now INT,
+  next_maintenance_date DATE,
+  out_of_service BOOLEAN,
+  FOREIGN KEY (instrument_u) REFERENCES uid(id)
 );
