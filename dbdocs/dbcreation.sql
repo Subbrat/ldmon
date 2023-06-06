@@ -43,15 +43,13 @@ CREATE TABLE faculty (
   id INT AUTO_INCREMENT PRIMARY KEY,
   name VARCHAR(255),
   dept INT,
-  email VARCHAR(255),
-  FOREIGN KEY (dept) REFERENCES department(id)
+  email VARCHAR(255)
 );
 
 CREATE TABLE funds (
   id INT AUTO_INCREMENT PRIMARY KEY,
   account INT,
-  balance DECIMAL(10, 2),
-  FOREIGN KEY (account) REFERENCES members(id)
+  balance DECIMAL(10, 2)
 );
 
 CREATE TABLE reservation (
@@ -62,11 +60,7 @@ CREATE TABLE reservation (
   dept INT,
   faculty INT,
   comment VARCHAR(255),
-  related VARCHAR(255),
-  FOREIGN KEY (user_id) REFERENCES members(id),
-  FOREIGN KEY (for_instrument) REFERENCES instruments(id),
-  FOREIGN KEY (dept) REFERENCES department(id),
-  FOREIGN KEY (faculty) REFERENCES faculty(id)
+  related VARCHAR(255)
 );
 
 CREATE TABLE peripherals (
@@ -127,10 +121,7 @@ CREATE TABLE log_usage (
   donby INT,
   guide INT,
   remark TEXT,
-  usageid INT,
-  FOREIGN KEY (instrument) REFERENCES instruments(id),
-  FOREIGN KEY (donby) REFERENCES members(id),
-  FOREIGN KEY (guide) REFERENCES faculty(id)
+  usageid INT
 );
 
 CREATE TABLE log_maintenance (
@@ -139,8 +130,7 @@ CREATE TABLE log_maintenance (
   dt DATETIME,
   donby VARCHAR(255),
   status VARCHAR(255),
-  remark TEXT,
-  FOREIGN KEY (instrument) REFERENCES instruments(id)
+  remark TEXT
 );
 
 CREATE TABLE log_service (
@@ -148,8 +138,7 @@ CREATE TABLE log_service (
   instrument INT,
   dt DATETIME,
   status VARCHAR(255),
-  remark TEXT,
-  FOREIGN KEY (instrument) REFERENCES instruments(id)
+  remark TEXT
 );
 
 CREATE TABLE log_room_cng (
@@ -157,10 +146,7 @@ CREATE TABLE log_room_cng (
   instrument INT,
   vfrom INT,
   vto INT,
-  remark TEXT,
-  FOREIGN KEY (instrument) REFERENCES instruments(id),
-  FOREIGN KEY (vfrom) REFERENCES rooms(id),
-  FOREIGN KEY (vto) REFERENCES rooms(id)
+  remark TEXT
 );
 
 CREATE TABLE log_fac_cng_dept (
@@ -169,10 +155,7 @@ CREATE TABLE log_fac_cng_dept (
   dt DATETIME,
   vfrom INT,
   vto INT,
-  remark TEXT,
-  FOREIGN KEY (depid) REFERENCES department(id),
-  FOREIGN KEY (vfrom) REFERENCES faculty(id),
-  FOREIGN KEY (vto) REFERENCES faculty(id)
+  remark TEXT
 );
 
 CREATE TABLE log_fac_cng_iid (
@@ -181,15 +164,13 @@ CREATE TABLE log_fac_cng_iid (
   dt DATETIME,
   vfrom VARCHAR(255),
   vto VARCHAR(255),
-  remark TEXT,
-  FOREIGN KEY (iid) REFERENCES instruments(id)
+  remark TEXT
 );
 
 CREATE TABLE iid_pricing (
   id INT AUTO_INCREMENT PRIMARY KEY,
   iid INT,
-  price DECIMAL(10, 2),
-  FOREIGN KEY (iid) REFERENCES instruments(id)
+  price DECIMAL(10, 2)
 );
 
 CREATE TABLE log_prc_cng (
@@ -198,17 +179,14 @@ CREATE TABLE log_prc_cng (
   utype INT,
   dt DATETIME,
   vfrom DECIMAL(10, 2),
-  remark TEXT,
-  FOREIGN KEY (iid) REFERENCES instruments(id),
-  FOREIGN KEY (utype) REFERENCES iid_pricing(id)
+  remark TEXT
 );
 
 CREATE TABLE log_transaction (
   id INT AUTO_INCREMENT PRIMARY KEY,
   account INT,
   t_type INT,
-  amount DECIMAL(10, 2),
-  FOREIGN KEY (account) REFERENCES members(id)
+  amount DECIMAL(10, 2)
 );
 
 CREATE TABLE log_refuel_fuel (
@@ -216,8 +194,7 @@ CREATE TABLE log_refuel_fuel (
   fid INT,
   dt DATETIME,
   amount DECIMAL(10, 2),
-  remark TEXT,
-  FOREIGN KEY (fid) REFERENCES refuels(id)
+  remark TEXT
 );
 
 CREATE TABLE log_refuel_uid (
@@ -226,9 +203,7 @@ CREATE TABLE log_refuel_uid (
   fid INT,
   dt DATETIME,
   amount DECIMAL(10, 2),
-  remark TEXT,
-  FOREIGN KEY (uid) REFERENCES instruments(id),
-  FOREIGN KEY (fid) REFERENCES refuels(id)
+  remark TEXT
 );
 
 CREATE TABLE log_refuel_iid (
@@ -237,9 +212,7 @@ CREATE TABLE log_refuel_iid (
   fid INT,
   dt DATETIME,
   amount DECIMAL(10, 2),
-  remark TEXT,
-  FOREIGN KEY (iid) REFERENCES instruments(id),
-  FOREIGN KEY (fid) REFERENCES refuels(id)
+  remark TEXT
 );
 
 CREATE TABLE log_us_ver (
