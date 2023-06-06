@@ -1,83 +1,95 @@
-## iid_basic
-| Column | Description | Data Type |
+## IID_BASIC
+| COLUMN | DESCRIPTION | DATA TYPE |
 |--------|-------------|-----------|
-| id | Unique ID / Primary Key | INT |
-| iid | instrumentID | Varchar |
-| department_id | Foreign Key from department table | INT |
-| category_id | Foreign Key from category table | INT |
-| name | Instrument Group Name or Instrument Name | VARCHAR |
-| company | Instrument Group Company Name | VARCHAR |
-| slno | Instrument Group SL Name | VARCHAR |
-| description | Description | varchar |
-| total nos | Total Number of Instruments | INT |
-| instructor | Current Faculty Incharge | VARCHAR |
-| image | Image | VARCHAR |
+| ID | UNIQUE ID / PRIMARY KEY | INT |
+| IID | INSTRUMENT ID | VARCHAR |
+| DEPARTMENT_ID | FOREIGN KEY FROM DEPARTMENT TABLE (REFERENCE: ID) | INT |
+| CATEGORY_ID | FOREIGN KEY FROM CATEGORY TABLE (REFERENCE: ID) | INT |
+| NAME | INSTRUMENT GROUP NAME OR INSTRUMENT NAME | VARCHAR |
+| COMPANY | INSTRUMENT GROUP COMPANY NAME, FOREIGN KEY TABLE- COMPANY REF- ID | INT |
+| SLNO | INSTRUMENT GROUP SERIAL NUMBER | VARCHAR |
+| DESCRIPTION | DESCRIPTION | VARCHAR |
+| TOTAL_NOS | TOTAL NUMBER OF INSTRUMENTS | INT |
+| INSTRUCTOR | FOREIGN KEY TABLE- FACULTY, REFERENCE - ID | INT |
+| IMAGE | IMAGE | VARCHAR |
 
-## iid_pricing
-| column | description | datatype |
+## IID_PRICING
+| COLUMN | DESCRIPTION | DATA TYPE |
 |--|--|--|
-| id | Unique ID / Primary Key | INT |
-| iid | instrumentID | Varchar |
-| u1 |price for u1|decimal|
-| u2 |price for u2|decimal|
-| u3 |price for u3|decimal|
-| u4 |price for u4|decimal|
-| u5 |price for u5|decimal|
+| ID | UNIQUE ID / PRIMARY KEY | INT |
+| INSTRUMENT | FOREIGN KEY TABLE- IID_BASIC, REFERENCE - ID | INT |
+| PRICE_U1 | PRICE FOR UNIT 1 | DECIMAL |
+| PRICE_U2 | PRICE FOR UNIT 2 | DECIMAL |
+| PRICE_U3 | PRICE FOR UNIT 3 | DECIMAL |
+| PRICE_U4 | PRICE FOR UNIT 4 | DECIMAL |
+| PRICE_U5 | PRICE FOR UNIT 5 | DECIMAL |
 
-## iid_spec
-| Column | Description | Data Type |
+## IID_SPEC
+| COLUMN | DESCRIPTION | DATA TYPE |
 |--------|-------------|-----------|
-| id | Unique ID / Primary Key | INT |
-| week availability | Week Availability | INT |
-| cycle time | Cycle Time (Minutes) | INT |
-| gap between cycle | Gap Between Cycles (Minutes) | INT |
-| cycles per day | Cycles Per Day | INT |
-| things used as input/refuel | Things Used as Input/Refuel | VARCHAR |
-| unit refuel one maintenance | Unit Refuel Amount per Maintenance | DECIMAL |
-| unit used per cycle | Unit Used per Cycle | VARCHAR |
-| cycle in one maintenance period | Cycles in One Maintenance Period | DECIMAL |
+| ID | UNIQUE ID / PRIMARY KEY | INT |
+| INSTRUMENT | FOREIGN KEY TABLE- IID_BASIC, REFERENCE - ID | INT |
+| WEEK_AVAILABILITY | WEEK AVAILABILITY | INT |
+| CYCLE_TIME | CYCLE TIME (MINUTES) | INT |
+| GAP_BETWEEN_CYCLE | GAP BETWEEN CYCLES (MINUTES) | INT |
+| CYCLES_PER_DAY | CYCLES PER DAY | INT |
+| THINGS_USED_AS_INPUT_REFUEL | THINGS USED AS INPUT/REFUEL | VARCHAR |
+| UNIT_REFUEL_ONE_MAINTENANCE | UNIT REFUEL AMOUNT PER MAINTENANCE | DECIMAL |
+| UNIT_USED_PER_CYCLE | UNIT USED PER CYCLE | VARCHAR |
+| CYCLES_IN_ONE_MAINTENANCE_PERIOD | CYCLES IN ONE MAINTENANCE PERIOD | DECIMAL |
 
-## Vicinity Requirements [2NF format]
-| Column | Description | Data Type |
+## IID_VIC
+| COLUMN | DESCRIPTION | DATA TYPE |
 |--------|-------------|-----------|
-| id | Unique ID / Primary Key | INT |
-| size | Size | VARCHAR |
-| weight | Weight | VARCHAR |
-| power requirement | Power Requirement | VARCHAR |
-| peripheral requirement | Peripheral Requirement | INT | Foreign Key from peripherals table |
-| gas requirement | Gas Requirement | VARCHAR |
-| any base req | Specific Foundation or Base System Requirement | VARCHAR |
-| water and drainage required | Water and Drainage Required | VARCHAR |
-| furniture or closet | Furniture or Closet | VARCHAR |
+| ID | UNIQUE ID / PRIMARY KEY | INT |
+| INSTRUMENT | FOREIGN KEY TABLE- IID_BASIC, REFERENCE - ID | INT |
+| SIZE | SIZE | VARCHAR |
+| WEIGHT | WEIGHT | VARCHAR |
+| POWER_REQUIREMENT | POWER REQUIREMENT | VARCHAR |
+| PERIPHERAL_REQUIREMENT | PERIPHERAL REQUIREMENT (FOREIGN KEY FROM PERIPHERALS TABLE - REFERENCE: PERIPHERALS.ID) | INT |
+| GAS_REQUIREMENT | GAS REQUIREMENT | VARCHAR |
+| ANY_BASE_REQ | SPECIFIC FOUNDATION OR BASE SYSTEM REQUIREMENT | VARCHAR |
+| WATER_AND_DRAINAGE_REQUIRED | WATER AND DRAINAGE REQUIRED | VARCHAR |
+| FURNITURE_OR_CLOSET | FURNITURE OR CLOSET | VARCHAR |
 
-## Guide/Manuals
-| Column | Description | Data Type |
+## IID_MANUAL
+| COLUMN | DESCRIPTION | DATA TYPE |
 |--------|-------------|-----------|
-| id | Unique ID / Primary Key | INT |
-| link to manual | Hyperlink to User Manual | VARCHAR |
-| template for certification | File and Link for Code | VARCHAR |
-| related risk warning | Related Risk Warning | VARCHAR |
-| Standard Operating Procedures (SOPs) for Equipment | SOPs for Equipment | VARCHAR |
-| Equipment Troubleshooting Guides | Troubleshooting Guide | VARCHAR |
+| ID | UNIQUE ID / PRIMARY KEY | INT |
+| INSTRUMENT | FOREIGN KEY TABLE- IID_BASIC, REFERENCE - ID | INT |
+| LINK_TO_MANUAL | HYPERLINK TO USER MANUAL | VARCHAR |
+| TEMPLATE_FOR_CERTIFICATION | FILE AND LINK FOR CODE | VARCHAR |
+| RELATED_RISK_WARNING | RELATED RISK WARNING | VARCHAR |
+| SOPS_FOR_EQUIPMENT | STANDARD OPERATING PROCEDURES (SOPS) FOR EQUIPMENT | VARCHAR |
+| EQUIPMENT_TROUBLESHOOTING_GUIDES | TROUBLESHOOTING GUIDE FOR EQUIPMENT | VARCHAR |
 
-## One Time for Individual Instrument
-| Column | Description | Data Type |
+## UID
+| COLUMN | DESCRIPTION | DATA TYPE |
 |--------|-------------|-----------|
-| id | Unique ID / Primary Key | INT |
-| floor | Floor Number | INT |
-| room | Room | VARCHAR
-| warranty date | Warranty Expiration Date | DATE |
-| warranty status | Warranty Status | VARCHAR |
-| past reports of malfunction | Past Reports of Malfunction | VARCHAR |
-| any other emergency guide | Other Emergency Guide | VARCHAR |
+| ID | UNIQUE ID / FOREIGN KEY | INT |
+| INSTRUMENT | FOREIGN KEY TABLE- IID_BASIC, REFERENCE - ID | INT |
+| UNIQUE_IDENTIFIER | UNIQUE IDENTIFIER | VARCHAR |
 
-## Dynamic to One Individual Instrument
-| Column | Description | Data Type |
+## UID_OT
+| COLUMN | DESCRIPTION | DATA TYPE |
 |--------|-------------|-----------|
-| id | Unique ID / Primary Key | INT |
-| last maintenance date | Last Maintenance Date | DATE |
-| already used | Cycles Used | INT |
-| remaining cycles | Remaining Cycles | INT |
-| working days it can run now | Working Days | INT |
-| next maintenance date | Next Maintenance Date | DATE |
-| out of service | Out of Service | BOOLEAN |
+| ID | UNIQUE ID / PRIMARY KEY | INT |
+| INSTRUMENT_U | FOREIGN KEY TABLE- UID, REFERENCE - ID | INT |
+| FLOOR | FLOOR NUMBER | INT |
+| ROOM | ROOM | VARCHAR |
+| WARRANTY_DATE | WARRANTY EXPIRATION DATE | DATE |
+| WARRANTY_STATUS | WARRANTY STATUS | VARCHAR |
+| PAST_REPORTS_OF_MALFUNCTION | PAST REPORTS OF MALFUNCTION | VARCHAR |
+| ANY_OTHER_EMERGENCY_GUIDE | OTHER EMERGENCY GUIDE | VARCHAR |
+
+## UID_DYNA
+| COLUMN | DESCRIPTION | DATA TYPE |
+|--------|-------------|-----------|
+| ID | UNIQUE ID / PRIMARY KEY | INT |
+| INSTRUMENT_U | FOREIGN KEY TABLE- UID, REFERENCE - ID | INT |
+| LAST_MAINTENANCE_DATE | LAST MAINTENANCE DATE | DATE |
+| ALREADY_USED_CYCLES | CYCLES USED | INT |
+| REMAINING_CYCLES | REMAINING CYCLES | INT |
+| WORKING_DAYS_NOW | WORKING DAYS IT CAN RUN NOW | INT |
+| NEXT_MAINTENANCE_DATE | NEXT MAINTENANCE DATE | DATE |
+| OUT_OF_SERVICE | OUT OF SERVICE | BOOLEAN |
