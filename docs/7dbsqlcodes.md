@@ -40,7 +40,8 @@
 12. [user verification](#userverification)
 13. [institutions](#institutions)
 
-CREATE TABLE `user` (
+
+CREATE TABLE user (
   id INT AUTO_INCREMENT PRIMARY KEY,
   name VARCHAR(255),
   dept INT,
@@ -67,11 +68,11 @@ CREATE TABLE rooms (
   room VARCHAR(255),
   floor INT,
   dept INT,
-  FOREIGN KEY (floor) REFERENCES `floor`(id),
+  FOREIGN KEY (floor) REFERENCES floor(id),
   FOREIGN KEY (dept) REFERENCES department(id)
 );
 
-CREATE TABLE `floor` (
+CREATE TABLE floor (
   id INT AUTO_INCREMENT PRIMARY KEY,
   floor_name VARCHAR(255)
 );
@@ -88,7 +89,7 @@ CREATE TABLE funds (
   id INT AUTO_INCREMENT PRIMARY KEY,
   account INT,
   balance DECIMAL(10, 2),
-  FOREIGN KEY (account) REFERENCES `user`(id)
+  FOREIGN KEY (account) REFERENCES user(id)
 );
 
 CREATE TABLE reservation (
@@ -100,7 +101,7 @@ CREATE TABLE reservation (
   faculty INT,
   comment VARCHAR(255),
   related VARCHAR(255),
-  FOREIGN KEY (user_id) REFERENCES `user`(id),
+  FOREIGN KEY (user_id) REFERENCES user(id),
   FOREIGN KEY (for_instrument) REFERENCES instruments(id),
   FOREIGN KEY (dept) REFERENCES department(id),
   FOREIGN KEY (faculty) REFERENCES faculty(id)
@@ -166,7 +167,7 @@ CREATE TABLE log_usage (
   remark TEXT,
   usageid INT,
   FOREIGN KEY (instrument) REFERENCES instruments(id),
-  FOREIGN KEY (donby) REFERENCES `user`(id),
+  FOREIGN KEY (donby) REFERENCES user(id),
   FOREIGN KEY (guide) REFERENCES faculty(id)
 );
 
@@ -193,11 +194,11 @@ CREATE TABLE log_room_cng (
   id INT AUTO_INCREMENT PRIMARY KEY,
   instrument INT,
   vfrom INT,
-  `to` INT,
+  to INT,
   remark TEXT,
   FOREIGN KEY (instrument) REFERENCES instruments(id),
   FOREIGN KEY (vfrom) REFERENCES rooms(id),
-  FOREIGN KEY (`to`) REFERENCES rooms(id)
+  FOREIGN KEY (to) REFERENCES rooms(id)
 );
 
 CREATE TABLE log_fac_cng_dept (
@@ -205,11 +206,11 @@ CREATE TABLE log_fac_cng_dept (
   depid INT,
   dt DATETIME,
   vfrom INT,
-  `to` INT,
+  to INT,
   remark TEXT,
   FOREIGN KEY (depid) REFERENCES department(id),
   FOREIGN KEY (vfrom) REFERENCES faculty(id),
-  FOREIGN KEY (`to`) REFERENCES faculty(id)
+  FOREIGN KEY (to) REFERENCES faculty(id)
 );
 
 CREATE TABLE log_fac_cng_iid (
@@ -217,7 +218,7 @@ CREATE TABLE log_fac_cng_iid (
   iid INT,
   dt DATETIME,
   vfrom VARCHAR(255),
-  `to` VARCHAR(255),
+  to VARCHAR(255),
   remark TEXT,
   FOREIGN KEY (iid) REFERENCES instruments(id)
 );
@@ -238,7 +239,7 @@ CREATE TABLE log_transaction (
   account INT,
   t_type INT,
   amount DECIMAL(10, 2),
-  FOREIGN KEY (account) REFERENCES `user`(id)
+  FOREIGN KEY (account) REFERENCES user(id)
 );
 
 CREATE TABLE log_refuel_fuel (
