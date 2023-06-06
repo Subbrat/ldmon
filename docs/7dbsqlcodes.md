@@ -297,6 +297,108 @@ CREATE TABLE log_us_ver (
 );
 
 
+CREATE TABLE iid_basic (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  iid VARCHAR(255),
+  department INT,
+  category INT,
+  name VARCHAR(255),
+  company INT,
+  slno VARCHAR(255),
+  description VARCHAR(255),
+  total_nos INT,
+  instructor INT,
+  image VARCHAR(255),
+  FOREIGN KEY (department) REFERENCES department(id),
+  FOREIGN KEY (category) REFERENCES category(id),
+  FOREIGN KEY (company) REFERENCES company(id),
+  FOREIGN KEY (instructor) REFERENCES faculty(id)
+);
+
+CREATE TABLE iid_pricing (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  instrument INT,
+  price_u1 DECIMAL(10, 2),
+  price_u2 DECIMAL(10, 2),
+  price_u3 DECIMAL(10, 2),
+  price_u4 DECIMAL(10, 2),
+  price_u5 DECIMAL(10, 2),
+  FOREIGN KEY (instrument) REFERENCES iid_basic(id)
+);
+
+CREATE TABLE iid_spec (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  instrument INT,
+  week_availability INT,
+  cycle_time INT,
+  gap_between_cycle INT,
+  cycles_per_day INT,
+  things_used_as_input_refuel VARCHAR(255),
+  unit_refuel_one_maintenance DECIMAL(10, 2),
+  unit_used_per_cycle VARCHAR(255),
+  cycles_in_one_maintenance_period DECIMAL(10, 2),
+  FOREIGN KEY (instrument) REFERENCES iid_basic(id)
+);
+
+CREATE TABLE iid_vic (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  instrument INT,
+  size VARCHAR(255),
+  weight VARCHAR(255),
+  power_requirement VARCHAR(255),
+  peripheral_requirement INT,
+  gas_requirement VARCHAR(255),
+  any_base_req VARCHAR(255),
+  water_and_drainage_required VARCHAR(255),
+  furniture_or_closet VARCHAR(255),
+  FOREIGN KEY (instrument) REFERENCES iid_basic(id),
+  FOREIGN KEY (peripheral_requirement) REFERENCES peripherals(id)
+);
+
+CREATE TABLE iid_manual (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  instrument INT,
+  link_to_manual VARCHAR(255),
+  template_for_certification VARCHAR(255),
+  related_risk_warning VARCHAR(255),
+  sops_for_equipment VARCHAR(255),
+  equipment_troubleshooting_guides VARCHAR(255),
+  FOREIGN KEY (instrument) REFERENCES iid_basic(id)
+);
+
+CREATE TABLE uid (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  instrument INT,
+  unique_identifier VARCHAR(255),
+  FOREIGN KEY (instrument) REFERENCES iid_basic(id)
+);
+
+CREATE TABLE uid_ot (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  instrument_u INT,
+  floor INT,
+  room VARCHAR(255),
+  warranty_date DATE,
+  warranty_status VARCHAR(255),
+  past_reports_of_malfunction VARCHAR(255),
+  any_other_emergency_guide VARCHAR(255),
+  FOREIGN KEY (instrument_u) REFERENCES uid(id)
+);
+
+CREATE TABLE uid_dyna (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  instrument_u INT,
+  last_maintenance_date DATE,
+  already_used_cycles INT,
+  remaining_cycles INT,
+  working_days_now INT,
+  next_maintenance_date DATE,
+  out_of_service BOOLEAN,
+  FOREIGN KEY (instrument_u) REFERENCES uid(id)
+);
+
+
+
 ---
 
 # code used to import db start from here !
@@ -488,12 +590,6 @@ CREATE TABLE log_fac_cng_iid (
   FOREIGN KEY (iid) REFERENCES instruments(id)
 );
 
-CREATE TABLE iid_pricing (
-  id INT AUTO_INCREMENT PRIMARY KEY,
-  iid INT,
-  price DECIMAL(10, 2),
-  FOREIGN KEY (iid) REFERENCES instruments(id)
-);
 
 CREATE TABLE log_prc_cng (
   id INT AUTO_INCREMENT PRIMARY KEY,
@@ -551,6 +647,95 @@ CREATE TABLE log_us_ver (
   utype TEXT,
   status INT
 );
+
+CREATE TABLE iid_basic (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  iid VARCHAR(255),
+  department INT,
+  category INT,
+  name VARCHAR(255),
+  company INT,
+  slno VARCHAR(255),
+  description VARCHAR(255),
+  total_nos INT,
+  instructor INT,
+  image VARCHAR(255)
+);
+
+CREATE TABLE iid_pricing (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  instrument INT,
+  price_u1 DECIMAL(10, 2),
+  price_u2 DECIMAL(10, 2),
+  price_u3 DECIMAL(10, 2),
+  price_u4 DECIMAL(10, 2),
+  price_u5 DECIMAL(10, 2)
+);
+
+CREATE TABLE iid_spec (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  instrument INT,
+  week_availability INT,
+  cycle_time INT,
+  gap_between_cycle INT,
+  cycles_per_day INT,
+  things_used_as_input_refuel VARCHAR(255),
+  unit_refuel_one_maintenance DECIMAL(10, 2),
+  unit_used_per_cycle VARCHAR(255),
+  cycles_in_one_maintenance_period DECIMAL(10, 2)
+);
+
+CREATE TABLE iid_vic (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  instrument INT,
+  size VARCHAR(255),
+  weight VARCHAR(255),
+  power_requirement VARCHAR(255),
+  peripheral_requirement INT,
+  gas_requirement VARCHAR(255),
+  any_base_req VARCHAR(255),
+  water_and_drainage_required VARCHAR(255),
+  furniture_or_closet VARCHAR(255)
+);
+
+CREATE TABLE iid_manual (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  instrument INT,
+  link_to_manual VARCHAR(255),
+  template_for_certification VARCHAR(255),
+  related_risk_warning VARCHAR(255),
+  sops_for_equipment VARCHAR(255),
+  equipment_troubleshooting_guides VARCHAR(255)
+);
+
+CREATE TABLE uid (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  instrument INT,
+  unique_identifier VARCHAR(255)
+);
+
+CREATE TABLE uid_ot (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  instrument_u INT,
+  floor INT,
+  room VARCHAR(255),
+  warranty_date DATE,
+  warranty_status VARCHAR(255),
+  past_reports_of_malfunction VARCHAR(255),
+  any_other_emergency_guide VARCHAR(255)
+);
+
+CREATE TABLE uid_dyna (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  instrument_u INT,
+  last_maintenance_date DATE,
+  already_used_cycles INT,
+  remaining_cycles INT,
+  working_days_now INT,
+  next_maintenance_date DATE,
+  out_of_service BOOLEAN
+);
+
 
 ALTER TABLE members
 ADD FOREIGN KEY (dept) REFERENCES department(id);
@@ -621,3 +806,23 @@ ADD FOREIGN KEY (fid) REFERENCES refuels(id);
 ALTER TABLE log_refuel_iid
 ADD FOREIGN KEY (iid) REFERENCES instruments(id),
 ADD FOREIGN KEY (fid) REFERENCES refuels(id);
+
+ALTER TABLE iid_basic ADD FOREIGN KEY (department) REFERENCES department(id);
+ALTER TABLE iid_basic ADD FOREIGN KEY (category) REFERENCES category(id);
+ALTER TABLE iid_basic ADD FOREIGN KEY (company) REFERENCES company(id);
+ALTER TABLE iid_basic ADD FOREIGN KEY (instructor) REFERENCES faculty(id);
+
+ALTER TABLE iid_pricing ADD FOREIGN KEY (instrument) REFERENCES iid_basic(id);
+
+ALTER TABLE iid_spec ADD FOREIGN KEY (instrument) REFERENCES iid_basic(id);
+
+ALTER TABLE iid_vic ADD FOREIGN KEY (instrument) REFERENCES iid_basic(id);
+ALTER TABLE iid_vic ADD FOREIGN KEY (peripheral_requirement) REFERENCES peripherals(id);
+
+ALTER TABLE iid_manual ADD FOREIGN KEY (instrument) REFERENCES iid_basic(id);
+
+ALTER TABLE uid ADD FOREIGN KEY (instrument) REFERENCES iid_basic(id);
+
+ALTER TABLE uid_ot ADD FOREIGN KEY (instrument_u) REFERENCES uid(id);
+
+ALTER TABLE uid_dyna ADD FOREIGN KEY (instrument_u) REFERENCES uid(id);

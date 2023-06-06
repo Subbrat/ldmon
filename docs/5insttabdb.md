@@ -3,8 +3,8 @@
 |--------|-------------|-----------|
 | id | unique id / primary key | int |
 | iid | instrument id | varchar |
-| department_id | foreign key from department table (reference: id) | int |
-| category_id | foreign key from category table (reference: id) | int |
+| department | foreign key from department table (reference: id) | int |
+| category | foreign key from category table (reference: id) | int |
 | name | instrument group name or instrument name | varchar |
 | company | instrument group company name, foreign key table- company ref- id | int |
 | slno | instrument group serial number | varchar |
