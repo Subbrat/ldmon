@@ -1,4 +1,3 @@
 DROP DATABASE ldmon;
 CREATE DATABASE ldmon;
 USE ldmon;
-
