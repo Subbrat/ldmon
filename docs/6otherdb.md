@@ -3,7 +3,7 @@
 |-------------|-------------|----------|
 | id | unique id/ primary key | INT |
 | name | name of user | VARCHAR |
-| dept | foreign key from table : department | INT |
+| dept | foreign key table : department, refernce-id | INT |
 | email | email | VARCHAR |
 
 ## category
@@ -11,22 +11,22 @@
 |-------------|-------------|----------|
 | id | unique id/ primary key | INT |
 | name | name | VARCHAR |
-| dept | dept : foreign key from table : department | INT |
+| dept | dept : foreign key from table : department-id | INT |
 
 ## department
 | column name | description | datatype |
 |-------------|-------------|----------|
 | id | unique id/ primary key | INT |
 | name | name | VARCHAR |
-| hod | name of hod : foreign key from table : faculty | INT |
+| hod | name of hod : foreign key from table : faculty, ref-id | INT |
 
 ## rooms
 | column name | description | datatype |
 |-------------|-------------|----------|
 | id | unique id/ primary key | INT |
 | room | room_name or number | VARCHAR |
-| floor | floor number : foreign key from table : floor | INT |
-| dept | assigned dept : foreign key from table : department | INT |
+| floor | floor number : foreign key from table : floor, ref-id | INT |
+| dept | assigned dept : foreign key from table : department, ref-id | INT |
 
 ## floor
 | column name | description | datatype |
@@ -39,34 +39,28 @@
 |-------------|-------------|----------|
 | id | unique id/ primary key | INT |
 | name | name | VARCHAR |
-| dept | foreign key from table : department | INT |
+| dept | foreign key from table : department, ref- id | INT |
 | email | email | VARCHAR |
 
 ## funds
 | column name | description | datatype |
 |--|--|--|
 | id | id / primary key | INT |
-|account | foreign key from table : user | INT |
+|account | foreign key from table : user,ref - id  | INT |
 |balance|present amount balanace|decimal|
 
 ## reservation
 | column name | description | datatype |
 |-------------|-------------|----------|
 | id | unique id / primary key | INT |
-| user | foreign key from table: user | INT |
-| for | foreign key from table: instruments | INT |
+| user | foreign key from table: user, ref-id | INT |
+| for | foreign key from table: instruments, ref-id | INT |
 | status | approved/ cancelled/ pending | INT |
-| dept | foreign key from table: department | INT |
-| faculty | foreign key from table: faculty | INT |
+| dept | foreign key from table: department, ref-id | INT |
+| faculty | foreign key from table: faculty, ref-id | INT |
 | comment | any comment for the same | varchar |
 | related | any link for the same | varchar |
 
-## pricing
-| column name | description | datatype |
-|-------------|-------------|----------|
-| id | unique id / primary key | INT |
-| iid | foreign key from table: iid_basic | INT |
-| price | pricing for the instrument | INT |
 
 ## Peripherals
 | Column | Description | Data Type |
@@ -182,6 +176,7 @@
 |-------------|-------------|-----------|
 | id | ID of the price change log | INT |
 | iid | Instrument ID | INT (foreign key referencing instruments table) |
+| utype | usertype (foreign key from iid_pricing) |
 | when | Date and time of the change | DATETIME |
 | from | Previous price | DECIMAL |
 | remark | Additional remarks or comments | TEXT |

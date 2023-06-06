@@ -13,7 +13,18 @@
 | instructor | Current Faculty Incharge | VARCHAR |
 | image | Image | VARCHAR |
 
-## Specification Data
+## iid_pricing
+| column | description | datatype |
+|--|--|--|
+| id | Unique ID / Primary Key | INT |
+| iid | instrumentID | Varchar |
+| u1 |price for u1|decimal|
+| u2 |price for u2|decimal|
+| u3 |price for u3|decimal|
+| u4 |price for u4|decimal|
+| u5 |price for u5|decimal|
+
+## iid_spec
 | Column | Description | Data Type |
 |--------|-------------|-----------|
 | id | Unique ID / Primary Key | INT |
