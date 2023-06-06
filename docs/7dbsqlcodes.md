@@ -89,7 +89,7 @@ CREATE TABLE funds (
   id INT AUTO_INCREMENT PRIMARY KEY,
   account INT,
   balance DECIMAL(10, 2),
-  FOREIGN KEY (account) REFERENCES user(id)
+  FOREIGN KEY (account) REFERENCES members(id)
 );
 
 CREATE TABLE reservation (
@@ -101,7 +101,7 @@ CREATE TABLE reservation (
   faculty INT,
   comment VARCHAR(255),
   related VARCHAR(255),
-  FOREIGN KEY (user_id) REFERENCES user(id),
+  FOREIGN KEY (user_id) REFERENCES members(id),
   FOREIGN KEY (for_instrument) REFERENCES instruments(id),
   FOREIGN KEY (dept) REFERENCES department(id),
   FOREIGN KEY (faculty) REFERENCES faculty(id)
@@ -167,7 +167,7 @@ CREATE TABLE log_usage (
   remark TEXT,
   usageid INT,
   FOREIGN KEY (instrument) REFERENCES instruments(id),
-  FOREIGN KEY (donby) REFERENCES user(id),
+  FOREIGN KEY (donby) REFERENCES members(id),
   FOREIGN KEY (guide) REFERENCES faculty(id)
 );
 
