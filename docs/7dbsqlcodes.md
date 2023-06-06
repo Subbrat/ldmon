@@ -40,6 +40,10 @@
 12. [user verification](#userverification)
 13. [institutions](#institutions)
 
+DROP DATABASE IF EXISTS ldmon;
+CREATE DATABASE ldmon;
+USE ldmon;
+
 CREATE TABLE members (
   id INT AUTO_INCREMENT PRIMARY KEY,
   name VARCHAR(255),
@@ -230,7 +234,9 @@ CREATE TABLE log_fac_cng_iid (
 
 CREATE TABLE iid_pricing (
   id INT AUTO_INCREMENT PRIMARY KEY,
-  price DECIMAL(10, 2)
+  iid INT,
+  price DECIMAL(10, 2),
+  FOREIGN KEY (iid) REFERENCES instruments(id)
 );
 
 CREATE TABLE log_prc_cng (
@@ -289,6 +295,7 @@ CREATE TABLE log_us_ver (
   utype TEXT,
   status INT
 );
+
 
 ---
 
