@@ -290,9 +290,10 @@ CREATE TABLE log_us_ver (
   status INT
 );
 
-
-
 ---
+
+# code used to import db start from here !
+
 DROP DATABASE IF EXISTS ldmon;
 CREATE DATABASE ldmon;
 USE ldmon;
