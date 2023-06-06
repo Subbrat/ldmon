@@ -27,6 +27,7 @@
 | room | room_name or number | VARCHAR |
 | floor | floor number : foreign key from table : floor, ref-id | INT |
 | dept | assigned dept : foreign key from table : department, ref-id | INT |
+<!-- we may add which room has how many tables of which size and room dimensions? -->
 
 ## floor
 | column name | description | datatype |
@@ -88,18 +89,19 @@
 | column name | description | datatype |
 |-------------|-------------|----------|
 | id | unique id / primary key | INT |
-| uinstid | instrument unique id, foreign key from table: UID | INT |
+| uinstid | instrument unique id, foreign key from table, ref-UID | INT |
 | date | date of task | DATE |
 | status | if done/failed/ upcoming | VARCHAR |
 
-## user_verification (3 tables - approved, cancelled, pending)
+## user_verification
 | column name | description | datatype |
 |-------------|-------------|----------|
 | id | unique id / primary key | INT |
 | name | | VARCHAR |
 | email | | VARCHAR |
+| status | Status of verification | int |
 | institute | institute name - fkey from table:inst | VARCHAR |
-| instituteid | foreign key from table:inst | VARCHAR |
+| instituteid | foreign key from table-inst, ref -id | VARCHAR |
 | date | when they applied for verification, date time | DATETIME |
 
 ## institutions
@@ -112,103 +114,103 @@
 
 ## LOG Tables
 
-### Usage Log
+### log_Usage
 | column name | description | data type |
 |-------------|-------------|-----------|
 | id | ID of the usage log | INT |
-| what | Description of the usage | VARCHAR |
+| instrument | uid of the inst, foreign key - UID, ref-id | int |
 | when | Date and time of the usage | DATETIME |
-| by whom | User who performed the usage | INT (foreign key referencing user table) |
-| guide | Student associated with the usage | INT (foreign key referencing user table) |
+| by whom | User who performed the usage, foreign key users, ref-id | INT |
+| guide | Student associated with the usage,  foreign key faculty, ref-id | INT |
 | remark | Additional remarks or comments | TEXT |
 | usageid | ID of the usage record | INT |
 
-### Maintenance Log
+### log_Maintenance
 | column name | description | data type |
 |-------------|-------------|-----------|
 | id | ID of the maintenance log | INT |
-| what | Description of the maintenance | VARCHAR |
+| instrument | uid of the inst, foreign key - UID, ref-id | int |
 | when | Date and time of the maintenance | DATETIME |
-| by whom | User who performed the maintenance | INT (foreign key referencing user table) |
-| status | Status of the maintenance (done/failed/upcoming) | VARCHAR |
+| by whom | User who performed the maintenance | VARCHAR |
+| status | Status of the maintenance (done/failed) | VARCHAR |
 | remark | Additional remarks or comments | TEXT |
 
-### Service Log
+### log_Service
 | column name | description | data type |
 |-------------|-------------|-----------|
 | id | ID of the service log | INT |
-| what | Description of the service | VARCHAR |
+| instrument | uid of the inst, foreign key - UID, ref-id | int |
 | when | Date and time of the service | DATETIME |
 | status | Status of the service | VARCHAR |
 | remark | Additional remarks or comments | TEXT |
 
-### Room Change Log
+### log_Room_Cng
 | column name | description | data type |
 |-------------|-------------|-----------|
 | id | ID of the room change log | INT |
-| what | Description of the room change | VARCHAR |
-| from | Previous room | VARCHAR |
-| to | New room | VARCHAR |
+| instrument | uid of the inst, foreign key - UID, ref-id | int |
+| from | foreign key table- room, reference - id | int |
+| to | foreign key table- room, reference - id | int |
 | remark | Additional remarks or comments | TEXT |
 
-### Faculty Change Log for department
+### log_Fac_Cng_dept
 | column name | description | data type |
 |-------------|-------------|-----------|
 | id | ID of the faculty change log | INT |
-| did | dept id :fkey dept | VARCHAR |
+| depid | dept id :foreign key dept,ref-id | int |
+| when | Date and time of the change | DATETIME |
+| from | dept id :foreign key faculty,ref-id | int |
+| to | dept id :foreign key faculty,ref-id | int |
+| remark | Additional remarks or comments | TEXT |
+
+### log_Fac_Cng_iid
+| column name | description | data type |
+|-------------|-------------|-----------|
+| id | ID of the faculty change log | INT |
+| iid | Instrument id :foreign key iid_basic, ref-id | VARCHAR |
 | when | Date and time of the change | DATETIME |
 | from | Previous value | VARCHAR |
 | to | New value | VARCHAR |
 | remark | Additional remarks or comments | TEXT |
 
-### Faculty Change Log for IID
-| column name | description | data type |
-|-------------|-------------|-----------|
-| id | ID of the faculty change log | INT |
-| iid | Instrument id :fkey iid | VARCHAR |
-| when | Date and time of the change | DATETIME |
-| from | Previous value | VARCHAR |
-| to | New value | VARCHAR |
-| remark | Additional remarks or comments | TEXT |
-
-### Price Change Log
+### log_Prc_Cng
 | column name | description | data type |
 |-------------|-------------|-----------|
 | id | ID of the price change log | INT |
-| iid | Instrument ID | INT (foreign key referencing instruments table) |
-| utype | usertype (foreign key from iid_pricing) |
+| iid | Instrument ID (foreign key table - iid_basic, ref -id)| INT  |
+| utype | usertype (foreign key from iid_pricing, ref- id) |
 | when | Date and time of the change | DATETIME |
 | from | Previous price | DECIMAL |
 | remark | Additional remarks or comments | TEXT |
 
-## transaction
+### log_transaction
 | column name | description | datatype |
 |-------------|-------------|----------|
 | id | unique id/ primary key | INT |
-| account | foreign key from user | INT |
-| type | is that credit or debit | VARCHAR |
+| account | foreign key from user, ref -id  | INT |
+| type | is that credit or debit | int |
 | amount | amount of transaction | DECIMAL |
 
-### Refuel Log (For Fuel)
+### log_Refuel_fuel
 | column name | description | data type |
 |-------------|-------------|-----------|
 | id | ID of the refuel log | INT |
+| fid | Fuel ID (foreign key referencing fuel table, ref - id) | INT |
+| when | Date and time of the refuel | DATETIME |
+| amount | Amount of fuel refueled | DECIMAL |
+| remark | Additional remarks or comments | TEXT |
+
+### log_Refuel_uid
+| column name | description | data type |
+|-------------|-------------|-----------|
+| id | ID of the refuel log | INT |
+| uid | UID (Unique Instrument ID) (foreign key table- ) | INT |
 | fid | Fuel ID | INT (foreign key referencing fuel table) |
 | when | Date and time of the refuel | DATETIME |
 | amount | Amount of fuel refueled | DECIMAL |
 | remark | Additional remarks or comments | TEXT |
 
-### Refuel Log (For UIDS)
-| column name | description | data type |
-|-------------|-------------|-----------|
-| id | ID of the refuel log | INT |
-| uid | UID (Unique Instrument ID) | INT (foreign key referencing instruments table) |
-| fid | Fuel ID | INT (foreign key referencing fuel table) |
-| when | Date and time of the refuel | DATETIME |
-| amount | Amount of fuel refueled | DECIMAL |
-| remark | Additional remarks or comments | TEXT |
-
-### Refuel Log (For IIDS)
+### log_Refuel_iid
 | column name | description | data type |
 |-------------|-------------|-----------|
 | id | ID of the refuel log | INT |
@@ -217,3 +219,11 @@
 | when | Date and time of the refuel | DATETIME |
 | amount | Amount of fuel refueled | DECIMAL |
 | remark | Additional remarks or comments | TEXT |
+
+### log_us_ver
+| column name | description | data type |
+|------------|-------------|-----------|
+| id | ID of the user verification | INT |
+| uname | User name | TEXT |
+| utype | User type | TEXT |
+| status | status | int |
