@@ -63,6 +63,12 @@ CREATE TABLE department (
   FOREIGN KEY (hod) REFERENCES faculty(id)
 );
 
+CREATE TABLE instruments (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  name VARCHAR(255),
+  description VARCHAR(255)
+);
+
 CREATE TABLE rooms (
   id INT AUTO_INCREMENT PRIMARY KEY,
   room VARCHAR(255),
@@ -221,6 +227,11 @@ CREATE TABLE log_fac_cng_iid (
   vto VARCHAR(255),
   remark TEXT,
   FOREIGN KEY (iid) REFERENCES instruments(id)
+);
+
+CREATE TABLE iid_pricing (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  price DECIMAL(10, 2)
 );
 
 CREATE TABLE log_prc_cng (
