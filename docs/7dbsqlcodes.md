@@ -40,7 +40,6 @@
 12. [user verification](#userverification)
 13. [institutions](#institutions)
 
-
 CREATE TABLE members (
   id INT AUTO_INCREMENT PRIMARY KEY,
   name VARCHAR(255),
@@ -118,7 +117,7 @@ CREATE TABLE peripherals (
   name VARCHAR(255),
   description VARCHAR(255),
   quantity INT,
-  use INT,
+  usedfor INT,
   type VARCHAR(255)
 );
 
@@ -290,3 +289,4 @@ CREATE TABLE log_us_ver (
   utype TEXT,
   status INT
 );
+
