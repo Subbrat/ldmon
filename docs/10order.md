@@ -45,7 +45,7 @@
 1. department
 1. company
 1. add_types
-1. category
+1. instrument_category
 1. peripherals
 1. institutions
 1. user_verification
