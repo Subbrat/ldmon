@@ -36,10 +36,6 @@
 11. [maintainance](#maintainance)
 12. [user verification](#userverification)
 13. [institutions](#institutions)
-
-
-
-
 1. floor
 1. rooms
 1. department
@@ -76,3 +72,53 @@
 1. log_refuel_fuel
 1. log_refuel_uid
 1. log_refuel_iid
+
+
+## category 1: Location and Facilities
+1. floor
+2. rooms
+## category 2: Organization and Hierarchy
+3. department
+4. company
+5. faculty
+## category 3: Data Management and Classification
+1. add_types
+2. instrument_category
+3. peripherals
+4. institutions
+## category 4: User Management and Authentication
+1. user_verification
+2. members
+## category 5: Financial Management
+1. funds
+## category 6: Reservations and Bookings
+1. reservation
+## category 7: Basic Instrument Information
+1. iid_basic
+## category 8: Instrument Details and Specifications
+1. instruments
+2. iid_pricing
+3. iid_spec
+4. iid_vic
+5. iid_manual
+## category 9: User Identification and Tracking
+1. uid
+2. uid_ot
+3. uid_dyna
+## category 10: Maintenance and Repairs
+1. maintenance
+2. log_maintenance
+## category 11: Usage Logs and Tracking
+1. log_us_ver
+2. log_usage
+3. log_service
+4. log_room_cng
+5. log_fac_cng_dept
+6. log_fac_cng_iid
+7. log_prc_cng
+8. log_transaction
+## category 12: Fuel and Refueling
+1. refuels
+2. log_refuel_fuel
+3. log_refuel_uid
+4. log_refuel_iid
