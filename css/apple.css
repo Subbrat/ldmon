@@ -1,0 +1,11 @@
+@charset "UTF-8";
+
+#topnav {
+    background-color: rgba(22, 22, 23, 0.8);
+    color: white;
+}
+
+.apple {
+    background-color: rgba(22, 22, 23, 0.8);
+    color: rgb(0, 0, 0);
+}
