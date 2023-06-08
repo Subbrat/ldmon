@@ -1,0 +1,7 @@
+[] layout responsive
+[] header
+    [] icons
+    [] search ajax
+[] sidebar
+[] footer
+
