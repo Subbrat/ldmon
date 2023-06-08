@@ -87,7 +87,7 @@
 3. peripherals
 4. institutions
 ## category 4: User Management and Authentication
-1. user_verification
+1. // user_verification
 2. members
 ## category 5: Financial Management
 1. funds
