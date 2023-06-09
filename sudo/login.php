@@ -8,10 +8,7 @@ if (isset($_SESSION['email'])) {
 
 if (isset($_POST['submitusnm'])) {
     $email = $_POST['email'];
-    $connection = mysqli_connect('localhost', 'root', 'Admin@1234', 'ldmon');
-    if (!$connection) {
-        die("Database connection failed: " . mysqli_connect_error());
-    }
+    include('./../class/conn.php');
     $query = "SELECT * FROM admins WHERE email = '$email'";
     $result = mysqli_query($connection, $query);
     if (mysqli_num_rows($result) > 0) {
@@ -37,8 +34,7 @@ if (isset($_POST['submitusnm'])) {
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Super User Login • Ldmon</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
 </head>
 
@@ -55,22 +51,19 @@ if (isset($_POST['submitusnm'])) {
 
         <form class="mx-auto col-10 col-md-6 col-lg-4 my-4 mb-5" method="POST">
             <div class="input-group mb-3">
-                <input autofocus type="email" class="form-control" name="email" placeholder="Email" aria-label="Email"
-                    aria-describedby="button-addon2" required
-                    value="<?php echo isset($_SESSION['email']) ? $_SESSION['email'] : ''; ?>">
-                <button class="btn btn-outline-secondary border-none border-opacity-50" type="submit" name="submitusnm"
-                    id="button-addon2">
+                <input autofocus type="email" class="form-control" name="email" placeholder="Email" aria-label="Email" aria-describedby="button-addon2" required value="<?php echo isset($_SESSION['email']) ? $_SESSION['email'] : ''; ?>">
+                <button class="btn btn-outline-secondary border-none border-opacity-50" type="submit" name="submitusnm" id="button-addon2">
                     <i class="bi bi-arrow-right-circle"></i>
                 </button>
             </div>
             <?php if (isset($_SESSION['show_warning']) && $_SESSION['show_warning']) { ?>
-            <h6 class="text-danger">Invalid eMail id</h6>
-            <script>
-            // Remove the warning message after 3 seconds
-            setTimeout(function() {
-                document.querySelector('.text-danger').remove();
-            }, 3000);
-            </script>
+                <h6 class="text-danger">Invalid eMail id</h6>
+                <script>
+                    // Remove the warning message after 3 seconds
+                    setTimeout(function() {
+                        document.querySelector('.text-danger').remove();
+                    }, 3000);
+                </script>
             <?php
                 // Reset the session variable
                 $_SESSION['show_warning'] = false;

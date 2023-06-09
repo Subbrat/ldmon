@@ -25,7 +25,7 @@ if (isset($_SESSION['verified'])) {
             </tr>
         </thead>
     </table>
-    <a href="./../logout">Logout</a>
+    <a href="logout.php">Logout</a>
 </body>
 
 </html>
@@ -34,7 +34,7 @@ if (isset($_SESSION['verified'])) {
     // Session does not exist, navigate to index page
     $_SESSION = array();
     session_destroy();
-    header("Location: ./../../index");
+    header("Location:./../login");
     exit;
 }
 ?>
