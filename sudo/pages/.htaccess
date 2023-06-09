@@ -1,0 +1,10 @@
+RewriteEngine On
+RewriteBase /ldmon/sudo/pages/
+
+# Check if session exists
+RewriteCond %{HTTP_COOKIE} !PHPSESSID= [NC]
+RewriteRule ^ /ldmon/sudo/cookie.php [L]
+
+# Allow specific files to be accessed without session (e.g., login.php)
+RewriteCond %{REQUEST_URI} !^/ldmon/sudo/login.php [NC]
+RewriteRule ^ - [L]
