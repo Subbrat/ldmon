@@ -30,7 +30,8 @@ CREATE TABLE rooms (
 );
 CREATE TABLE floor (
   id INT AUTO_INCREMENT PRIMARY KEY,
-  floor_name VARCHAR(255)
+  floor_name VARCHAR(255),
+  location VARCHAR (255) NULL
 );
 CREATE TABLE faculty (
   id INT AUTO_INCREMENT PRIMARY KEY,
@@ -336,3 +337,4 @@ ALTER TABLE iid_manual ADD FOREIGN KEY (instrument) REFERENCES iid_basic(id);
 ALTER TABLE uid ADD FOREIGN KEY (instrument) REFERENCES iid_basic(id);
 ALTER TABLE uid_ot ADD FOREIGN KEY (instrument_u) REFERENCES uid(id);
 ALTER TABLE uid_dyna ADD FOREIGN KEY (instrument_u) REFERENCES uid(id);
+ALTER TABLE uid_ot ADD FOREIGN KEY (floor) REFERENCES floor(id);
