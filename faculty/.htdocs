@@ -1,0 +1,6 @@
+RewriteEngine On
+RewriteBase /ldmon/faculty/
+
+# Check if session exists
+RewriteCond %{HTTP_COOKIE} !PHPSESSID= [NC]
+RewriteRule ^ - [F]
