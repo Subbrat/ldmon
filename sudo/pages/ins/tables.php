@@ -1,30 +1,8 @@
 <head>
-
     <style>
-    body {
-        min-height: 100%;
-    }
-
-    #main {
-        padding-top: 5%;
-    }
-
-    @media (min-width:993px) {
-        #main {
-            margin-left: 310px;
+        .s_table {
+            width: 50%;
         }
-    }
-
-    @media (max-width:993px) {
-        #main {
-            margin-left: 0px;
-        }
-    }
-
-    /* table  */
-    .s_table {
-        width: 50%;
-    }
     </style>
 </head>
 
