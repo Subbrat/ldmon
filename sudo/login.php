@@ -6,7 +6,7 @@ if (isset($_SESSION['email'])) {
 }
 if (isset($_POST['submitusnm'])) {
     $email = $_POST['email'];
-    include('./class/conn.php');
+    include('./../class/conn.php');
     $query = "SELECT * FROM admins WHERE email = '$email'";
     $result = mysqli_query($connection, $query);
     if (mysqli_num_rows($result) > 0) {
@@ -25,6 +25,7 @@ if (isset($_POST['submitusnm'])) {
 }
 ?>
 <!DOCTYPE html>
+<?php include('./../class/com.php'); ?>
 
 <body class="">
     <main class="container my-5 py-5">
