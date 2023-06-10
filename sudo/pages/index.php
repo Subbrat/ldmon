@@ -21,7 +21,7 @@ if (isset($_SESSION['verified'])) {
         <?php include('./includes/header.php'); ?>
         <?php include('./includes/sidebar.php'); ?>
         <div id="main" class="s-red">
-            content starts fom here
+            content goes fom here
         </div>
     </body>
 
