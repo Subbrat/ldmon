@@ -1,35 +1,35 @@
 <head>
 
     <style>
-        body {
-            min-height: 100%;
-        }
+    body {
+        min-height: 100%;
+    }
 
+    #main {
+        padding-top: 5%;
+    }
+
+    @media (min-width:993px) {
         #main {
-            padding-top: 5%;
+            margin-left: 310px;
         }
+    }
 
-        @media (min-width:993px) {
-            #main {
-                margin-left: 310px;
-            }
+    @media (max-width:993px) {
+        #main {
+            margin-left: 0px;
         }
+    }
 
-        @media (max-width:993px) {
-            #main {
-                margin-left: 0px;
-            }
-        }
-
-        /* table  */
-        .s_table {
-            width: 50%;
-        }
+    /* table  */
+    .s_table {
+        width: 50%;
+    }
     </style>
 </head>
 
 <body>
-    <div id="main" class="s-grey s-card-2 s-center">
+    <div id="main" class="s-grey s-card-4 s-center">
         <!--  -->
         <table class="s-table-all s-card-4 s_table ">
             <tr>
