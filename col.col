@@ -1,0 +1,26 @@
+1. Header/Footer:
+   - Background: #1D3557 (Dark Blue)
+   - Text: #F1FAEE (Off-White)
+
+2. Navigation Menu:
+   - Background: #F1FAEE (Off-White)
+   - Text: #1D3557 (Dark Blue)
+   - Active Item: #A8DADC (Light Blue)
+
+3. Main Content Area:
+   - Background: #F1FAEE (Off-White)
+   - Text: #1D3557 (Dark Blue)
+   - Accent Color for Buttons, Links, and Highlighted Elements: #A8DADC (Light Blue)
+
+4. Sidebar/Widgets:
+   - Background: #F1FAEE (Off-White)
+   - Text: #1D3557 (Dark Blue)
+   - Accent Color for Buttons, Links, and Highlighted Elements: #A8DADC (Light Blue)
+
+5. Call-to-Action Buttons:
+   - Background: #A8DADC (Light Blue)
+   - Text: #F1FAEE (Off-White)
+
+6. Overlay or Modal Windows:
+   - Background: rgba(22, 22, 23, 0.8) (Dark Gray with 80% Opacity)
+   - Text: #F1FAEE (Off-White)
