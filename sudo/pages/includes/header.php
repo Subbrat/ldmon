@@ -1,3 +1,19 @@
+<head>
+    <style>
+        @charset "UTF-8";
+
+        #topnav {
+            background-color: rgba(22, 22, 23, 0.8);
+            color: white;
+        }
+
+        .apple {
+            background-color: rgba(22, 22, 23, 0.8);
+            color: rgb(0, 0, 0);
+        }
+    </style>
+</head>
+
 <body>
     <div class="s-bar s-top s-large" id="topnav" style="z-index:4">
         <button class="s-bar-item s-button s-hide-large s-hover-none s-hover-text-light-grey" onclick="w3_open();"><i class="fa fa-bars"></i></button>
