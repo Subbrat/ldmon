@@ -1,11 +1,10 @@
 <head>
-
 </head>
 <nav class="s-sidebar s-card-4 s-collapse s-grey s-animate-left" style="z-index:3;width:300px;" id="mySidebar">
     <br>
     <div class="s-container s-row">
         <div class="s-col s4">
-            <img src="./avatar.png" class="s-circle s-margin-right" style="width:50px">
+            <img src="./includes/avatar.png" class="s-circle s-margin-right" style="width:50px">
         </div>
         <div class="s-col s8 s-bar">
             <span>Welcome, <strong>$session_user</strong></span><br>
