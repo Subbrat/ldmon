@@ -338,7 +338,7 @@ ALTER TABLE uid ADD FOREIGN KEY (instrument) REFERENCES iid_basic(id);
 ALTER TABLE uid_ot ADD FOREIGN KEY (instrument_u) REFERENCES uid(id);
 ALTER TABLE uid_dyna ADD FOREIGN KEY (instrument_u) REFERENCES uid(id);
 ALTER TABLE uid_ot ADD FOREIGN KEY (floor) REFERENCES floor(id);
--- initial import -- 
+-- initial import --
 ALTER TABLE user_verification ADD FOREIGN KEY (instituteid) REFERENCES institutions(id);
 CREATE TABLE admins(
 id INT(11) AUTO_INCREMENT PRIMARY KEY,
@@ -351,3 +351,5 @@ USE ldmon;
 INSERT INTO admins (name,password,email,status)
 VALUES ('subbrat','ap','subbrat@sub.sub','1');
 
+ALTER TABLE `admins`
+ADD UNIQUE `email` (`email`);
