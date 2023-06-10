@@ -27,22 +27,16 @@ if (isset($_POST['submitpwd'])) {
     mysqli_close($connection);
 }
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Login</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
     <style>
-        .text-danger {
-            color: #dc3545;
-            font-size: 0.9rem;
-            margin-top: 10px;
-        }
+    .text-danger {
+        color: #dc3545;
+        font-size: 0.9rem;
+        margin-top: 10px;
+    }
     </style>
 </head>
 
@@ -54,19 +48,21 @@ if (isset($_POST['submitpwd'])) {
         </div>
         <form class="mx-auto col-10 col-md-6 col-lg-4 my-4 mb-5" method="POST">
             <div class="input-group mb-3">
-                <input type="password" autofocus class="form-control" name="password" placeholder="Password" aria-label="Password" aria-describedby="button-addon2" required>
-                <button class="btn btn-outline-secondary border-none border-opacity-50" type="submit" name="submitpwd" id="button-addon2">
+                <input type="password" autofocus class="form-control" name="password" placeholder="Password"
+                    aria-label="Password" aria-describedby="button-addon2" required>
+                <button class="btn btn-outline-secondary border-none border-opacity-50" type="submit" name="submitpwd"
+                    id="button-addon2">
                     <i class="bi bi-arrow-right-circle"></i>
                 </button>
             </div>
             <?php if (isset($_SESSION['show_warning']) && $_SESSION['show_warning']) { ?>
-                <p class="text-danger">Invalid password. Please try again.</p>
-                <script>
-                    // Remove the warning message after 3 seconds
-                    setTimeout(function() {
-                        document.querySelector('.text-danger').remove();
-                    }, 3000);
-                </script>
+            <p class="text-danger">Invalid password. Please try again.</p>
+            <script>
+            // Remove the warning message after 3 seconds
+            setTimeout(function() {
+                document.querySelector('.text-danger').remove();
+            }, 3000);
+            </script>
             <?php
                 unset($_SESSION['show_warning']);
             } ?>
