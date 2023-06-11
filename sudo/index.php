@@ -5,10 +5,10 @@ if (isset($_SESSION['verified'])) {
 ?>
     <!DOCTYPE html>
     <html>
-    <?php include('./../../class/com.php'); ?>
+    <?php include('./../class/com.php'); ?>
 
     <head>
-        <link rel="stylesheet" href="./../../class/css/s6css.css">
+        <link rel="stylesheet" href="./../class/css/s6css.css">
         <link rel="stylesheet" href="./css/base.css">
         <style>
             body {
