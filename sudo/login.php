@@ -14,12 +14,10 @@ if (isset($_POST['submitusnm'])) {
         header("Location: enterpwd");
         exit;
     } else {
-        // Set a session variable to indicate the existence of the warning
         $_SESSION['show_warning'] = true;
     }
     mysqli_close($connection);
 } else {
-    // Clear the session variables related to email and warning when page is refreshed
     unset($_SESSION['email']);
     unset($_SESSION['show_warning']);
 }
@@ -33,7 +31,6 @@ if (isset($_POST['submitusnm'])) {
             <img width="100px" src="./assets/icloud.png" />
             <h3 class="fw-normal">
                 Enter Email
-                <!-- Add the warning message placeholder here -->
             </h3>
         </div>
         <form class="mx-auto col-10 col-md-6 col-lg-4 my-4 mb-5" method="POST">
@@ -46,13 +43,11 @@ if (isset($_POST['submitusnm'])) {
             <?php if (isset($_SESSION['show_warning']) && $_SESSION['show_warning']) { ?>
                 <h6 class="text-danger">Invalid eMail id</h6>
                 <script>
-                    // Remove the warning message after 3 seconds
                     setTimeout(function() {
                         document.querySelector('.text-danger').remove();
                     }, 3000);
                 </script>
             <?php
-                // Reset the session variable
                 $_SESSION['show_warning'] = false;
             } ?>
         </form>
