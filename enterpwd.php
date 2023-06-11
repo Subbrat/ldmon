@@ -1,7 +1,7 @@
 <?php
 session_start();
 if (isset($_SESSION['verified'])) {
-    header("Location: ./pages/");
+    header("Location: ./sudo/");
     exit;
 }
 if (!isset($_SESSION['email']) || time() >= $_SESSION['expires']) {
@@ -23,7 +23,7 @@ if (isset($_POST['submitpwd'])) {
         $_SESSION['verified'] = true;
         $_SESSION['expires'] = time() + 60; // Refresh session expiration to 1 minute
         $_SESSION['last_activity'] = time(); // Set the last activity time
-        header("Location: ./pages/");
+        header("Location: ./sudo/");
         exit;
     } else {
         $_SESSION['show_warning'] = true;
@@ -33,7 +33,7 @@ if (isset($_POST['submitpwd'])) {
 ?>
 <!DOCTYPE html>
 <html lang="en">
-<?php include('./../class/com.php'); ?>
+<?php include('./class/com.php'); ?>
 
 <head>
     <style>
