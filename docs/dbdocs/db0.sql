@@ -343,7 +343,7 @@ ALTER TABLE user_verification ADD FOREIGN KEY (instituteid) REFERENCES instituti
 DROP TABLE IF EXISTS admins;
 CREATE TABLE admins(
 id INT(11) AUTO_INCREMENT PRIMARY KEY,
-name VARCHAR (255),
+name VARCHAR (255),	
 password VARCHAR (255),
 email VARCHAR (255),
 status TINYINT(1),
