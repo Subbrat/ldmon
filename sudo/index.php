@@ -17,10 +17,10 @@ if (isset($_SESSION['verified'])) {
         </style>
     </head>
 
-    <body class="s-grey s-pink">
+    <body class="s-grey">
         <?php include('./includes/header.php'); ?>
         <?php include('./includes/sidebar.php'); ?>
-        <div id="main" class="s-red">
+        <div id="main" class="s-light-grey">
             content goes fom here
         </div>
     </body>
