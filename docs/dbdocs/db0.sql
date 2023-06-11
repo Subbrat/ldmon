@@ -340,16 +340,18 @@ ALTER TABLE uid_dyna ADD FOREIGN KEY (instrument_u) REFERENCES uid(id);
 ALTER TABLE uid_ot ADD FOREIGN KEY (floor) REFERENCES floor(id);
 -- initial import --
 ALTER TABLE user_verification ADD FOREIGN KEY (instituteid) REFERENCES institutions(id);
+DROP TABLE IF EXISTS admins;
 CREATE TABLE admins(
 id INT(11) AUTO_INCREMENT PRIMARY KEY,
 name VARCHAR (255),
 password VARCHAR (255),
 email VARCHAR (255),
-status TINYINT(1)
+status TINYINT(1),
+type INT (10) COMMENT '1-sudo, 2-faculty, 3-user, 4-maintainance'
 );
-USE ldmon;
-INSERT INTO admins (name,password,email,status)
-VALUES ('subbrat','ap','subbrat@sub.sub','1');
-
 ALTER TABLE `admins`
 ADD UNIQUE `email` (`email`);
+INSERT INTO admins (name,password,email,status,type)
+VALUES ('s','ap','a@p.p','1','1');
+
+select * from admins
