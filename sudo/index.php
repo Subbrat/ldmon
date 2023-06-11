@@ -28,7 +28,6 @@ if (isset($_SESSION['verified'])) {
 </html>
 <?php
 } else {
-    // Session does not exist, navigate to index page
     $_SESSION = array();
     session_destroy();
     header("Location:./../login");
