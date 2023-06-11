@@ -1,0 +1,17 @@
+@charset "UTF-8";
+
+body {
+    min-height: 100%;
+}
+
+@media (min-width:993px) {
+    #main {
+        margin-left: 310px;
+    }
+}
+
+@media (max-width:993px) {
+    #main {
+        margin-left: 0px;
+    }
+}
