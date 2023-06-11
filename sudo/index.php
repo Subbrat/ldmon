@@ -1,23 +1,37 @@
 <?php
 session_start();
+if (isset($_SESSION['verified'])) {
+    // Session exists, display the HTML table contents
+?>
+    <!DOCTYPE html>
+    <html>
+    <?php include('./../../class/com.php'); ?>
 
-// Check if the session exists and is not expired
-if (isset($_SESSION['name']) && time() < $_SESSION['expires']) {
-    // Check for inactivity duration
-    $inactiveDuration = 60; // Set the desired inactivity duration in seconds (1 minute in this case)
-    $lastActivity = isset($_SESSION['last_activity']) ? $_SESSION['last_activity'] : 0;
-    if (time() - $lastActivity > $inactiveDuration) {
-        // Inactivity duration exceeded, destroy the session and navigate to login.php
-        session_unset();
-        session_destroy();
-        header("Location: login");
-        exit;
-    }
-    $_SESSION['last_activity'] = time(); // Update the last activity time
-    // Session exists and is not expired, navigate to page.php
-    header("Location: ./pages/");
+    <head>
+        <link rel="stylesheet" href="./../../class/css/s6css.css">
+        <link rel="stylesheet" href="./css/base.css">
+        <style>
+            body {
+                padding-top: 10px;
+            }
+        </style>
+    </head>
+
+    <body class="s-grey s-pink">
+        <?php include('./includes/header.php'); ?>
+        <?php include('./includes/sidebar.php'); ?>
+        <div id="main" class="s-red">
+            content goes fom here
+        </div>
+    </body>
+
+    </html>
+<?php
 } else {
-    // Session does not exist or is expired, navigate to login.php
-    header("Location: login");
+    // Session does not exist, navigate to index page
+    $_SESSION = array();
+    session_destroy();
+    header("Location:./../login");
+    exit;
 }
-exit;
+?>

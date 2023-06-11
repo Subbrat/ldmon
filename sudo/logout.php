@@ -9,5 +9,5 @@ $_SESSION = array();
 session_destroy();
 
 // Redirect to the index page or any other page you desire
-header("Location: index");
+header("Location: ./index");
 exit;
