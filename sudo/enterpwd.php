@@ -4,7 +4,9 @@ if (isset($_SESSION['verified'])) {
     header("Location: ./pages/");
     exit;
 }
-if (!isset($_SESSION['email'])) {
+if (!isset($_SESSION['email']) || time() >= $_SESSION['expires']) {
+    session_unset(); // Clear all session variables
+    session_destroy(); // Destroy the session
     header("Location: login");
     exit;
 }
@@ -19,6 +21,8 @@ if (isset($_POST['submitpwd'])) {
     $result = mysqli_query($connection, $query);
     if (mysqli_num_rows($result) > 0) {
         $_SESSION['verified'] = true;
+        $_SESSION['expires'] = time() + 60; // Refresh session expiration to 1 minute
+        $_SESSION['last_activity'] = time(); // Set the last activity time
         header("Location: ./pages/");
         exit;
     } else {
