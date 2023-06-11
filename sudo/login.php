@@ -11,7 +11,7 @@ if (isset($_POST['submitusnm'])) {
     $result = mysqli_query($connection, $query);
     if (mysqli_num_rows($result) > 0) {
         $_SESSION['email'] = $email;
-        $_SESSION['expires'] = time() + 1 * 2;
+        $_SESSION['expires'] = time() + 60;
         header("Location: enterpwd");
         exit;
     } else {
