@@ -11,7 +11,8 @@ if (isset($_POST['submitusnm'])) {
     $result = mysqli_query($connection, $query);
     if (mysqli_num_rows($result) > 0) {
         $_SESSION['email'] = $email;
-        $_SESSION['expires'] = time() + 1 * 2;
+        $_SESSION['expires'] = time() + 10; // Set session expiration to 1 minute
+        $_SESSION['last_activity'] = time(); // Set the last activity time
         header("Location: enterpwd");
         exit;
     } else {
