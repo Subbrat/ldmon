@@ -352,6 +352,6 @@ type INT (10) COMMENT '1-sudo, 2-faculty, 3-user, 4-maintainance'
 ALTER TABLE `admins`
 ADD UNIQUE `email` (`email`);
 INSERT INTO admins (name,password,email,status,type)
-VALUES ('s','ap','a@p.p','1','1');
+VALUES ('s','ap','a@p','1','1');
 
 select * from admins
