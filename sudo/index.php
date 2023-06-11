@@ -1,12 +1,12 @@
 <?php
 session_start();
 
-// Check if the session exists
-if (isset($_SESSION['name'])) {
-    // Session exists, navigate to page.php
+// Check if the session exists and is not expired
+if (isset($_SESSION['name']) && time() < $_SESSION['expires']) {
+    // Session exists and is not expired, navigate to page.php
     header("Location: ./pages/");
 } else {
-    // Session does not exist, navigate to login.php
+    // Session does not exist or is expired, navigate to login.php
     header("Location: login");
 }
 exit;
