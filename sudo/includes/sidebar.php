@@ -15,7 +15,6 @@
         some text
     </div>
     <hr>
-    <!-- sidebar  -->
     <div class="s-bar-block s-light-grey">
         <a href=" #" class="s-bar-item s-button">Link 1</a>
         <div class="s-dropdown-hover">
@@ -37,7 +36,6 @@
             </div>
         </div>
     </div>
-    <!--  -->
     <script>
         var mySidebar = document.getElementById("mySidebar");
         var overlayBg = document.getElementById("myOverlay");
