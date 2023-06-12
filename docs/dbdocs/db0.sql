@@ -357,6 +357,7 @@ INSERT INTO access (name,password,email,status,type)
 VALUES ('a','sp','s@p','1','2');
 
 -- logs --
+
 CREATE TABLE accesslog (
   id INT AUTO_INCREMENT PRIMARY KEY,
   user_id VARCHAR(50),
