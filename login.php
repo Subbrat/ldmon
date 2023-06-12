@@ -7,7 +7,7 @@ if (isset($_SESSION['email'])) {
 if (isset($_POST['submitusnm'])) {
     $email = $_POST['email'];
     include('./class/conn.php');
-    $query = "SELECT * FROM admins WHERE email = '$email'";
+    $query = "SELECT * FROM access WHERE email = '$email'";
     $result = mysqli_query($connection, $query);
     if (mysqli_num_rows($result) > 0) {
         $_SESSION['email'] = $email;
