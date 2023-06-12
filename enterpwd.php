@@ -23,6 +23,10 @@ if (isset($_POST['submitpwd'])) {
         $_SESSION['verified'] = true;
         $_SESSION['expires'] = time() + 60; // Refresh session expiration to 1 minute
         $_SESSION['last_activity'] = time(); // Set the last activity time
+
+        $loginTime = date('Y-m-d H:i:s');
+        $insertLoginQuery = "INSERT INTO accesslog (user_id, login_time) VALUES ('$email', '$loginTime')";
+        mysqli_query($connection, $insertLoginQuery);
         header("Location: ./sudo/");
         exit;
     } else {
