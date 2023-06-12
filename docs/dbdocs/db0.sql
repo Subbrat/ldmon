@@ -355,4 +355,12 @@ INSERT INTO access (name,password,email,status,type)
 VALUES ('s','ap','a@p','1','1');
 INSERT INTO access (name,password,email,status,type)
 VALUES ('a','sp','s@p','1','2');
-select * from access
+
+-- logs --
+CREATE TABLE accesslog (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  user_id VARCHAR(50),
+  login_time DATETIME,
+  logout_time DATETIME
+);
+select * from accesslog
