@@ -2,7 +2,7 @@
 session_start();
 // Retrieve the email from the session
 $email = $_SESSION['email'];
-// Retrieve the current time
+date_default_timezone_set('Asia/Kolkata');
 $logoutTime = date('Y-m-d H:i:s');
 // Update the logout time in the accesslog table
 $connection = mysqli_connect('localhost', 'root', 'Admin@1234', 'ldmon');

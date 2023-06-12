@@ -24,6 +24,7 @@ if (isset($_POST['submitpwd'])) {
         $_SESSION['expires'] = time() + 60; // Refresh session expiration to 1 minute
         $_SESSION['last_activity'] = time(); // Set the last activity time
         // Insert login record into accesslog table
+        date_default_timezone_set('Asia/Kolkata');
         $loginTime = date('Y-m-d H:i:s'); // Current time
         $insertLoginQuery = "INSERT INTO accesslog (user_id, login_time) VALUES ('$email', '$loginTime')";
         mysqli_query($connection, $insertLoginQuery);
