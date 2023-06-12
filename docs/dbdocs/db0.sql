@@ -341,17 +341,25 @@ ALTER TABLE uid_ot ADD FOREIGN KEY (floor) REFERENCES floor(id);
 -- initial import --
 ALTER TABLE user_verification ADD FOREIGN KEY (instituteid) REFERENCES institutions(id);
 DROP TABLE IF EXISTS admins;
-CREATE TABLE admins(
+CREATE TABLE access(
 id INT(11) AUTO_INCREMENT PRIMARY KEY,
-name VARCHAR (255),
+name VARCHAR (255),	
 password VARCHAR (255),
 email VARCHAR (255),
 status TINYINT(1),
 type INT (10) COMMENT '1-sudo, 2-faculty, 3-user, 4-maintainance'
 );
-ALTER TABLE `admins`
+ALTER TABLE `access`
 ADD UNIQUE `email` (`email`);
-INSERT INTO admins (name,password,email,status,type)
+INSERT INTO access (name,password,email,status,type)
 VALUES ('s','ap','a@p','1','1');
-
-select * from admins
+INSERT INTO access (name,password,email,status,type)
+VALUES ('a','sp','s@p','1','2');
+-- logs --
+CREATE TABLE accesslog (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  user_id VARCHAR(50),
+  login_time DATETIME,
+  logout_time DATETIME
+);
+select * from accesslog
