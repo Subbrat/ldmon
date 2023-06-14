@@ -8,13 +8,11 @@ if (isset($_SESSION['verified'])) {
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $floorName = $_POST["floorName"];
         $location = $_POST["location"];
-        // Check if the floor name already exists
         $checkQuery = "SELECT * FROM floor WHERE floor_name = '$floorName'";
         $checkResult = $connection->query($checkQuery);
         if ($checkResult->num_rows > 0) {
-            $errorMessage = "Floor name already exists. Please enter a unique floor name.";
+            $errorMessage = "Floor already exists.";
         } else {
-            // Insert the new floor data into the table
             $insertQuery = "INSERT INTO floor (floor_name, location) VALUES ('$floorName', ";
             if (!empty($location)) {
                 $insertQuery .= "'$location')";
@@ -22,8 +20,7 @@ if (isset($_SESSION['verified'])) {
                 $insertQuery .= "NULL)";
             }
             if ($connection->query($insertQuery) === true) {
-                $successMessage = "Floor data added successfully.";
-                // Clear form fields after successful submission
+                $successMessage = "Floor added successfully.";
                 $floorName = "";
                 $location = "";
                 echo '<script>
