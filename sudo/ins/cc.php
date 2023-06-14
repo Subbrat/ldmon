@@ -7,44 +7,56 @@ $result = mysqli_query($connection, $query);
 <html>
 
 <head>
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.11.3/css/dataTables.bootstrap5.min.css" />
+    <style>
+    body {
+        background-color: #f2f2f2;
+        padding: 20px;
+    }
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
-    <script src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
-    <script src="https://cdn.datatables.net/1.10.12/js/dataTables.bootstrap.min.js"></script>
-    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.12/css/dataTables.bootstrap.min.css" />
+    .container {
+        background-color: #fff;
+        border-radius: 5px;
+        padding: 20px;
+    }
+    </style>
 </head>
 
 <body>
     <div class="container">
-        <br />
         <div class="table-responsive">
             <table id="employee_data" class="table table-striped table-bordered">
                 <thead>
                     <tr>
-                        <th>slno</th>
-                        <th>floor</th>
-                        <th>location</th>
+                        <th>Sl. No.</th>
+                        <th>Floor</th>
+                        <th>Location</th>
+                    </tr>
                 </thead>
-                <?php
-                while ($row = mysqli_fetch_array($result)) {
-                    echo '
-                               <tr>
-                                    <td>' . $row["id"] . '</td>
-                                    <td>' . $row["floor_name"] . '</td>
-                                    <td>' . $row["location"] . '</td>
-                               </tr>
-                               ';
-                }
-                ?>
+                <tbody>
+                    <?php
+                    while ($row = mysqli_fetch_array($result)) {
+                        echo '
+                        <tr>
+                            <td>' . $row["id"] . '</td>
+                            <td>' . $row["floor_name"] . '</td>
+                            <td>' . $row["location"] . '</td>
+                        </tr>';
+                    }
+                    ?>
+                </tbody>
             </table>
         </div>
     </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.11.3/js/dataTables.bootstrap5.min.js"></script>
+    <script>
+    $(document).ready(function() {
+        $('#employee_data').DataTable();
+    });
+    </script>
 </body>
 
 </html>
-<script>
-$(document).ready(function() {
-    $('#employee_data').DataTable();
-});
-</script>
