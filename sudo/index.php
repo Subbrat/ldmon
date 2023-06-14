@@ -23,7 +23,7 @@
             <!--  -->
             <?php include('./ins/floor.php'); ?>
             <!--  -->
-            <? //php include('./ins/tables.php'); 
+            <? //php include('./ins/tables.php');
                 ?>
         </div>
         <?php include('./includes/footer.php'); ?>
