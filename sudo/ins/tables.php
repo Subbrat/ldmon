@@ -1,41 +1,41 @@
 <head>
     <style>
-        .s_table {
-            width: 70%;
-        }
+    .s_table {
+        width: 70%;
+    }
 
-        /* Custom Table Styles */
-        .custom-table {
-            border-collapse: collapse;
-            width: 70%;
-        }
+    /* Custom Table Styles */
+    .custom-table {
+        border-collapse: collapse;
+        width: 70%;
+    }
 
-        .custom-table th,
-        .custom-table td {
-            border: 1px solid #ddd;
-            padding: 3px;
-            text-align: left;
-        }
+    .custom-table th,
+    .custom-table td {
+        border: 1px solid #ddd;
+        padding: 3px;
+        text-align: left;
+    }
 
-        .custom-table th {
-            background-color: #4287f5;
-            color: #fff;
-        }
+    .custom-table th {
+        background-color: #4287f5;
+        color: #fff;
+    }
 
-        .custom-table-striped tbody tr:nth-child(even) {
-            background-color: #f2f2f2;
-        }
+    .custom-table-striped tbody tr:nth-child(even) {
+        background-color: #f2f2f2;
+    }
 
-        .custom-btn {
-            padding: 3px 6px;
-            text-decoration: none;
-        }
+    .custom-btn {
+        padding: 3px 6px;
+        text-decoration: none;
+    }
 
-        .custom-checkbox {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
+    .custom-checkbox {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
     </style>
 </head>
 
