@@ -22,12 +22,24 @@ if (isset($_SESSION['verified'])) {
                 $insertQuery .= "NULL)";
             }
             if ($connection->query($insertQuery) === true) {
-                echo "<p class='success-message'>Floor data added successfully.</p>";
+                $successMessage = "Floor data added successfully.";
                 // Clear form fields after successful submission
                 $floorName = "";
                 $location = "";
+                echo '<script>
+        setTimeout(function() {
+            document.getElementById("floorName").value = "";
+            document.getElementById("location").value = "";
+            document.getElementsByClassName("success-message")[0].style.display = "none";
+        }, 3000);
+    </script>';
             } else {
                 $errorMessage = "Error: " . $connection->error;
+                echo '<script>
+        setTimeout(function() {
+            document.getElementById("errorMessage").style.display = "none";
+        }, 3000);
+    </script>';
             }
         }
     } else {
@@ -94,9 +106,21 @@ $result = mysqli_query($connection, $query);
                     <label for="location">Location:</label>
                     <input type="text" name="location" value="<?php echo $location; ?>" autocomplete="off">
                     <button type="submit" class="s-btn s-round-large button">Add Floor</button>
-                </form>
-                <?php if (!empty($errorMessage)) : ?>
-                <div class="alert alert-danger mt-3"><?php echo $errorMessage; ?></div>
+                </form> <?php if (!empty($errorMessage)) : ?>
+                <div class="alert alert-danger mt-3" id="errorMessage"><?php echo $errorMessage; ?></div>
+                <script>
+                setTimeout(function() {
+                    document.getElementById('errorMessage').remove();
+                }, 3000);
+                </script>
+                <?php endif; ?>
+                <?php if (!empty($successMessage)) : ?>
+                <div class="alert alert-success mt-3" id="successMessage"><?php echo $successMessage; ?></div>
+                <script>
+                setTimeout(function() {
+                    document.getElementById('successMessage').remove();
+                }, 3000);
+                </script>
                 <?php endif; ?>
                 <div class="table-responsive mt-4">
                     <table id="employee_data" class="table table-striped table-bordered">
