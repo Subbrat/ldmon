@@ -54,7 +54,9 @@ $result = mysqli_query($connection, $query);
     <script src="https://cdn.datatables.net/1.11.3/js/dataTables.bootstrap5.min.js"></script>
     <script>
     $(document).ready(function() {
-        $('#employee_data').DataTable();
+        $('#employee_data').DataTable({
+            "pageLength": 5
+        });
     });
     </script>
 </body>

@@ -22,9 +22,12 @@
         <div id="main" class="s-light-grey">
             <!--  -->
             <div style="height:70px;" class=""></div>
-            <?php include('./ins/floor.php'); ?>
+            <?php include('./ins/cw.php');
+                ?>
+            <? //php include('./ins/cc.php');
+                ?>
             <!--  -->
-            <?php //include('./ins/tables.php');
+            <? //php include('./ins/floor.php');
                 // include('./ins/cc.php');
                 ?>
         </div>
