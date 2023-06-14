@@ -5,7 +5,11 @@
     #footbar {
         background-color: rgba(22, 22, 23, 0.8);
         color: white;
-        padding: 0px 13px
+        padding: 0px 13px;
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        width: 100%;
     }
     </style>
 </head>
