@@ -1,5 +1,5 @@
 <?php
-//session_start();
+// session_start();
 if (isset($_SESSION['verified'])) {
     include('./../class/conn.php');
     $floorName = "";
@@ -31,7 +31,6 @@ if (isset($_SESSION['verified'])) {
             }
         }
     } else {
-        // Reset variables when the page is loaded without form submission
         $floorName = "";
         $location = "";
         $errorMessage = "";
@@ -40,26 +39,9 @@ if (isset($_SESSION['verified'])) {
 ?>
 
 <head>
-    <?php
-    $query = "SELECT * FROM floor ORDER BY ID DESC";
-    $result = mysqli_query($connection, $query);
-    ?>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
-    <script src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
-    <script src="https://cdn.datatables.net/1.10.12/js/dataTables.bootstrap.min.js"></script>
-    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.12/css/dataTables.bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.11.3/css/dataTables.bootstrap5.min.css">
     <style>
-    .error-message {
-        color: red;
-        font-weight: bold;
-    }
-
-    .success-message {
-        color: green;
-        font-weight: bold;
-    }
-
     input[type=text] {
         width: 350px;
         padding: 4px 7px;
@@ -96,54 +78,62 @@ if (isset($_SESSION['verified'])) {
     }
     </style>
 </head>
+<?php
+$query = "SELECT * FROM floor ORDER BY ID DESC";
+$result = mysqli_query($connection, $query);
+?>
 
 <body>
-    <div class="s-margin s-padding s-border">
-        <form method="POST">
-            <label class=" catlabel">floor</label><br>
-            <label for="floorName">Floor Name:</label>
-            <input type="text" name="floorName" value="<?php echo $floorName; ?>" autocomplete="off" required>
-            <label for="location">Location:</label>
-            <input type="text" name="location" value="<?php echo $location; ?>" autocomplete="off">
-            <button type="submit" class="s-btn s-round-large button">Add Floor</button>
-        </form>
-        <div id="" class="">
-            <div class="container">
-                <div class="table-responsive">
+    <div class="s-border s-red" id="">
+        <div class="card">
+            <div class="card-body">
+                <form method="POST">
+                    <label class=" catlabel">floor</label><br>
+                    <label for="floorName">Floor Name:</label>
+                    <input type="text" name="floorName" value="<?php echo $floorName; ?>" autocomplete="off" required>
+                    <label for="location">Location:</label>
+                    <input type="text" name="location" value="<?php echo $location; ?>" autocomplete="off">
+                    <button type="submit" class="s-btn s-round-large button">Add Floor</button>
+                </form>
+                <?php if (!empty($errorMessage)) : ?>
+                <div class="alert alert-danger mt-3"><?php echo $errorMessage; ?></div>
+                <?php endif; ?>
+                <div class="table-responsive mt-4">
                     <table id="employee_data" class="table table-striped table-bordered">
                         <thead>
                             <tr>
-                                <th>slno</th>
-                                <th>floor</th>
-                                <th>location</th>
+                                <th>Sl. No.</th>
+                                <th>Floor</th>
+                                <th>Location</th>
+                            </tr>
                         </thead>
-                        <?php
-                        while ($row = mysqli_fetch_array($result)) {
-                            echo '
- <tr>
-<td>' . $row["id"] . '</td>
-<td>' . $row["floor_name"] . '</td>
-<td>' . $row["location"] . '</td>
- </tr>
- ';
-                        }
-                        ?>
+                        <tbody>
+                            <?php
+                            while ($row = mysqli_fetch_array($result)) {
+                                echo '
+                                    <tr>
+                                        <td>' . $row["id"] . '</td>
+                                        <td>' . $row["floor_name"] . '</td>
+                                        <td>' . $row["location"] . '</td>
+                                    </tr>
+                                ';
+                            }
+                            ?>
+                        </tbody>
                     </table>
                 </div>
             </div>
-            <script>
-            $(document).ready(function() {
-                $('#employee_data').DataTable();
-            });
-            </script>
         </div>
     </div>
-    <?php if (!empty($errorMessage)) : ?>
-    <p class="error-message"><?php echo $errorMessage; ?></p>
-    <?php endif; ?>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.11.3/js/dataTables.bootstrap5.min.js"></script>
     <script>
-    // Clear form fields when the page is refreshed
-    if (window.history.replaceState) {
-        window.history.replaceState(null, null, window.location.href);
-    }
+    $(document).ready(function() {
+        $('#employee_data').DataTable();
+    });
     </script>
+</body>
+
+</html>

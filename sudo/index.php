@@ -21,9 +21,11 @@
             include('./includes/sidebar.php'); ?>
         <div id="main" class="s-light-grey">
             <!--  -->
+            <div style="height:70px;" class=""></div>
             <?php include('./ins/floor.php'); ?>
             <!--  -->
-            <? //php include('./ins/tables.php');
+            <?php //include('./ins/tables.php');
+                // include('./ins/cc.php');
                 ?>
         </div>
         <?php include('./includes/footer.php'); ?>

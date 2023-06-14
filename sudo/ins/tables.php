@@ -13,7 +13,7 @@
     .custom-table th,
     .custom-table td {
         border: 1px solid #ddd;
-        padding: 3px;
+        padding: 1px;
         text-align: left;
     }
 
@@ -27,7 +27,7 @@
     }
 
     .custom-btn {
-        padding: 3px 6px;
+        padding: 1px 3px;
         text-decoration: none;
     }
 
@@ -40,37 +40,51 @@
 </head>
 
 <body>
-    <div id="" class="s-grey s-card-4">
-        <table class="s-table-all s-card-4 s_table custom-table custom-table-striped">
+    <div class="container">
+        <h2>Floor Details</h2>
+        <table class="s-table-all">
             <tr>
                 <th>slno</th>
-                <th>select</th>
                 <th>floor</th>
-                <th>view room</th>
+                <th>location</th>
+                <th>view rooms</th>
                 <th>view all instrument</th>
                 <th>edit</th>
                 <th>delete</th>
             </tr>
+            <?php
+            // Fetch all floor details from the table
+            include('./../class/conn.php');
+            $query = "SELECT * FROM floor";
+            $result = $connection->query($query);
+
+            if ($result->num_rows > 0) {
+                $count = 1;
+                while ($row = $result->fetch_assoc()) {
+                    $floorId = $row['id'];
+                    $floorName = $row['floor_name'];
+                    $location = $row['location'];
+            ?>
             <tr>
+                <td><?php echo $count; ?></td>
+                <td><?php echo $floorName; ?></td>
+                <td><?php echo $location; ?></td>
+                <td><button class="custom-btn">View Rooms</button></td>
+                <td><button class="custom-btn">View All Instruments</button></td>
+                <td><button class="custom-btn">Edit</button></td>
+                <td><button class="custom-btn">Delete</button></td>
             </tr>
+            <?php
+                    $count++;
+                }
+            } else {
+                ?>
             <tr>
-                <td>1</td>
-                <td class="custom-checkbox"><input class="" type="checkbox"></td>
-                <td>Smith</td>
-                <td>Smith</td>
-                <td><button class="custom-btn">Button</button></td>
-                <td><button class="custom-btn">Button</button></td>
-                <td><button class="custom-btn">Button</button></td>
+                <td colspan="7">No floor data found.</td>
             </tr>
-            <tr>
-                <td>1</td>
-                <td class="custom-checkbox"><input class="" type="checkbox"></td>
-                <td>Smith</td>
-                <td>Smith</td>
-                <td><button class="custom-btn">Button</button></td>
-                <td><button class="custom-btn">Button</button></td>
-                <td><button class="custom-btn">Button</button></td>
-            </tr>
+            <?php
+            }
+            ?>
         </table>
     </div>
 </body>
