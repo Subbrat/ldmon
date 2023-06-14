@@ -1,12 +1,13 @@
 <?php
-$connect = mysqli_connect("localhost", "root", "Admin@1234", "ldmon");
+include('./../class/conn.php');
 $query = "SELECT * FROM floor ORDER BY ID DESC";
-$result = mysqli_query($connect, $query);
+$result = mysqli_query($connection, $query);
 ?>
 <!DOCTYPE html>
 <html>
 
 <head>
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
     <script src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
@@ -15,7 +16,6 @@ $result = mysqli_query($connect, $query);
 </head>
 
 <body>
-    <br /><br />
     <div class="container">
         <br />
         <div class="table-responsive">
@@ -44,7 +44,7 @@ $result = mysqli_query($connect, $query);
 
 </html>
 <script>
-    $(document).ready(function() {
-        $('#employee_data').DataTable();
-    });
+$(document).ready(function() {
+    $('#employee_data').DataTable();
+});
 </script>
