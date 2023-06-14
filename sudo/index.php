@@ -20,7 +20,7 @@ if (isset($_SESSION['verified'])) {
     <?php include('./includes/header.php'); ?>
     <?php include('./includes/sidebar.php'); ?>
     <div id="main" class="s-light-grey">
-        <h1>SUDO PAGE IT IS</h1>
+        <?php include('./ins/tables.php'); ?>
     </div>
     <?php include('./includes/footer.php'); ?>
 </body>
