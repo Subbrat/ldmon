@@ -5,27 +5,22 @@ if (isset($_SESSION['verified'])) {
     $floorName = "";
     $location = "";
     $errorMessage = "";
-
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $floorName = $_POST["floorName"];
         $location = $_POST["location"];
-
         // Check if the floor name already exists
         $checkQuery = "SELECT * FROM floor WHERE floor_name = '$floorName'";
         $checkResult = $connection->query($checkQuery);
-
         if ($checkResult->num_rows > 0) {
             $errorMessage = "Floor name already exists. Please enter a unique floor name.";
         } else {
             // Insert the new floor data into the table
             $insertQuery = "INSERT INTO floor (floor_name, location) VALUES ('$floorName', ";
-
             if (!empty($location)) {
                 $insertQuery .= "'$location')";
             } else {
                 $insertQuery .= "NULL)";
             }
-
             if ($connection->query($insertQuery) === true) {
                 echo "<p class='success-message'>Floor data added successfully.</p>";
                 // Clear form fields after successful submission
@@ -96,14 +91,66 @@ if (isset($_SESSION['verified'])) {
 </head>
 
 <body>
-    <form method="POST" class="s-padding s-border s-margin">
-        <label class="catlabel">floor</label><br>
-        <label for="floorName">Floor Name:</label>
-        <input type="text" name="floorName" value="<?php echo $floorName; ?>" autocomplete="off" required>
-        <label for="location">Location:</label>
-        <input type="text" name="location" value="<?php echo $location; ?>" autocomplete="off">
-        <button type="submit" class="s-btn s-round-large button">Add Floor</button>
-    </form>
+    <div class="s-margin s-padding s-border">
+        <form method="POST">
+            <label class=" catlabel">floor</label><br>
+            <label for="floorName">Floor Name:</label>
+            <input type="text" name="floorName" value="<?php echo $floorName; ?>" autocomplete="off" required>
+            <label for="location">Location:</label>
+            <input type="text" name="location" value="<?php echo $location; ?>" autocomplete="off">
+            <button type="submit" class="s-btn s-round-large button">Add Floor</button>
+        </form>
+        <?php
+        $connect = mysqli_connect("localhost", "root", "Admin@1234", "ldmon");
+        $query = "SELECT * FROM floor ORDER BY ID DESC";
+        $result = mysqli_query($connect, $query);
+        ?>
+        <!DOCTYPE html>
+        <html>
+
+        <head>
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+            <script src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
+            <script src="https://cdn.datatables.net/1.10.12/js/dataTables.bootstrap.min.js"></script>
+            <link rel="stylesheet" href="https://cdn.datatables.net/1.10.12/css/dataTables.bootstrap.min.css" />
+        </head>
+
+        <body>
+            <br /><br />
+            <div class="container">
+                <br />
+                <div class="table-responsive">
+                    <table id="employee_data" class="table table-striped table-bordered">
+                        <thead>
+                            <tr>
+                                <th>slno</th>
+                                <th>floor</th>
+                                <th>location</th>
+                        </thead>
+                        <?php
+                        while ($row = mysqli_fetch_array($result)) {
+                            echo '
+                               <tr>
+                                    <td>' . $row["id"] . '</td>
+                                    <td>' . $row["floor_name"] . '</td>
+                                    <td>' . $row["location"] . '</td>
+                               </tr>
+                               ';
+                        }
+                        ?>
+                    </table>
+                </div>
+            </div>
+        </body>
+
+        </html>
+        <script>
+        $(document).ready(function() {
+            $('#employee_data').DataTable();
+        });
+        </script>
+    </div>
     <?php if (!empty($errorMessage)) : ?>
     <p class="error-message"><?php echo $errorMessage; ?></p>
     <?php endif; ?>
