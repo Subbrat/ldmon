@@ -18,7 +18,13 @@ if (isset($_SESSION['verified'])) {
             $errorMessage = "Floor name already exists. Please enter a unique floor name.";
         } else {
             // Insert the new floor data into the table
-            $insertQuery = "INSERT INTO floor (floor_name, location) VALUES ('$floorName', '$location')";
+            $insertQuery = "INSERT INTO floor (floor_name, location) VALUES ('$floorName', ";
+
+            if (!empty($location)) {
+                $insertQuery .= "'$location')";
+            } else {
+                $insertQuery .= "NULL)";
+            }
 
             if ($connection->query($insertQuery) === true) {
                 echo "<p class='success-message'>Floor data added successfully.</p>";
