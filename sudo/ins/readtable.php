@@ -9,12 +9,7 @@ $result = mysqli_query($connection, $query);
 <head>
     <link rel="stylesheet" href="https://cdn.datatables.net/1.11.3/css/dataTables.bootstrap5.min.css" />
     <style>
-    body {
-        background-color: #f2f2f2;
-        padding: 20px;
-    }
-
-    .container {
+    .tab_bg {
         background-color: #fff;
         border-radius: 5px;
         padding: 20px;
@@ -23,9 +18,9 @@ $result = mysqli_query($connection, $query);
 </head>
 
 <body>
-    <div class="container">
+    <div class="tab_bg">
         <div class="table-responsive">
-            <table id="employee_data" class="table table-striped table-bordered">
+            <table id="readtable" class="table table-striped table-bordered">
                 <thead>
                     <tr>
                         <th>Sl. No.</th>
@@ -41,6 +36,8 @@ $result = mysqli_query($connection, $query);
                             <td>' . $row["id"] . '</td>
                             <td>' . $row["floor_name"] . '</td>
                             <td>' . $row["location"] . '</td>
+                            <td>' . $row["location"] . '</td>
+                            <td>' . $row["location"] . '</td>
                         </tr>';
                     }
                     ?>
@@ -54,7 +51,7 @@ $result = mysqli_query($connection, $query);
     <script src="https://cdn.datatables.net/1.11.3/js/dataTables.bootstrap5.min.js"></script>
     <script>
     $(document).ready(function() {
-        $('#employee_data').DataTable({
+        $('#readtable').DataTable({
             "pageLength": 5
         });
     });

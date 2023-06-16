@@ -18,17 +18,14 @@
 
     <body class="s-grey">
         <?php include('./includes/header.php');
-            include('./includes/sidebar.php'); ?>
-        <div id="main" class="s-light-grey">
-            <!--  -->
+            include('./includes/sidebar.php');
+            ?>
+        <div id="main" class="s-lgrey">
             <div style="height:70px;" class=""></div>
-            </ /?php include('./ins/cw.php'); ?>
-            <? //php include('./ins/cc.php');
+            <!--  -->
+            <?php include('./ins/readtable.php');
                 ?>
             <!--  -->
-            <? //php include('./ins/floor.php');
-                // include('./ins/cc.php');
-                ?>
         </div>
         <?php include('./includes/footer.php'); ?>
     </body>
