@@ -13,7 +13,7 @@ if (!isset($_SESSION['email']) || time() >= $_SESSION['expires']) {
 if (isset($_POST['submitpwd'])) {
     $password = $_POST['password'];
     $email = $_SESSION['email'];
-    $connection = mysqli_connect('localhost', 'root', 'Admin@1234', 'ldmon');
+    $connection = mysqli_connect('localhost', 'root', 'cetadelta', 'ldmon');
     if (!$connection) {
         die("Database connection failed: " . mysqli_connect_error());
     }
@@ -43,11 +43,11 @@ if (isset($_POST['submitpwd'])) {
 
 <head>
     <style>
-    .text-danger {
-        color: #dc3545;
-        font-size: 0.9rem;
-        margin-top: 10px;
-    }
+        .text-danger {
+            color: #dc3545;
+            font-size: 0.9rem;
+            margin-top: 10px;
+        }
     </style>
 </head>
 
@@ -59,21 +59,19 @@ if (isset($_POST['submitpwd'])) {
         </div>
         <form class="mx-auto col-10 col-md-6 col-lg-4 my-4 mb-5" method="POST">
             <div class="input-group mb-3">
-                <input type="password" autofocus class="form-control" name="password" placeholder="Password"
-                    aria-label="Password" aria-describedby="button-addon2" required>
-                <button class="btn btn-outline-secondary border-none border-opacity-50" type="submit" name="submitpwd"
-                    id="button-addon2">
+                <input type="password" autofocus class="form-control" name="password" placeholder="Password" aria-label="Password" aria-describedby="button-addon2" required>
+                <button class="btn btn-outline-secondary border-none border-opacity-50" type="submit" name="submitpwd" id="button-addon2">
                     <i class="bi bi-arrow-right-circle"></i>
                 </button>
             </div>
             <?php if (isset($_SESSION['show_warning']) && $_SESSION['show_warning']) { ?>
-            <p class="text-danger">Invalid password. Please try again.</p>
-            <script>
-            // Remove the warning message after 3 seconds
-            setTimeout(function() {
-                document.querySelector('.text-danger').remove();
-            }, 3000);
-            </script>
+                <p class="text-danger">Invalid password. Please try again.</p>
+                <script>
+                    // Remove the warning message after 3 seconds
+                    setTimeout(function() {
+                        document.querySelector('.text-danger').remove();
+                    }, 3000);
+                </script>
             <?php
                 unset($_SESSION['show_warning']);
             } ?>
