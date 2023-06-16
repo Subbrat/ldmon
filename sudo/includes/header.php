@@ -11,7 +11,7 @@
 
 <body>
     <div class="s-bar s-top s-large" id="topnav" style="z-index:4">
-        <button class="s-bar-item s-button s-white s-hide-large s-hover-none s-hover-text-light-grey" onclick="w3_open();"><i class="fa fa-bars"></i></button>
+        <button class="s-bar-item s-button s-hide-large s-hover-none" onclick="w3_open();"><i class="fa fa-bars s-transparent"></i></button>
         <span class="s-bar-item s-left">LDEMON</span>
         <span class="s-bar-item s-right"><a href="logout.php">Logout</a></span>
     </div>

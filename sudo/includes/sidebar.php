@@ -1,6 +1,6 @@
 <head>
 </head>
-<nav class="s-sidebar s-card-4 s-collapse s-grey s-animate-left" style="z-index:3;width:300px;" id="mySidebar">
+<nav class="s-sidebar s-border s-collapse s-animate-left" style="z-index:3;width:300px;" id="mySidebar">
     <br>
     <div class="s-container s-row">
         <div class="s-col s4">
@@ -12,17 +12,16 @@
         </div>
     </div>
     <hr>
-    <div class="s-container">
+    <div class="s-container s-border">
         some text
     </div>
-    <hr>
-    <div class="s-bar-block s-light-grey">
+    <div class="s-bar-block">
         <a href=" #" class="s-bar-item s-button">Link 1</a>
         <div class="s-dropdown-hover">
             <button class="s-button" onclick="myDropFunc()">
                 Dropdown <i class="fa fa-caret-down"></i>
             </button>
-            <div class="s-dropdown-content s-bar-block s-white">
+            <div class="s-dropdown-content s-bar-block">
                 <a href="#" class="s-bar-item s-button">Link</a>
                 <a href="#" class="s-bar-item s-button">Link</a>
             </div>
@@ -31,7 +30,7 @@
             <button class="s-button" onclick="myDropFunc()">
                 Dropdown <i class="fa fa-caret-down"></i>
             </button>
-            <div class="s-dropdown-content s-bar-block s-white">
+            <div class="s-dropdown-content s-bar-block ">
                 <a href="#" class="s-bar-item s-button">Link</a>
                 <a href="#" class="s-bar-item s-button">Link</a>
             </div>
