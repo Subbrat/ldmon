@@ -1,6 +1,6 @@
 <head>
 </head>
-<nav class="s-sidebar s-border s-collapse s-animate-left" style="z-index:3;width:300px;" id="mySidebar">
+<nav class="s-sidebar s-blue  s-border s-collapse s-animate-left" style="z-index:3;width:300px;" id="mySidebar">
     <br>
     <div class="s-container s-row">
         <div class="s-col s4">
