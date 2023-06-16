@@ -5,7 +5,7 @@ $email = $_SESSION['email'];
 date_default_timezone_set('Asia/Kolkata');
 $logoutTime = date('Y-m-d H:i:s');
 // Update the logout time in the accesslog table
-$connection = mysqli_connect('localhost', 'root', 'Admin@1234', 'ldmon');
+$connection = mysqli_connect('localhost', 'root', 'cetadelta', 'ldmon');
 if (!$connection) {
     die("Database connection failed: " . mysqli_connect_error());
 }
