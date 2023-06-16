@@ -13,6 +13,19 @@
             <style>
                 body {
                     padding-top: 10px;
+                    min-height: 100%;
+                }
+
+                @media (min-width:993px) {
+                    #main {
+                        margin-left: 310px;
+                    }
+                }
+
+                @media (max-width:993px) {
+                    #main {
+                        margin-left: 0px;
+                    }
                 }
             </style>
 
@@ -21,7 +34,10 @@
             include('./includes/sidebar.php');
             ?>
             <div id="main" class="s-lightgrey">
-                <div style="height:70px;" class=""></div>
+                <div style="height:70px;" class="off-white"></div>
+                <!--  -->
+                <div class="s-green">ss</div>
+                <!--  -->
             </div>
             <?php include('./includes/footer.php'); ?>
         </body>
