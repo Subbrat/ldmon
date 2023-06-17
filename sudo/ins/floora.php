@@ -4,6 +4,7 @@ if (isset($_SESSION['verified'])) {
     $floorName = "";
     $location = "";
     $errorMessage = "";
+    $successMessage = "";
 
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $floorName = $_POST["floorName"];
@@ -31,12 +32,13 @@ if (isset($_SESSION['verified'])) {
             }
         }
     } else {
-        $floorName = "";
-        $location = "";
         $errorMessage = "";
+        $successMessage = "";
     }
 }
 ?>
+
+<!-- Rest of the code remains the same -->
 
 <head>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/css/bootstrap.min.css">
@@ -90,7 +92,6 @@ if (isset($_SESSION['verified'])) {
                     <input type="text" name="location" value="<?php echo $location; ?>" autocomplete="off">
                     <button type="submit" class="s-btn s-round-large button">Add Floor</button>
                 </form>
-
                 <?php if (!empty($errorMessage)) : ?>
                     <div class="alert alert-danger mt-3" id="errorMessage"><?php echo $errorMessage; ?></div>
                     <script>
@@ -99,7 +100,6 @@ if (isset($_SESSION['verified'])) {
                         }, 3000);
                     </script>
                 <?php endif; ?>
-
                 <?php if (!empty($successMessage)) : ?>
                     <div class="alert alert-success mt-3" id="successMessage"><?php echo $successMessage; ?></div>
                     <script>
