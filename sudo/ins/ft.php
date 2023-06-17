@@ -40,10 +40,28 @@
         label {
             color: #000;
         }
+
+        /* Added styles for error and success messages */
+        .alert {
+            display: none;
+            margin-top: 10px;
+        }
+
+        .alert-danger {
+            color: red;
+        }
+
+        .alert-success {
+            color: green;
+        }
+
+        #floorf {
+            height: 200px;
+        }
     </style>
 </head>
-<div class="s-border s-red" id="">
-    <div class="card">
+<div class="s-border s-red">
+    <div class="card" id="floorf">
         <div class="card-body">
             <form id="addFloorForm" method="POST" action="./ins/fts.php">
                 <!-- Update the action attribute -->
@@ -54,8 +72,8 @@
                 <input type="text" name="location" autocomplete="off">
                 <button type="submit" class="s-btn s-round-large button">Add Floor</button>
             </form>
-            <div class="alert alert-danger mt-3" id="errorMessage" style="display: none;"></div>
-            <div class="alert alert-success mt-3" id="successMessage" style="display: none;"></div>
+            <div class="alert alert-danger" id="errorMessage"></div>
+            <div class="alert alert-success" id="successMessage"></div>
         </div>
     </div>
 </div>
