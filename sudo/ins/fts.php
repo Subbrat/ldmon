@@ -25,12 +25,6 @@ if (isset($_SESSION['verified'])) {
 
             if ($connection->query($insertQuery) === true) {
                 $successMessage = "Floor added successfully.";
-                $response = array(
-                    'redirect' => 'index.php',
-                    'successMessage' => $successMessage
-                );
-                echo json_encode($response);
-                exit();
             } else {
                 $errorMessage = "Error: " . $connection->error;
             }
@@ -39,16 +33,10 @@ if (isset($_SESSION['verified'])) {
         $errorMessage = "Invalid request.";
     }
 
-    // Generate the updated content to return
-    ob_start();
-    include('./../ins/ft.php');
-    $updatedContent = ob_get_clean();
-
     // Prepare the response
     $response = array(
         'errorMessage' => $errorMessage,
-        'successMessage' => $successMessage,
-        'content' => $updatedContent
+        'successMessage' => $successMessage
     );
 
     echo json_encode($response);

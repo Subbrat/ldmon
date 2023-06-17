@@ -45,19 +45,25 @@ if (isset($_SESSION['verified'])) {
                 data: formData,
                 dataType: 'json', // Expect JSON response
                 success: function(response) {
-                    if (response.redirect) {
-                        window.location.href = response.redirect;
-                    } else if (response.errorMessage) {
+                    // Check if there are any error messages
+                    if (response.errorMessage) {
                         $('#errorMessage').text(response.errorMessage);
                         $('#errorMessage').show();
+                        setTimeout(function() {
+                            $('#errorMessage').fadeOut();
+                        }, 2500); // Fade out after 2.5 seconds
                     } else {
                         $('#successMessage').text(response.successMessage);
                         $('#successMessage').show();
-                        // Update the content dynamically
-                        $('#main').html(response.content);
+                        setTimeout(function() {
+                            $('#successMessage').fadeOut();
+                        }, 2500); // Fade out after 2.5 seconds
+
+                        // Optionally, you can update specific content on the page
+                        // For example, update a table of floors with the newly added floor
+                        // $('#floorTable').append(response.newFloorRow);
                     }
                 },
-
                 error: function(xhr, status, error) {
                     console.log(xhr.responseText);
                 }
