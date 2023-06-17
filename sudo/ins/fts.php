@@ -32,12 +32,21 @@ if (isset($_SESSION['verified'])) {
     } else {
         $errorMessage = "Invalid request.";
     }
+
+    // Generate the updated content to return
+    ob_start();
+    include('./ins/../ft.php');
+    $updatedContent = ob_get_clean();
+
+    // Prepare the response
+    $response = array(
+        'errorMessage' => $errorMessage,
+        'successMessage' => $successMessage,
+        'content' => $updatedContent
+    );
+
+    echo json_encode($response);
 } else {
     $errorMessage = "Session not verified.";
+    echo $errorMessage;
 }
-
-// Redirect back to the form page with appropriate messages
-$_SESSION['errorMessage'] = $errorMessage;
-$_SESSION['successMessage'] = $successMessage;
-// header("Location: ");
-exit;
