@@ -7,26 +7,31 @@ if (isset($_SESSION['verified'])) {
     $successMessage = "";
 
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        $floorName = $_POST["floorName"];
-        $location = $_POST["location"];
-        $checkQuery = "SELECT * FROM floor WHERE floor_name = '$floorName'";
-        $checkResult = $connection->query($checkQuery);
+        $floorName = trim($_POST["floorName"]);
+        $location = trim($_POST["location"]);
 
-        if ($checkResult->num_rows > 0) {
-            $errorMessage = "Floor already exists.";
+        if (empty($floorName) || empty($location)) {
+            $errorMessage = "Floor Name and Location are required.";
         } else {
-            $insertQuery = "INSERT INTO floor (floor_name, location) VALUES ('$floorName', ";
+            $checkQuery = "SELECT * FROM floor WHERE floor_name = '$floorName'";
+            $checkResult = $connection->query($checkQuery);
 
-            if (!empty($location)) {
-                $insertQuery .= "'$location')";
+            if ($checkResult->num_rows > 0) {
+                $errorMessage = "Floor already exists.";
             } else {
-                $insertQuery .= "NULL)";
-            }
+                $insertQuery = "INSERT INTO floor (floor_name, location) VALUES ('$floorName', ";
 
-            if ($connection->query($insertQuery) === true) {
-                $successMessage = "Floor added successfully.";
-            } else {
-                $errorMessage = "Error: " . $connection->error;
+                if (!empty($location)) {
+                    $insertQuery .= "'$location')";
+                } else {
+                    $insertQuery .= "NULL)";
+                }
+
+                if ($connection->query($insertQuery) === true) {
+                    $successMessage = "Floor added successfully.";
+                } else {
+                    $errorMessage = "Error: " . $connection->error;
+                }
             }
         }
     } else {
