@@ -35,7 +35,7 @@ if (isset($_SESSION['verified'])) {
 
     // Generate the updated content to return
     ob_start();
-    include('./ins/../ft.php');
+    include('./../ins/ft.php');
     $updatedContent = ob_get_clean();
 
     // Prepare the response

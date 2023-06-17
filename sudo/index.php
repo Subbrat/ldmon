@@ -27,7 +27,7 @@ if (isset($_SESSION['verified'])) {
             <div style="height:70px;" class=""></div>
             <!--  -->
             <?php include('./ins/ft.php'); ?>
-            <? //php include('./ins/readonlytable.php'); 
+            <? //php include('./ins/readonlytable.php');
             ?>
         </div>
         <?php include('./includes/footer.php'); ?>
@@ -43,9 +43,18 @@ if (isset($_SESSION['verified'])) {
                         type: 'POST',
                         url: url,
                         data: formData,
+                        dataType: 'json', // Expect JSON response
                         success: function(response) {
-                            // Update the content dynamically
-                            $('#main').html(response);
+                            // Check if there are any error messages
+                            if (response.errorMessage) {
+                                $('#errorMessage').text(response.errorMessage);
+                                $('#errorMessage').show();
+                            } else {
+                                $('#successMessage').text(response.successMessage);
+                                $('#successMessage').show();
+                                // Update the content dynamically
+                                $('#main').html(response.content);
+                            }
                         },
                         error: function(xhr, status, error) {
                             console.log(xhr.responseText);
