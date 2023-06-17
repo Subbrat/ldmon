@@ -25,6 +25,12 @@ if (isset($_SESSION['verified'])) {
 
             if ($connection->query($insertQuery) === true) {
                 $successMessage = "Floor added successfully.";
+                $response = array(
+                    'redirect' => 'index.php',
+                    'successMessage' => $successMessage
+                );
+                echo json_encode($response);
+                exit();
             } else {
                 $errorMessage = "Error: " . $connection->error;
             }
