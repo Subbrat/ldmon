@@ -352,20 +352,20 @@
 	ALTER TABLE uid_ot ADD FOREIGN KEY (floor) REFERENCES floor(id);
 	-- initial import --
 	ALTER TABLE user_verification ADD FOREIGN KEY (instituteid) REFERENCES institutions(id);
+    DROP table if exists access;
 	CREATE TABLE access(
 	id INT(11) AUTO_INCREMENT PRIMARY KEY,
 	name VARCHAR (255),
 	password VARCHAR (255),
 	email VARCHAR (255),
+    created DATETIME,
 	status TINYINT(1),
-	type INT (10) COMMENT '1-sudo, 2-faculty, 3-user, 4-maintainance'
+	type INT (10) COMMENT '1-sudo, 2-faculty, 3-user, 4-maintainance,5-unverified,6-webadmin'
 	);
 	ALTER TABLE `access`
 	ADD UNIQUE `email` (`email`);
 	INSERT INTO access (name,password,email,status,type)
-	VALUES ('s','ap','a@p','1','1');
-	INSERT INTO access (name,password,email,status,type)
-	VALUES ('a','sp','s@p','1','2');
+	VALUES ('subbrat','$2y$10$mmL8P4JX8HHEvP9S2kaoP.DVQHDQhjhM.VKw85SsXiMigPIr74jhu','a@p','1','1');
 	-- logs --
 	CREATE TABLE accesslog (
 	  id INT AUTO_INCREMENT PRIMARY KEY,
