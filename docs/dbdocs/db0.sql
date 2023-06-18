@@ -353,24 +353,30 @@
 	-- initial import --
 	ALTER TABLE user_verification ADD FOREIGN KEY (instituteid) REFERENCES institutions(id);
     DROP table if exists access;
-	CREATE TABLE access(
-	id INT(11) AUTO_INCREMENT PRIMARY KEY,
-	name VARCHAR (255),
-	password VARCHAR (255),
-	email VARCHAR (255),
+	CREATE TABLE access (
+    id INT(11) AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(255),
+    password VARCHAR(255),
+    email VARCHAR(255) UNIQUE,
     created DATETIME,
-	status TINYINT(1),
-	type INT (10) COMMENT '1-sudo, 2-faculty, 3-user, 4-maintainance,5-unverified,6-webadmin'
-	);
-	ALTER TABLE `access`
-	ADD UNIQUE `email` (`email`);
+    status TINYINT(1),
+    type INT(10) COMMENT '1-sudo, 2-faculty, 3-user, 4-maintenance, 5-unverified, 6-webadmin',
+    access_token VARCHAR(255),
+    is_logged_in BOOLEAN DEFAULT FALSE
+);
+INSERT INTO access (name, password, email, status, type)
+VALUES ('subbrat', '$2y$10$mmL8P4JX8HHEvP9S2kaoP.DVQHDQhjhM.VKw85SsXiMigPIr74jhu', 'a@p', '1', '1');
+	ALTER TABLE `access`;
 	INSERT INTO access (name,password,email,status,type)
 	VALUES ('subbrat','$2y$10$mmL8P4JX8HHEvP9S2kaoP.DVQHDQhjhM.VKw85SsXiMigPIr74jhu','a@p','1','1');
 	-- logs --
+    DROP table if exists accesslog;
 	CREATE TABLE accesslog (
-	  id INT AUTO_INCREMENT PRIMARY KEY,
-	  user_id VARCHAR(50),
-	  login_time DATETIME,
-	  logout_time DATETIME
-	);
--- 83 commits -- 
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    user_id VARCHAR(50),
+    login_time DATETIME,
+    logout_time DATETIME
+);
+ALTER TABLE access ADD COLUMN access_token VARCHAR(255);
+ALTER TABLE access ADD COLUMN is_logged_in BOOLEAN DEFAULT FALSE;
+-- 83 commits --
