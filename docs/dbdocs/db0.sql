@@ -352,6 +352,8 @@
 	ALTER TABLE uid_ot ADD FOREIGN KEY (floor) REFERENCES floor(id);
 	-- initial import --
 	ALTER TABLE user_verification ADD FOREIGN KEY (instituteid) REFERENCES institutions(id);
+    
+    -- 
     DROP table if exists access;
 	CREATE TABLE access (
     id INT(11) AUTO_INCREMENT PRIMARY KEY,
@@ -361,22 +363,19 @@
     created DATETIME,
     status TINYINT(1),
     type INT(10) COMMENT '1-sudo, 2-faculty, 3-user, 4-maintenance, 5-unverified, 6-webadmin',
-    access_token VARCHAR(255),
     is_logged_in BOOLEAN DEFAULT FALSE
 );
+ALTER TABLE `access` ADD `force_logout` TINYINT(1) DEFAULT 0;
+
 INSERT INTO access (name, password, email, status, type)
 VALUES ('subbrat', '$2y$10$mmL8P4JX8HHEvP9S2kaoP.DVQHDQhjhM.VKw85SsXiMigPIr74jhu', 'a@p', '1', '1');
-	ALTER TABLE `access`;
-	INSERT INTO access (name,password,email,status,type)
-	VALUES ('subbrat','$2y$10$mmL8P4JX8HHEvP9S2kaoP.DVQHDQhjhM.VKw85SsXiMigPIr74jhu','a@p','1','1');
 	-- logs --
     DROP table if exists accesslog;
 	CREATE TABLE accesslog (
     id INT AUTO_INCREMENT PRIMARY KEY,
     user_id VARCHAR(50),
     login_time DATETIME,
-    logout_time DATETIME
+    logout_time DATETIME,
+    forced TINYINT (1) DEFAULT 0
 );
-ALTER TABLE access ADD COLUMN access_token VARCHAR(255);
-ALTER TABLE access ADD COLUMN is_logged_in BOOLEAN DEFAULT FALSE;
 -- 83 commits --
