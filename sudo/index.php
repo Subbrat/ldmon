@@ -14,6 +14,7 @@ if (isset($_SESSION['verified'])) {
     <style>
     body {
         padding-top: 10px;
+        padding-bottom: 70px;
     }
     </style>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
@@ -26,7 +27,8 @@ if (isset($_SESSION['verified'])) {
         <!--  -->
         <!-- <div style="height:70px;" clasxls=""></div> -->
         <!--  -->
-        <?php include('./ins/ft.php'); ?>
+        <?php include('./ins/readt.php');
+            ?>
         <? //php include('./ins/readonlytable.php');
             ?>
     </div>
