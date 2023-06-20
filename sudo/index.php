@@ -27,7 +27,7 @@ if (isset($_SESSION['verified'])) {
         <!--  -->
         <!-- <div style="height:70px;" clasxls=""></div> -->
         <!--  -->
-        <?php include('./ins/readt.php');
+        <?php include('./ins/ft.php');
             ?>
         <? //php include('./ins/readonlytable.php');
             ?>
