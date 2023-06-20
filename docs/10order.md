@@ -77,11 +77,12 @@
 
 ## category 1: Location and Facilities
 1. floor
-2. rooms
+2. wing
+3. rooms
 ## category 2: Organization and Hierarchy
-3. department
-4. company
-5. faculty
+1. department
+2. company
+3. faculty
 ## category 3: Data Management and Classification
 1. add_types
 2. instrument_category
@@ -123,3 +124,10 @@
 2. log_refuel_fuel
 3. log_refuel_uid
 4. log_refuel_iid
+
+## additional logs
+
+
+
+
+
