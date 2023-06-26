@@ -30,7 +30,7 @@ if (isset($_SESSION['verified'])) {
                 if ($connection->query($insertQuery) === true) {
                     $successMessage = "Floor added successfully.";
                 } else {
-                    $errorMessage = "Error: " . $connection->error;
+                    $errorMessage = "Error: " . $connection->$error;
                 }
             }
         }
