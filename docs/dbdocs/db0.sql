@@ -352,11 +352,13 @@
 	ALTER TABLE uid_ot ADD FOREIGN KEY (floor) REFERENCES floor(id);
 	-- initial import --
 	ALTER TABLE user_verification ADD FOREIGN KEY (instituteid) REFERENCES institutions(id);
+    drop table if exists access;
 	CREATE TABLE access(
 	id INT(11) AUTO_INCREMENT PRIMARY KEY,
 	name VARCHAR (255),
 	password VARCHAR (255),
 	email VARCHAR (255),
+    created DATETIME,
 	status TINYINT(1),
 	type INT (10) COMMENT '1-sudo, 2-faculty, 3-user, 4-maintainance'
 	);
@@ -373,4 +375,4 @@
 	  login_time DATETIME,
 	  logout_time DATETIME
 	);
--- 83 commits -- 
+-- 83 commits --
